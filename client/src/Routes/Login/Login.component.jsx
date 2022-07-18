@@ -1,8 +1,8 @@
 import React from 'react';
 import "./login.styles.scss";
-import FormInput from '../../Components/button/forminput/FormInput.component';
+import FormInput from '../../Components/poes/forminput/FormInput.component';
 import { useState } from 'react';
-import Button from '../../Components/button/Button/Button.component';
+import Button from '../../Components/Button/Button.component';
 import { Link } from 'react-router-dom';
 
 const defaultFormVals = {
