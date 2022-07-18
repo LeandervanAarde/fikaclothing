@@ -1,0 +1,55 @@
+@import "../../../StylesSource/variables.scss";
+
+.button-con {
+    @include body();
+    height: 50px;
+    letter-spacing: 0.5px;
+    padding: 0 35px 0 35px;
+    line-height: 50px;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+
+    &.primary {
+        background-color: $red;
+        color: $white;
+        font-weight: 800;
+        transition: 300ms linear all;
+
+        &:hover {
+            background-color: darken($red, 14%);
+            transform: scale(1.1);
+            font-size: 15px;
+        }
+    }
+
+    &.google-btn {
+        background-color: $blue;
+        color: $white;
+        font-weight: 800;
+        transition: 300ms linear all;
+
+        &:hover {
+            background-color: darken($blue, 14%);
+            transform: scale(1.1);
+            font-size: 15px;
+        }
+    }
+
+    &.secondary{
+        border: 3px solid $black;
+        color: $black;
+        font-weight: 800;
+        transition: 300ms linear all;
+
+        &:hover{
+            transform: scale(1,1);
+            font-size: 15px;
+            color: white;
+            border: none;
+            background-color: $black;
+        }
+    }
+}
