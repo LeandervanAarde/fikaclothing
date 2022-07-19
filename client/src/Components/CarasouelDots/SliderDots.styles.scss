@@ -1,0 +1,9 @@
+@import "../../StylesSource/variables.scss";
+
+.dot{
+    width: 25px;
+    height: auto;
+    aspect-ratio: 1/1;
+    background-color: black;
+    border-radius: 55%;
+}

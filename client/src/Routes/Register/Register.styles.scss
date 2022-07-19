@@ -18,5 +18,47 @@
         display: flex;
         justify-content: center;
 
+        .register-container {
+            width: 35%;
+            height: 86vh;
+            background-color: $white;
+            margin-top: 1.8vh;
+            @include dropShadow();
+
+            .register-heading {
+                @include headingOne();
+                width: 100%;
+                text-align: center;
+                margin-bottom: -7px;
+                margin-top: 10px;
+            }
+
+            .buttonContainer {
+                margin-top: 0;
+                width: 28%;
+                margin-left: 15%;
+                float: left;
+            }
+
+            .buttonContainerTwo {
+                margin-top: 0;
+                width: 40%;
+                margin-left: 4%;
+                float: left;
+            }
+
+            h5{
+                @include headingFive();
+                text-align: center;
+                margin-bottom: 0;
+            }
+
+
+            .reg-btn-container{
+                width: 28%;
+                margin-left: 35%;
+                margin-top: 10px;
+            }
+        }
     }
 }

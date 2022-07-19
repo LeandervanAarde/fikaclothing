@@ -1,9 +1,10 @@
 import React from 'react';
+import Slider from '../../Components/Carasouel/Slider.component';
 
 const Home = () => {
     return (
         <div>
-            <h1> I am the home Component. I will be where featured items are</h1>
+            <Slider/>
         </div>
     );
 };

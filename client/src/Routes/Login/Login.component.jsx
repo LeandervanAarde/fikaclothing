@@ -1,6 +1,6 @@
 import React from 'react';
 import "./login.styles.scss";
-import FormInput from '../../Components/poes/forminput/FormInput.component';
+import FormInput from "../../Components/forminput/FormInput.component"
 import { useState } from 'react';
 import Button from '../../Components/Button/Button.component';
 import { Link } from 'react-router-dom';
@@ -47,6 +47,7 @@ const Login = () => {
                         required={true}
                         onChange={handleChange}
                         onBlur={validateEmail}
+                        placeholder = {"eg. john@gmail.com"}
                     />
 
                     <FormInput

@@ -17,11 +17,11 @@ const Navigation = () => {
                 </Link>
                 <div className='nav-links-container'>
                     <input type={"text"} placeholder="Search item..." className='itemSearch' />
-                    <Link to="/shop" className='nav-link'>
+                    <Link to="/" className='nav-link'>
                         <p className='nav-item'>Home</p>
                     </Link>
 
-                    <Link to="/featured" className='nav-link'>
+                    <Link to="/Shop" className='nav-link'>
                         <p className='nav-item'>Shop</p>
                     </Link>
 
