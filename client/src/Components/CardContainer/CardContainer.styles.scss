@@ -1,0 +1,14 @@
+@import "../../StylesSource/variables.scss";
+
+h2{
+    @include headingTwo();
+}
+
+.mainHeading{
+    text-align: center;
+}
+
+.card-container{
+    padding-left: 5%;
+    padding-right: 5%;
+}

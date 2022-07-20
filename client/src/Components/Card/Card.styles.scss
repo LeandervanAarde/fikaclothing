@@ -1,0 +1,15 @@
+@import "../../StylesSource/variables.scss";
+
+.card-body{
+    width: 253px;
+    height: 302px;
+    background-color: $white;
+    @include dropShadow();
+
+    img{
+        width: 100%;
+        height: 65%;
+        background-color: red;
+        object-fit: cover;
+    }
+}
