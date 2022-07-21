@@ -3,7 +3,7 @@
 .dot{
     width: 25px;
     height: auto;
-    aspect-ratio: 1/1;
+    aspect-ratio: 1/1 !important;
     background-color: $white;
     border-radius: 55%;
     display: inline-block;

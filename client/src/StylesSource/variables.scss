@@ -47,6 +47,12 @@ $headings: 'Koulen', cursive;
     color: $black;
 }
 
+@mixin headingSix{
+    font-family: $headings;
+    font-size: 15px;
+    color: $black;
+}
+
 @mixin body{
     font-family: $primary;
     font-weight: 400;

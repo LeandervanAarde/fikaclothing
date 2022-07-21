@@ -9,6 +9,9 @@ const CardContainer = ({heading}) => {
             <h2 className='mainHeading'>{heading}</h2>
             <div className='card-container'>
                 <Card/>
+                <Card/>
+                <Card/>
+                <Card/>
             </div>
         </>
     );

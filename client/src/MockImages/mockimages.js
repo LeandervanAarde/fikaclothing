@@ -9,11 +9,7 @@ const sliderImages = [
         content: 'Looking the best is an essential part of any outfit, Fiika offers the most up to date fashion statements through shoes of any category! ',
         shoe: 'https://i.ibb.co/ZYW3VTp/brown-brim.png'
     }, 
-    {
-        title: 'I dont know what to say here',
-        content: 'This is the best part, Shoelaces and stuff could be free if you order here my dude , eat my chimiChangas ',
-        shoe: 'https://i.ibb.co/RjBLWxB/grey-brim.png'
-    }, 
+
     {
         title: 'What else can I say ',
         content: 'Among us is pretty sus, but not as sus as a person wearing shoes that are old and fucked up, dont be that guy. Be the guy that wears cool shoes that he bought at FIika ',
