@@ -1,8 +1,8 @@
 import React from 'react';
 import "./SliderDots.styles.scss"
-const Sliderdots = ({setImg}) => {
+const Sliderdots = ({setImg, dotClass}) => {
     return (
-        <div className='dot' onClick={setImg}></div>
+        <div className={dotClass} onClick={setImg}></div>
     );
 };
 

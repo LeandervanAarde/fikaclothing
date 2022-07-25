@@ -4,7 +4,7 @@ import { Link, Outlet } from 'react-router-dom';
 import { ReactComponent as StoreLogo } from "../../Assets/Logo.svg";
 import { CartIcon } from '../../Components/cartIcon/CartIcon.component';
 import "./navigation.styles.scss";
-import { HiOutlineShoppingBag } from "react-icons/hi";
+
 
 const Navigation = () => {
     return (
