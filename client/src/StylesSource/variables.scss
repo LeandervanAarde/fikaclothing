@@ -23,11 +23,6 @@ $headings: 'Koulen', cursive;
     color: $black;
 }
 
-@mixin headingTwo{
-    font-family: $headings;
-    font-size: 32px;
-    color: $black;
-}
 
 @mixin headingThree{
     font-family: $headings;

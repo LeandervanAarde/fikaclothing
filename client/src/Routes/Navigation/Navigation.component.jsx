@@ -1,12 +1,16 @@
-import React from 'react';
+import React, {useContext} from 'react';
 // import { Col } from 'react-bootstrap';
 import { Link, Outlet } from 'react-router-dom';
 import { ReactComponent as StoreLogo } from "../../Assets/Logo.svg";
 import { CartIcon } from '../../Components/cartIcon/CartIcon.component';
+import CartDropDown from '../../Components/CartDropDown/CartDropDown.component';
+import { CartContext } from '../../contexts/CartDrop.context';
 import "./navigation.styles.scss";
 
 
 const Navigation = () => {
+    const {showCart, setShowCart} = useContext(CartContext);
+
     return (
         <>
             <div className="navigation">
@@ -42,6 +46,9 @@ const Navigation = () => {
                     <Link className='form-link nav-link' to="/signIn">
                         <p className='nav-item'>Login/ Register</p>
                     </Link>
+                    {
+                        showCart && <CartDropDown/>
+                    }
                 </div>
             </div>
             <Outlet />

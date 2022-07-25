@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import "./Footer.styles.scss";
 import { ReactComponent as StoreLogo } from '../../Assets/Logo.svg';
 import FooterInformation from '../FooterInformation/FooterInformation.component';
+import EmailInput from '../SubscribeInput/EmailInput.component';
 
 const Footer = () => {
     return (
@@ -30,6 +31,8 @@ const Footer = () => {
                     <li>@Fiika_shoes_official</li>
                 </>}
             />
+
+            <EmailInput/>
         </div>
     );
 };
