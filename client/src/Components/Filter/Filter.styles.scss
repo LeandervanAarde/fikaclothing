@@ -1,0 +1,18 @@
+@import "../../StylesSource/variables.scss";
+
+.filter-container{
+    width: 18vw;
+    height: 85vh;
+    background-color: $black;
+    @include dropShadow();
+    position: fixed;
+    top: 12.5vh;
+    left: 10px;
+
+    .filter-heading{
+        @include headingFour();
+        margin-top: 10px;
+        color: white;
+        text-align: center;
+    }
+}

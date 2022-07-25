@@ -7,19 +7,21 @@ const CartDropDown = () => {
 
     const navigate = useNavigate();
     const goToCheckout = () =>{
-        navigate("/checkout")
+        navigate("/Checkout")
     }
     const cartItems = useContext(CartContext);
 
 
     return (
         <div className='cart-dropdown-container'>
+            <h2>CART</h2>
             <div className='cart-items'>
 
             </div>
             <Button
                 buttonType={"secondary"}
                 children = {"Go to checkout"}
+                onClick={goToCheckout}
             />
         </div>
     );

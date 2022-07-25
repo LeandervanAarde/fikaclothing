@@ -14,4 +14,9 @@
     right: 40px;
     z-index: +999;
 
+    h2{
+        @include headingTwo();
+        margin-top: 0;
+    }
+
 }

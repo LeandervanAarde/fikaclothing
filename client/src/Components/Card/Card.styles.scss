@@ -1,7 +1,7 @@
 @import "../../StylesSource/variables.scss";
 
 .card-body{
-    width: 225px;
+    width: 230px;
     height: auto;
     margin-bottom: 40px;
     min-height: 290px;
@@ -37,7 +37,7 @@
        float: left;
         margin-left: 20%;
         @include body();
-        font-weight: 500;    
+        font-weight: 500;  
             
     }
 
@@ -45,8 +45,8 @@
         color: $black;
         font-weight: 700;
         font-size: 18px;
-        margin-left: 20%;
-        margin-bottom: 10px;
+        margin-left: 15%;
+        margin-bottom: 5px;
         margin-top: 10px;
     }
 
@@ -65,7 +65,9 @@
     }
 
     .btn-container{
-        width: 90%;
-        margin-left: 5%;
+       width: 100%;
+       display: flex;
+       justify-content: center;
+       padding: 0;
     }
 }
