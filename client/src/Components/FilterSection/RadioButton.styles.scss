@@ -1,11 +1,13 @@
 @import "../../StylesSource/variables.scss"; 
 
 label{
-    color: white;
+    color: $white;
     margin-top: 20px;
+ 
+    @include body();
 }
 
-input{
+.radio{
     margin-top: 20px;
-    margin-left: 10px;
+    margin-left: 30px;
 }
