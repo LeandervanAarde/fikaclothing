@@ -2,12 +2,14 @@
 
 .filter-container{
     width: 18vw;
-    height: 85vh;
+    height: 86vh;
     background-color: $black;
+    float: left;
+    margin-top: 20px;
+    margin-left: 12px;
+    position: relative;
+
     @include dropShadow();
-    position: fixed;
-    top: 12.5vh;
-    left: 10px;
 
     .filter-heading{
         @include headingFour();

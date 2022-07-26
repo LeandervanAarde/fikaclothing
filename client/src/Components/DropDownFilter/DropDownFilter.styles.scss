@@ -1,0 +1,14 @@
+@import "../../StylesSource/variables.scss";
+
+select{
+    width: 12vw ;
+    height: 4vh;
+    background-color: transparent;
+    border: 2px solid $black;
+    outline: none;
+    @include body();
+
+    option{
+        @include body();
+    }
+}
