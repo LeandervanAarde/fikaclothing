@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import "./login.styles.scss";
 import FormInput from "../../Components/forminput/FormInput.component"
 import { useState } from 'react';
@@ -32,6 +32,10 @@ const Login = () => {
             setEmailError(false)
         }
     }
+
+    useEffect(() =>{
+        document.title = "Sign In"
+     }, [])
 
 
     return (
@@ -78,7 +82,8 @@ const Login = () => {
                     <br />
                     <br />
                     <br />
-                    <h5>Already have an account?</h5>
+                    <br/>
+                    <h5 className='acc'>Already have an account?</h5>
                     <div className='reg-btn-container'>
                         <Link to="/Register">
                             <Button

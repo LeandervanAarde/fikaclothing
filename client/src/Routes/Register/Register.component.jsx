@@ -1,7 +1,6 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import "./Register.styles.scss";
 import FormInput from '../../Components/forminput/FormInput.component';
-import { useState } from 'react';
 import Button from '../../Components/Button/Button.component';
 import { Link } from 'react-router-dom';
 const defaultFormVals = {
@@ -33,6 +32,10 @@ const Register = () => {
             setEmailError(false)
         }
     }
+
+    useEffect(() =>{
+        document.title = "Sign up"
+     }, [])
 
     return (
         <div className='register-image'>
@@ -100,8 +103,9 @@ const Register = () => {
                     </div>
                     <br />
                     <br />
-
-                    <h5>Already have an account?</h5>
+                    <br />
+                    <br />
+                    <h5 className='acc'>Already have an account?</h5>
                     <div className='reg-btn-container'>
                         <Link to="/signIn">
                             <Button
