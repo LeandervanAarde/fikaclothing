@@ -1,0 +1,27 @@
+@import "../../StylesSource/variables.scss";
+
+.delivery-date{
+    width: 100%;
+    @include dropShadow();
+    padding: 6px;
+    margin-bottom: 5%;
+    transition: 0.4s ease-in-out all;
+
+    .delivery-date-heading{
+        margin: 0;
+        @include headingFive();
+
+    }
+    .delivery-date-content{
+        margin-top: 1%;
+        margin-bottom: 1%;
+        @include body();
+    }
+
+    &:hover{
+        box-shadow: none;
+        background-color: $red;
+        color: $white;
+        cursor: pointer;
+    }
+}

@@ -58,14 +58,19 @@ const PaymentForm = () => {
             <div className='cvv'>
                 <FormInput
                     label={"CVV"}
-                    value={"Hello"}
-                    type="email"
-                    name="email"
+                    value={133}
+                    type="number"
+                    name="cvv"
                     required={true}
                     // onChange={handleChange}
                     // onBlur={validateEmail}
                     placeholder={"eg. john@gmail.com"}
                 />
+            </div>
+            <div className='paymentOptions'>  
+            <p className='options'>Payment </p>  
+                    <div className='straight'><span>Straight</span></div>
+                    <div className='budget'><span>Budget</span></div>
             </div>
         </div>
     );

@@ -2,7 +2,7 @@
 
 .form{
     width: 100%;
-    height: 80%;
+    height: 50%;
   
 .exp-date-container{
     display: flex;
@@ -26,4 +26,42 @@
     width: 30%;
     margin-left: 5%;
     margin-top: 1%;
+    float: left;
+}
+
+.paymentOptions{
+    width: 50%;
+    display: flex;
+
+    .options{
+        @include body();
+        width: 60%;
+        margin-left: 10%;
+        margin-top: 15%;
+    }
+    .straight{
+        margin-left: 15%;
+    }
+    .straight, .budget{
+        max-height: 20px;
+        width:  30%;
+        border: 2px solid $red;
+        padding: 3%;
+        text-align: center;
+        margin-right: 20px;
+        margin-top: 10%;
+        transition: 0.4s ease all;
+        cursor: pointer;
+
+        span{
+            @include body();
+            margin-bottom: 0;
+        }
+
+        &:hover{
+            background-color: $red;
+            color: $white;
+            font-weight: 400;
+        }
+    }
 }
