@@ -1,0 +1,107 @@
+@import "../../StylesSource/variables.scss";
+
+.individualProduct{
+    flex: 1;
+
+    .mainImage{
+        width: 30%;
+        aspect-ratio: 1/1;
+        background-position: center;
+        background-size: cover;
+        margin-top: 0;
+        margin-left: 2.5%;
+        float: left;
+        transition: 0.2s ease-in-out all;
+    
+    }
+    .Product-information-container{
+        width: 69%;
+        margin-left: 30%;
+        margin-top: 0;
+        padding-left: 1%;
+        
+        .product-name{
+            margin: 0;
+            @include headingTwo();
+            text-align: left;
+        }
+        .stock-text{
+            @include body();
+            margin-top: 0;
+            color: $green;
+            text-transform: capitalize;
+        }
+        .out-of-stock{
+            @include body();
+            margin-top: 0;
+            color: $red;
+            text-transform: capitalize;
+        }
+        .product-description{
+            width: 50%;
+            @include body();
+        }
+    
+        .price{
+            color: black;
+            color: $black;
+            font-weight: 400;
+            font-size: 20px;
+            margin: 0;
+            font-family: $primary;
+        }
+    
+        .discount{
+            color: lighten($black,  40%);
+            margin: 0;
+            font-weight: 400;
+            font-family: $primary;
+            text-decoration: line-through;
+            text-decoration-color: $red;
+            text-decoration-thickness: 2.5px;
+            
+            del{
+                color: $red;
+            }
+        }
+    }
+
+    .sizeH{
+        @include headingFive;
+        margin-top: 1%;
+        margin-bottom: 0;
+        font-weight: 400;
+    }
+    
+    .subImages-container{
+        width: 32%;
+        margin-left: 2%;
+    }
+    .size-box-container, .color-box-container{
+        width: 30%;
+        height: 70px;
+        margin-left: 32.5%;
+        margin-top: 0.5%;
+        margin-bottom: 2;
+    }
+
+    .size-box-container{
+        margin-bottom: 2%;
+    }
+
+    .cart-button{
+        width: 15%;
+        height: 70px;
+        margin-left: 34.5%;
+        margin-top: 3%;
+    }
+
+    .not-sure{
+        float: left;
+        margin-left: 20%;
+        @include body();
+        font-weight: 700;
+        margin-top: -3%;
+    }
+}
+

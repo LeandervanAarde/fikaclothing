@@ -1,0 +1,19 @@
+@import "../../StylesSource/variables.scss";
+
+
+.back-button{
+    width: 4%;
+    height: 20px;
+    margin: 0;
+    padding:  2%;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+
+
+    svg{
+        margin-right: 1%;
+    }
+
+   
+}

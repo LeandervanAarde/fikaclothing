@@ -1,0 +1,27 @@
+@import "../../StylesSource/variables.scss";
+
+.size-container{
+    height: 100%;
+    aspect-ratio: 1/1;
+    background-color: transparent;
+    display: inline-block;
+    justify-content: space-between;
+    margin-right: 3%;
+    border: 2px solid $black;
+
+    .Size{
+        @include headingFour();
+        text-align: center;
+        margin-top: 25%;
+    }
+    
+    &:hover{
+        background-color: $red;
+        border: none;
+        cursor: pointer;
+     
+        .Size{
+            color: white;
+        }
+    }
+}
