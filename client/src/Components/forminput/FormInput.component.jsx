@@ -1,19 +1,21 @@
 import React from 'react';
 import "./Forminput.styles.scss";
-const FormInput = ({label, ...otherprops}) => {
+const FormInput = ({ label, ...otherprops }) => {
     return (
-   <>   
-   
-   <div className='group'>
-            <input className='form-input' {...otherprops}/>
-            {
-                label && 
-                <label for={label} className={`${otherprops.value.length ? 'shrink' : ''} form-input-label`}>{label}</label>
-            }
-        </div>
-        <br/>
-    
-   </>
+        <>
+
+            <div className='group'>
+
+                {
+                    label &&
+                    <label for={label} className={`${otherprops.value.length ? 'shrink' : ''} form-input-label`}>{label}</label>
+                }
+                <br />
+                <input className='form-input' {...otherprops} />
+            </div>
+            <br />
+
+        </>
     );
 };
 

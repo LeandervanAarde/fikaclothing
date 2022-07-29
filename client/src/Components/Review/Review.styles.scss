@@ -1,0 +1,35 @@
+@import "../../StylesSource/variables.scss";
+
+.review{
+    width: 100%;
+    border-bottom: 1.5px solid $black;
+
+    h5{
+        text-align: left;
+        margin-bottom: 0;
+        .name{
+            font-family: $primary;
+            color: $black;
+            text-align: left !important;
+        }
+    }
+
+    .rating{
+        display: flex;
+        align-items: center;
+
+        .rating-text{
+            margin-left: 10px;
+            @include smallText();
+            font-weight: bold;
+        }
+    }
+
+    .content{
+        width: 70%;
+        line-height: 25px;
+        margin-top: 0;
+        @include body();
+    }
+
+}

@@ -4,7 +4,8 @@ import './Button.styles.scss';
 const buttonClasses = {
     google: 'google-btn',
     primary: 'primary',
-    secondary: 'secondary'
+    secondary: 'secondary',
+    extra : 'extra'
 }
 
 const Button = ({children, buttonType, ...otherProps}) => {

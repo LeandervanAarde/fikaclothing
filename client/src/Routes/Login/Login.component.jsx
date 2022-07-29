@@ -44,7 +44,7 @@ const Login = () => {
                 <div className='login-container'>
                     <h2 className='login-heading'>SIGN IN</h2>
                     <FormInput
-                        label={!emailError ? "email" : <span className='error' style={{ display: 'flex', marginLeft: '60%' }}>Invalid email try again</span>}
+                        label={!emailError ? "email" : <span className='error' style={{color: "red"}}>Invalid email try again</span>}
                         value={email}
                         type="email"
                         name="email"

@@ -52,7 +52,7 @@ const Register = () => {
                         placeholder={"eg. John Doe"}
                     />
                     <FormInput
-                        label={!emailError ? "email" : <span className='error' style={{ display: 'flex', marginLeft: '60%' }}>Invalid email try again</span>}
+                        label={!emailError ? "email" : <span className='error' style={{color: "red"}}>Invalid email try again</span>}
                         value={email}
                         type="email"
                         name="email"
@@ -65,7 +65,7 @@ const Register = () => {
                         label={"cellphone"}
                         value={cellphone}
                         type="tel"
-                        name="cellhphone"
+                        name="cellphone"
                         required={true}
                         onChange={handleChange}
                         placeholder={"eg.076 890 0876"}

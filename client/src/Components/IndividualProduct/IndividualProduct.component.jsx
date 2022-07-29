@@ -8,6 +8,7 @@ import MockStock from "../../MockImages/MockStock.json"
 import AvailableSizes from '../AvailableSizes/AvailableSizes.component';
 import Colour from '../Colour/Colour.component';
 import Button from '../Button/Button.component';
+import ReviewContainer from '../ReviewSection/ReviewContainer.component';
 
 const IndividualProduct = () => {
     const data = MockStock[0];
@@ -21,14 +22,10 @@ const IndividualProduct = () => {
     const productInformation = data.availableStock.map((i, index) => i);
     const colorInformation = productInformation.map((color, index) => color.variations)
     const availableColors = colorInformation[0].map((c, index) => (c.color))
-    console.log(availableColors);
-
-
 
     useEffect(() => {
         document.title = "View Product"
     }, []);
-
 
     return (
         <div className='individualProduct'>
@@ -51,9 +48,8 @@ const IndividualProduct = () => {
                 <h4 className='discount'>R {originalPrice}</h4>
                 <h4 className='price'>R {price}</h4>
             </div>
-                <h4 className='sizeH'>Sizes</h4>
+            <h4 className='sizeH'>Sizes</h4>
             <div className='size-box-container'>
-                
                 {
                     data.availableStock.map((i, index) => (<AvailableSizes key={index} size={i.size} />))
                 }
@@ -72,7 +68,8 @@ const IndividualProduct = () => {
             </div>
 
             <p className='not-sure'>Not sure? Try it on and return free of charge within 14 days</p>
-
+            <h3 className='rev-heading'>Reviews</h3>
+            <ReviewContainer/>
             <Footer />
         </div>
     );

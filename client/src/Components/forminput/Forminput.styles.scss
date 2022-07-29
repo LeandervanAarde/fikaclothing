@@ -1,58 +1,40 @@
 @import "../../StylesSource/variables.scss";
-.group {
-    display: flex;
-    justify-content: left;
-    margin-top: 7px;
-  
 
-    .form-input {
+.group{
+    width: 90%;
+    margin-left: 5%;
+    display: block;
+    
+
+    .form-input{
+        width: 90%;
+        margin-left: 5%;
+        height: 4vh;
         background-color: transparent;
-        outline: none;
         border-bottom: 2px solid $red;
         border-left: none;
         border-right: none;
         border-top: none;
-        width: 100vw;
-        height: 4vh;
-        color: $black;
-        @include body();
-        padding: 10px 10px 10px 5px;
-        display: block;
-        margin-left: 20%;
+        outline: none;
 
+
+    }
+
+
+
+    .form-input-label{
+        color: grey;
+        height: 10px;
+        margin-left: 5%;
+        transition: 400ms ease all;
+        position: relative;
+        
+        &.shrink{
+            @include shrinkLabel()
+        }
         &:focus~.form-input-label {
             @include shrinkLabel();
          
         }
-
     }
-
-    input[type='password'] {
-        letter-spacing: 0.3em;
-    }
-
-    .form-input-label {
-        color: grey;
-        height: 10px;
-        @include body();
-        position: relative;
-        width: 50%;
-        margin-left: 7%;
-        left: -67%;
-        transition: 400ms ease all;
-
-        & .shrink {
-            @include shrinkLabel();
-        }
-
-        .error{
-            color: red;
-            font-weight: 800;
-            width: 100vw !important;
-         
-        }
-
-
-    }
-
 }

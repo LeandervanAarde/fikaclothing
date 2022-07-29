@@ -55,6 +55,12 @@ $headings: 'Koulen', cursive;
     font-size: 14px;
 }
 
+@mixin smallText{
+    font-family: $primary;
+    font-weight: 400;
+    font-size: 12px;
+}
+
 //DropShadow
 
 @mixin dropShadow{

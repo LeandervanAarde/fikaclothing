@@ -3,7 +3,13 @@ import "./Checkout.styles.scss";
 import Footer from "../../Components/Footer/Footer.component"
 import CartItem from '../../Components/CartItem/CartItem.component';
 import Button from '../../Components/Button/Button.component';
+import { useNavigate } from 'react-router';
 const Checkout = () => {
+    const navigate = useNavigate();
+
+    const goToPayment = () => {
+        navigate("/Payment")
+    }
 
     const cartItems = [
         {
@@ -80,6 +86,7 @@ const Checkout = () => {
                 <Button
                     buttonType={'primary'}
                     children="Proceed to Checkout"
+                    onClick = {goToPayment}
                 />
             </div>
 
