@@ -2,9 +2,13 @@ import React from 'react';
 import "./CardContainer.styles.scss";
 import Card from '../Card/Card.component';
 import { BiLeftArrow, BiRightArrow } from "react-icons/bi";
-
+import MockStock from "../../MockImages/MockStock.json";
 
 const CardContainer = ({heading}) => {
+    const data = MockStock;
+
+    const test = data.slice(-10);
+  
 
     const scrollRight = (e) =>{
         let scrollBtn = e.currentTarget.parentNode;
@@ -15,7 +19,6 @@ const CardContainer = ({heading}) => {
             behaviour: 'smooth'
         })
     }
-
     const scrollLeft = (e) =>{
         let scrollBtn = e.currentTarget.parentNode;
         let currPos = scrollBtn.scrollLeft;
@@ -33,16 +36,11 @@ const CardContainer = ({heading}) => {
                 <div className='back' onClick={scrollRight}>
                 <BiLeftArrow size={70}/>
                 </div>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
+                    {
+                        data
+                        .slice(-10)
+                        .map(shoe =>(<Card key={shoe._id} name={shoe.brand +' '+ shoe.name} discount={shoe.price} price={ + shoe.price - shoe.discount} img={shoe.images[0]}/>))
+                    }
                 <div className='forward' onClick={scrollLeft}>
                     <BiRightArrow size={70}/>
                 </div>

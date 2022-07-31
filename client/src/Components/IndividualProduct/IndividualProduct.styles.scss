@@ -10,6 +10,7 @@
         background-size: cover;
         margin-top: 0;
         margin-left: 2.5%;
+        margin-right: 2%;
         float: left;
         transition: 0.2s ease-in-out all;
     
@@ -74,8 +75,9 @@
     }
     
     .subImages-container{
-        width: 32%;
-        margin-left: 2%;
+        width: 31.6%;
+        margin-left: 1.6%;
+        margin-right: 2%;
     }
     .size-box-container, .color-box-container{
         width: 30%;
@@ -98,7 +100,7 @@
 
     .not-sure{
         float: left;
-        margin-left: 20%;
+        margin-left: 55%;
         @include body();
         font-weight: 700;
         margin-top: -3%;

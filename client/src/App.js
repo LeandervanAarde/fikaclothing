@@ -9,6 +9,7 @@ import Checkout from './Routes/Checkout/Checkout.component';
 import Shop from './Routes/Shop/Shop.component';
 import IndividualProduct from './Components/IndividualProduct/IndividualProduct.component';
 import Payment from './Routes/Payment/Payment.component';
+import StockManagement from './Routes/Administration/StockManagement.component';
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
               <Route path={`Product/*`}element={<IndividualProduct/>}/>
               <Route path='/Checkout/*' element={<Checkout/>}/>
               <Route path='/Payment' element={<Payment/>}></Route>
+              <Route path='/management' element={<StockManagement/>}/>
         </Route>
     </Routes>
   );

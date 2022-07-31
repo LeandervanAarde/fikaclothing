@@ -19,12 +19,12 @@ const Home = () => {
             />
             <FeaturedBrands
                 heading="Featured Brands"
-                brandName={"NIKE"}
+                brandName={"Nike"}
             />
 
             <FeaturedBrands
                 heading={""}
-                brandName={"ADIDAS"}
+                brandName={"Adidas"}
             />
             <Footer />
         </div>

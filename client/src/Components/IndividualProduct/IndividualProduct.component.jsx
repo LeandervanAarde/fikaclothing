@@ -13,6 +13,7 @@ import ReviewContainer from '../ReviewSection/ReviewContainer.component';
 const IndividualProduct = () => {
     const data = MockStock[0];
     const images = data.images;
+    const name = data.name;
     const itemStockIndex = data.availableStock.map(i => i.totalStock);
     const totalStock = itemStockIndex.reduce((prev, curr, index) => prev + curr, 0);
     const descript = data.description;
@@ -37,7 +38,7 @@ const IndividualProduct = () => {
                 }
             </div>
             <div className='Product-information-container'>
-                <h2 className='product-name'>{MockStock[0].name}</h2>
+                <h2 className='product-name'>{name}</h2>
                 {
                     totalStock > 0 ?
                         <p className='stock-text'>In Stock</p>
