@@ -4,6 +4,7 @@ import './Home.styles.scss';
 import CardContainer from '../../Components/CardContainer/CardContainer.component';
 import Footer from '../../Components/Footer/Footer.component';
 import FeaturedBrands from "../../Components/FeaturedBrands/FeaturedBrands.component"
+import SearchResults from '../../Components/SearchResults/SearchResults.component';
 
 const Home = () => {
     useEffect(() =>{

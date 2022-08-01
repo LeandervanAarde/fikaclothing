@@ -1,29 +1,26 @@
 import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router';
+import "./IndividualProduct.styles.scss"
 import BackButton from '../BackButton/BackButton.component';
 import Footer from '../Footer/Footer.component';
 import SubImages from '../SubImages/SubImages.component';
-import "./IndividualProduct.styles.scss"
-import { productImageArr } from '../../MockImages/individual'
-import MockStock from "../../MockImages/MockStock.json"
 import AvailableSizes from '../AvailableSizes/AvailableSizes.component';
 import Colour from '../Colour/Colour.component';
 import Button from '../Button/Button.component';
 import ReviewContainer from '../ReviewSection/ReviewContainer.component';
+import MockStock from "../../MockImages/MockStock.json"
+
 
 const IndividualProduct = () => {
-    const data = MockStock[0];
-    const images = data.images;
-    const name = data.name;
-    const itemStockIndex = data.availableStock.map(i => i.totalStock);
+    const product = useParams();
+    const thisProd = MockStock.find(prod => prod._id == product.productId);
+    const itemStockIndex = thisProd.availableStock.map(i => i.totalStock);
     const totalStock = itemStockIndex.reduce((prev, curr, index) => prev + curr, 0);
-    const descript = data.description;
     const [img, setImg] = useState(0);
-    const price = data.price - data.discount;
-    const originalPrice = data.price;
-    const productInformation = data.availableStock.map((i, index) => i);
+    const price = thisProd.price - thisProd.discount;
+    const productInformation = thisProd.availableStock.map((i, index) => i);
     const colorInformation = productInformation.map((color, index) => color.variations)
-    const availableColors = colorInformation[0].map((c, index) => (c.color))
-
+    console.log(totalStock)
     useEffect(() => {
         document.title = "View Product"
     }, []);
@@ -31,33 +28,40 @@ const IndividualProduct = () => {
     return (
         <div className='individualProduct'>
             <BackButton />
-            <div className='mainImage' style={{ backgroundImage: `url(${images[img]})` }}> </div>
+            <div className='mainImage' style={{ backgroundImage: `url(${thisProd.images[img]})` }}> </div>
             <div className='subImages-container'>
                 {
-                    images.map((image, index) => (<SubImages key={index} productImage={image} changeImage={() => (setImg(index))} />))
+                    thisProd.images.map((image, index) => (<SubImages key={index} productImage={image} changeImage={() => (setImg(index))} />))
                 }
             </div>
             <div className='Product-information-container'>
-                <h2 className='product-name'>{name}</h2>
+                <h2 className='product-name'>{thisProd.name}</h2>
                 {
                     totalStock > 0 ?
                         <p className='stock-text'>In Stock</p>
                         :
                         <p className='out-of-stock'>Out of Stock</p>
                 }
-                <p className='product-description'>{descript}</p>
-                <h4 className='discount'>R {originalPrice}</h4>
-                <h4 className='price'>R {price}</h4>
+                <p className='product-description'>{thisProd.description}</p>
+                {
+                    thisProd.discount === 0 || null ?
+                        <h4 className='price'>R {price}</h4>
+                        :
+                        <>
+                            <h4 className='discount'>R {thisProd.price}</h4>
+                            <h4 className='price'>R {price}</h4>
+                        </>
+                }
             </div>
             <h4 className='sizeH'>Sizes</h4>
             <div className='size-box-container'>
                 {
-                    data.availableStock.map((i, index) => (<AvailableSizes key={index} size={i.size} />))
+                    thisProd.availableStock.map((i, index) => (<AvailableSizes key={index} size={i.size} />))
                 }
             </div>
             <div className='color-box-container'>
                 {
-                    colorInformation[0].map((c, index) => (<Colour color={c.color} />))
+                    colorInformation[0].map((c, index) => (<Colour key={index} color={c.color} />))
                 }
             </div>
 
@@ -70,7 +74,7 @@ const IndividualProduct = () => {
 
             <p className='not-sure'>Not sure? Try it on and return free of charge within 14 days</p>
             <h3 className='rev-heading'>Reviews</h3>
-            <ReviewContainer/>
+            <ReviewContainer />
             <Footer />
         </div>
     );

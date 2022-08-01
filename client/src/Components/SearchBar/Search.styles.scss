@@ -1,0 +1,17 @@
+@import "../../StylesSource/variables.scss";
+
+
+.itemSearch{
+    width: 38%;
+    max-width: 150px;
+    height: auto;
+    min-height: 30%;
+    background-color: transparent;
+    outline: none;
+    border-right: 1px solid $white;
+    border-left: 0;
+    border-bottom: 0;
+    border-top: 0;
+    color: white;
+    @include body();
+}

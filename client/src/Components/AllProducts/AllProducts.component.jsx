@@ -14,12 +14,8 @@ const AllProducts = () => {
             </div>
 
             <div className='products-container'>
-                {data.map(shoe =>(<Card key={shoe._id} name={shoe.brand +' '+ shoe.name} discount={shoe.price} price={ + shoe.price - shoe.discount} img={shoe.images[0]}/>))
-}
+                {data.map(shoe =>(<Card key={shoe._id} id={shoe._id}  name={shoe.brand +' '+ shoe.name} discount={shoe.price} price={ + shoe.price - shoe.discount} img={shoe.images[0]}/>))}
             </div>
-
-
-
         </div>
     );
 };

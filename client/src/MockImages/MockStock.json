@@ -23,59 +23,59 @@
         "availableStock": [
             {
                 "size": 8,
-                "totalStock": 25,
+                "totalStock": 0,
                 "variations": [
                     {
                         "color": "white",
-                        "stock": 10
+                        "stock": 0
                     },
                     {
                         "color": "Black",
-                        "stock": 10
+                        "stock": 0
                     },
                     {
                         "color": "Gray",
-                        "stock": 2
+                        "stock": 0
                     },
                     {
                         "color": "Blue",
-                        "stock": 3
+                        "stock": 0
                     }
                 ]
             },
             {
                 "size": 9,
-                "totalStock": 12,
+                "totalStock": 0,
                 "variations": [
                     {
                         "color": "white",
-                        "stock": 2
+                        "stock": 0
                     },
                     {
                         "color": "Black",
-                        "stock": 1
+                        "stock": 0
                     },
                     {
                         "color": "Gray",
-                        "stock": 6
+                        "stock": 0
                     },
                     {
                         "color": "Blue",
-                        "stock": 3
+                        "stock": 0
                     }
                 ]
             },
             {
                 "size": 10,
-                "totalStock": 2,
+                "totalStock": 0,
                 "variations": [
                     {
                         "color": "white",
-                        "stock": 1
+                        "stock": 0
                     },
                     {
                         "color": "Black",
-                        "stock": 1
+                        "stock": 0
                     },
                     {
                         "color": "Gray",

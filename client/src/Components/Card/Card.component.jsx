@@ -4,16 +4,16 @@ import shoe1 from "../../Assets/leon-skibitzki-mHUk4Se7peY-unsplash.jpg";
 import Button from "../Button/Button.component";
 import { useNavigate } from 'react-router';
 
-const Card = ({name, discount, price, img}) => {
+const Card = ({id,name, discount, price, img}) => {
     // const productName = "Nike Airforce 1 Jordan Edition"
     const navigate = useNavigate();
     
     const viewItem = () =>{
-        navigate(`/Product/${name}`)
+        navigate(`/Shop/Product/${name}/${id}`)
     }
 
     return (
-        <div className='card-body' onClick={viewItem}>
+        <div className={`card-body ${id}`} onClick={viewItem} >
             <img src={img} />
             <h6 className='product-name'>{name}</h6>
             <hr />

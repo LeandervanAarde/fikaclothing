@@ -1,0 +1,18 @@
+@import "../../StylesSource/variables.scss";
+
+
+.Search-results-container{
+    position: absolute;
+    width: 400px;
+    height: auto;
+    max-height: 450px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    @include dropShadow();
+    background-color: white;
+    overflow: scroll;
+    top: 10vh;
+    left: 100px;
+    z-index: +999;
+}

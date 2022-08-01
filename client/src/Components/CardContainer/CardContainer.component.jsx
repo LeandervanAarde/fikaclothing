@@ -39,7 +39,7 @@ const CardContainer = ({heading}) => {
                     {
                         data
                         .slice(-10)
-                        .map(shoe =>(<Card key={shoe._id} name={shoe.brand +' '+ shoe.name} discount={shoe.price} price={ + shoe.price - shoe.discount} img={shoe.images[0]}/>))
+                        .map(shoe =>(<Card id={shoe._id}  key={shoe._id} name={shoe.brand +' '+ shoe.name} discount={shoe.price} price={ + shoe.price - shoe.discount} img={shoe.images[0]}/>))
                     }
                 <div className='forward' onClick={scrollLeft}>
                     <BiRightArrow size={70}/>

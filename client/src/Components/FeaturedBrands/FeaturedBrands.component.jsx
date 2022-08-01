@@ -14,7 +14,7 @@ const FeaturedBrands = ({ heading, brandName }) => {
             {
               data
               .filter(shoe => { return shoe.brand == brandName})
-              .map(shoe =>(<Card key={shoe._id} name={shoe.brand +' '+ shoe.name} discount={shoe.price} price={ + shoe.price - shoe.discount} img={shoe.images[0]} button={"Add to cart"}/>))
+              .map(shoe =>(<Card id={shoe._id}  key={shoe._id} name={shoe.brand +' '+ shoe.name} discount={shoe.price} price={ + shoe.price - shoe.discount} img={shoe.images[0]} button={"Add to cart"}/>))
             }
         </div>
         </>

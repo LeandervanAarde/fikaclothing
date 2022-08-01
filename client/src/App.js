@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.scss';
-import { Routes, Route } from 'react-router';
+import { Link, Route, Routes, Switch } from "react-router-dom";
 import Navigation from './Routes/Navigation/Navigation.component';
 import Home from './Routes/Home/Home.component';
 import Login from './Routes/Login/Login.component';
@@ -18,8 +18,8 @@ const App = () => {
               <Route index element={<Home/>}></Route>
               <Route path="/signIn" element={<Login/>} />
               <Route path="/Register" element={<Register/>}/>
-              <Route path='/Shop/*' element={<Shop/>}/>
-              <Route path={`Product/*`}element={<IndividualProduct/>}/>
+              <Route path='/Shop/*' element={<Shop/>}></Route>
+              <Route path={`Shop/Product/:productName/:productId`}element={<IndividualProduct/>}/>
               <Route path='/Checkout/*' element={<Checkout/>}/>
               <Route path='/Payment' element={<Payment/>}></Route>
               <Route path='/management' element={<StockManagement/>}/>
