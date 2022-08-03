@@ -3,7 +3,7 @@
 
 .itemSearch{
     width: 38%;
-    max-width: 150px;
+    max-width: 600px;
     height: auto;
     min-height: 30%;
     background-color: transparent;
@@ -14,4 +14,9 @@
     border-top: 0;
     color: white;
     @include body();
+    transition: 0.4s ease-in-out all;
+
+    &:focus{
+        width: 600px;
+    }
 }

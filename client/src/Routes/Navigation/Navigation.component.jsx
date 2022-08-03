@@ -16,14 +16,19 @@ const Navigation = () => {
     const [showSearch, setShowSearch] = useState(false);
     const [searchQuery, setSearchQuery] = useState("");
     const [searchItems, setSearchItems] = useState();
-
+  
     const handleSearch = (newSearchQuery) => {
-        setShowSearch(!showSearch);
-        setSearchQuery(newSearchQuery);
-        const filtered = MockStock.filter(item => item.name.includes(newSearchQuery) || item.brand.includes(newSearchQuery))
-            .map(filteredItem => (<SearchItem key={filteredItem._id} id={filteredItem._id} name={filteredItem.name} price={`R ${filteredItem.price}`} image={filteredItem.images[0] }/>));
-        console.log(filtered)
-        setSearchItems(filtered);
+
+        if(newSearchQuery !== ""){
+            setShowSearch(true);
+            setSearchQuery(newSearchQuery);
+            const filtered = MockStock.filter(item => item.name.toLowerCase().includes(newSearchQuery) || item.name.includes(newSearchQuery) || item.brand.toLowerCase().includes(newSearchQuery) || item.brand.includes(newSearchQuery))
+                .map(filteredItem => (<SearchItem key={filteredItem._id} id={filteredItem._id} name={filteredItem.name} price={`R ${filteredItem.price}`} image={filteredItem.images[0] }/>));
+            setSearchItems(filtered);
+        } else{
+            setShowSearch(false)
+        }
+
     }
 
     return (
@@ -37,7 +42,7 @@ const Navigation = () => {
                 <div className='nav-links-container'>
                     <Search handleSearch={handleSearch} />
                     {
-                        setShowSearch && <SearchResults
+                       showSearch && <SearchResults
                             children={searchItems}
                         />
                     }

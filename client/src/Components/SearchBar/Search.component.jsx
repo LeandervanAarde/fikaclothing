@@ -4,6 +4,8 @@ const Search = ({handleSearch}) => {
     const onChange = (e) =>{
         handleSearch(e.target.value)
     }
+
+    
     return (
         <input type={"text"} placeholder="Search item..." className='itemSearch' onChange={onChange} />
     );
