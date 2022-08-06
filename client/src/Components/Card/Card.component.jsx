@@ -14,7 +14,8 @@ const Card = ({id,name, discount, price, imageUrl}) => {
     const {addItemToCart} = useContext(CartContext)
     const addProduct = () => addItemToCart({id,name, discount, price, imageUrl})
     const viewItem = () =>{
-        navigate(`/Shop/Product/${name}/${id}`)
+        navigate(`/Shop/Product/${name}/${id}`);
+        window.scrollTo(0, 0)
     }
 
     return (

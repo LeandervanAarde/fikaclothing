@@ -8,12 +8,14 @@ import AvailableSizes from '../AvailableSizes/AvailableSizes.component';
 import Colour from '../Colour/Colour.component';
 import Button from '../Button/Button.component';
 import ReviewContainer from '../ReviewSection/ReviewContainer.component';
-import MockStock from "../../MockImages/MockStock.json"
+import MockStock from "../../MockImages/MockStock.json";
+import Review from '../Review/Review.component';
 
 
 const IndividualProduct = () => {
     const product = useParams();
     const thisProd = MockStock.find(prod => prod._id == product.productId);
+    const thisreview = thisProd.reviews.map((rev) => (<Review reviews={rev}/>));
     const itemStockIndex = thisProd.availableStock.map(i => i.totalStock);
     const totalStock = itemStockIndex.reduce((prev, curr, index) => prev + curr, 0);
     const [img, setImg] = useState(0);
@@ -22,8 +24,10 @@ const IndividualProduct = () => {
     const colorInformation = productInformation.map((color, index) => color.variations)
     console.log(totalStock)
     useEffect(() => {
-        document.title = "View Product"
+        document.title = "View Product";
+        window.scrollTo(0, 0)
     }, []);
+
 
     return (
         <div className='individualProduct'>
@@ -74,7 +78,9 @@ const IndividualProduct = () => {
 
             <p className='not-sure'>Not sure? Try it on and return free of charge within 14 days</p>
             <h3 className='rev-heading'>Reviews</h3>
-            <ReviewContainer />
+            <ReviewContainer 
+                children = {thisreview}
+            />
             <Footer />
         </div>
     );
