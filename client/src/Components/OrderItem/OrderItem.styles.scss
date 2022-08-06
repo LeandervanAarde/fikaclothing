@@ -1,0 +1,43 @@
+@import "../../StylesSource/variables.scss";
+
+.orderItem{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    background-color: $white;
+    @include dropShadow();
+    margin-top: 1%;
+
+    .order-information{
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+
+        .viewButton, .dispatchButton{
+            margin-top: 1.8%
+        }
+  
+
+    .name,
+    .id,
+    .date,
+    .status,
+    .products {
+     
+      @include body();
+      font-weight: 700;
+      margin-top: 3%;
+      
+    }
+    .mail{
+       
+        @include body();
+        font-weight: 700;
+        text-align: left;
+        margin-top: 3%;
+    }
+    }
+
+
+ 
+}

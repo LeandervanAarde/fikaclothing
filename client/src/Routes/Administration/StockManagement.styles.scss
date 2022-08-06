@@ -10,4 +10,14 @@
         column-gap: 20px;
         margin-bottom: 0;
     }
+
+    .add-item-container{
+        width: 100%;
+        min-height: 100px;
+
+        .prodAdd{
+            margin: 2%;
+        }
+       
+    }
 }

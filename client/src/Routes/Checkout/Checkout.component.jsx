@@ -56,7 +56,7 @@ const Checkout = () => {
                         <CartItem key={index} cartItems={cartItem} />
                     ))
                 }
-                <span className='total'>Total Price (ZAR): R {total} </span>
+                <span className='total'>Total Price (ZAR): R {total? total.price * total.quantity : total} </span>
                 <Button
                     buttonType={'primary'}
                     children="Proceed to Checkout"

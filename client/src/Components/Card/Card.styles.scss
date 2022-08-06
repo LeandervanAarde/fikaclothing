@@ -10,6 +10,7 @@
     justify-content: center;
     padding-bottom: 10px;
     @include dropShadow();
+    transition: 0.3s ease-in-out all;
 
     img{
         width: 100%;

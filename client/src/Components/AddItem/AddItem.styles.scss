@@ -1,0 +1,23 @@
+@import "../../StylesSource/variables.scss";
+
+.add-form{
+    margin-top: 2%;
+    width: 80%;
+
+    .name,.brand{
+        width: 50%;
+        display: inline-block;
+       
+    }
+
+    .price, .disc, .col, .quan, .size{
+        margin-top: 3%;
+        width: 20%;
+        display: inline-block;
+    }
+
+    .add-item-btn{
+        width: 15%;
+        margin-left: 2%;
+    }
+}

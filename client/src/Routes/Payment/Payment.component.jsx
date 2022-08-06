@@ -14,12 +14,12 @@ const Payment = () => {
             <div className='left'>
                 <PaymentForm />
                 <DeliveryOptions
-                    icon={<MdOutlineTimeToLeave size={100} />}
+                    icon={<MdOutlineTimeToLeave size={70} />}
                     option={"Delivery"}
                     content={"Have goods delivered to your door"}
                 />
                 <DeliveryOptions
-                    icon={<MdOutlineInventory2 size={100} />}
+                    icon={<MdOutlineInventory2 size={70} />}
                     option={"Collection"}
                     content={"Collect goods at pick up point"}
                 />
