@@ -18,9 +18,11 @@ const Card = ({id,name, discount, price, imageUrl}) => {
         window.scrollTo(0, 0)
     }
 
+
+
     return (
         <div className={`card-body ${id}`} >
-            <img src={imageUrl} onClick={viewItem}  />
+            <img src={imageUrl} onClick={viewItem}/>
             <h6 className='product-name'>{name}</h6>
             <hr />
             <h5 className='price'>R {price}</h5>

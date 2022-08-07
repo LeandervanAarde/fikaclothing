@@ -1132,5 +1132,94 @@
                 ]
             }
         ]
+    },
+    {
+        "_id": 13,
+        "name": "Air Jordan XXXVI",
+        "brand": "Nike",
+        "price": 3499,
+        "discount": 0,
+        "description": "The Air Jordan XXXVI isn't just the next up in the iconic franchise; it's an expression of the drive and energy that sparked a basketball revolution. It's one of the lightest Air Jordan game shoes to date, featuring a minimal but durable Leno-Weave upper reinforced with a TPU ribbon",
+        "images": [
+            "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/66748c08-075c-4554-a50e-0ebb90f8c85d/air-jordan-xxxvi-basketball-shoes-0CKrQR.png",
+            "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/d825d7bb-4d8d-4af1-b0f5-a7a8f902bd80/air-jordan-xxxvi-basketball-shoes-0CKrQR.png",
+            "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/10b2e3ca-98ad-4841-80cf-50059b3a06a0/air-jordan-xxxvi-basketball-shoes-0CKrQR.png",
+            "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/10b2e3ca-98ad-4841-80cf-50059b3a06a0/air-jordan-xxxvi-basketball-shoes-0CKrQR.png"
+        ],
+        "reviews": [
+            {
+                "name": "Shooter McGavin",
+                "review": "I may not have beaten Happy on the Golf Course, but Basketball will be a sweet victory!",
+                "rating": 4
+            }
+        ],
+        "availableStock": [
+            {
+                "size":  7,
+                "totalStock": 12,
+                "variations": [
+                    {
+                        "color": "white",
+                        "stock": 2
+                    },
+                    {
+                        "color": "Black",
+                        "stock": 6
+                    },
+                    {
+                        "color": "Gray",
+                        "stock": 2
+                    },
+                    {
+                        "color": "Red",
+                        "stock": 2
+                    }
+                ]
+            },
+            {
+                "size":  8,
+                "totalStock": 10,
+                "variations": [
+                    {
+                        "color": "white",
+                        "stock": 2
+                    },
+                    {
+                        "color": "Black",
+                        "stock": 4
+                    },
+                    {
+                        "color": "Gray",
+                        "stock": 2
+                    },
+                    {
+                        "color": "Red",
+                        "stock": 2
+                    }
+                ]
+            },
+            {
+                "size":  9,
+                "totalStock": 45,
+                "variations": [
+                    {
+                        "color": "white",
+                        "stock": 20
+                    },
+                    {
+                        "color": "Black",
+                        "stock": 2
+                    },
+                    {
+                        "color": "Gray",
+                        "stock": 12
+                    },
+                    {
+                        "color": "Red",
+                        "stock": 11
+                    }
+                ]
+            }
+        ]
     }
 ]

@@ -36,5 +36,12 @@
       margin-left: auto;
       @include headingThree();
     }
+
+    .oops{
+      @include body();
+      font-weight: 700;
+      text-align: center;
+      color: $red;
+    }
   }
   

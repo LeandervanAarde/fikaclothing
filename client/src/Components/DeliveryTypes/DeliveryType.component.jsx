@@ -1,8 +1,8 @@
 import React from 'react';
 import "./DeliveryType.styles.scss"
-const DeliveryType = ({heading, date}) => {
+const DeliveryType = ({heading, date, handleClick}) => {
     return (
-        <div className='delivery-date'>
+        <div className='delivery-date' >
             <h4 className='delivery-date-heading'>{heading}</h4>
             <p className='delivery-date-content'>{date}</p>
         </div>

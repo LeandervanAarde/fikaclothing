@@ -5,13 +5,13 @@ import DropDownFilter from '../../Components/DropDownFilter/DropDownFilter.compo
 import "./Shop.styles.scss";
 import AllProducts from '../../Components/AllProducts/AllProducts.component';
 
+
 const Shop = () => {
     useEffect(() =>{
         document.title = "Shop"
      }, [])
     return (
         <div className='container'>
-            <Filter />
             <AllProducts />
             <Footer />
         </div>

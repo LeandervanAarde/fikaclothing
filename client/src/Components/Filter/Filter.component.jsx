@@ -6,20 +6,15 @@ import MockStock from "../../MockImages/MockStock.json";
 
 
 
-const Filter = () => {
+const Filter = ({filterfunc, brand}) => {
     const Range = [[0, " - ", 500], [500, " - ", 1000], [1500, " - ", 2000], [2000, " - ", 2500]];
-    const [brand, setBrand] = useState();
-    const [filter, setFilter] = useState();
+
     const [range, setRange] = useState();
     const data = MockStock.map(brand =>  brand.brand);
     const checkIfExists = Array.from(new Set(data));
+    const [filter, setFilter] = useState(data);
 
-    const handleChange = (e) => {
-        setBrand(e.target.value)
-        console.log(e.target.value)
-       const val = MockStock.filter(brand => brand.brand === e.target.value)
-    //    setFilter(val)
-    }
+   
 
     const handlePriceChange = (e) => {
         setRange(e.target.value)
@@ -27,7 +22,7 @@ const Filter = () => {
     }
 
     const brands = checkIfExists.map((i, index) => (<>
-        <input key={index} type={"radio"} name={`radio ${i}`} value={i} className="radio" checked={brand === i} onChange={handleChange} />
+        <input key={index} type={"radio"} name={`radio ${i}`} value={i} className="radio" checked={brand == i} onChange={filterfunc} />
         <label key={index+1} htmlFor={i} > {i}</label>
         <br />
     </>))
@@ -37,9 +32,6 @@ const Filter = () => {
         <label key={index +1} htmlFor={i} > {i}</label>
         <br />
     </>))
-
-
-    console.log(checkIfExists)
 
 
     return (

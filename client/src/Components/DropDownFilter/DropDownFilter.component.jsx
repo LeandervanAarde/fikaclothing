@@ -4,7 +4,7 @@ const DropDownFilter = ({nameSort}) => {
   
     return (
         <select name='dropselect' onChange={nameSort}>
-            <option disabled={true} selected={true}>Select sorting </option>
+            <option disabled={true} selected={true}>Select sorting</option>
             <option value={"A-Z"}>Sort A-Z</option>
             <option value={"Z-A"}>Sort Z-A</option>
             <option value={"high-low"}>Sort High to Low</option>

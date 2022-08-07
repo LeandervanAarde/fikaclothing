@@ -9,9 +9,11 @@ const uri =process.env.DB_CONNECTION;
 const db = mongoose.connection.useDb('allshoes')
 console.log(db)
 
-app.use(express.json());
+app.use(cors)
 app.use(express.urlencoded({extended: false}));
+app.use(express.json());
 app.use(routes);
+
 
 mongoose.connect(uri,(err) =>{
     err? console.log('not connected to DB'): (console.log("Connected to DB"));
