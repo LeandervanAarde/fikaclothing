@@ -1,14 +1,25 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import "./CardContainer.styles.scss";
 import Card from '../Card/Card.component';
 import { BiLeftArrow, BiRightArrow } from "react-icons/bi";
-import MockStock from "../../MockImages/MockStock.json";
+import axios from 'axios'
 
 const CardContainer = ({heading}) => {
-    const data = MockStock;
+    const [data, setData] = useState();
+    const [cards, setCards] = useState();
 
-    const test = data.slice(-10);
-  
+    useEffect(() =>{
+        axios.get('http://localhost:5001/api/allproducts')
+        .then(res =>{
+            const data = res.data;
+            console.log(data)
+            setData(data)
+            setCards(data.slice(-10).map(shoe =>(<Card id={shoe._id}  key={shoe._id} name={shoe.brand +' '+ shoe.name} discount={shoe.price} price={ + shoe.price - shoe.discount} imageUrl={shoe.images[0]}/>)))
+        })
+        .catch(err =>{
+            console.log(err);
+        })
+    },[])
 
     const scrollRight = (e) =>{
         let scrollBtn = e.currentTarget.parentNode;
@@ -36,11 +47,7 @@ const CardContainer = ({heading}) => {
                 <div className='back' onClick={scrollRight}>
                 <BiLeftArrow size={70}/>
                 </div>
-                    {
-                        data
-                        .slice(-10)
-                        .map(shoe =>(<Card id={shoe._id}  key={shoe._id} name={shoe.brand +' '+ shoe.name} discount={shoe.price} price={ + shoe.price - shoe.discount} imageUrl={shoe.images[0]}/>))
-                    }
+                    {cards}
                 <div className='forward' onClick={scrollLeft}>
                     <BiRightArrow size={70}/>
                 </div>

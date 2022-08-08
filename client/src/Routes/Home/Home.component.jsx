@@ -23,7 +23,6 @@ const Home = () => {
                 heading="Featured Brands"
                 brandName={"Nike"}
             />
-
             <FeaturedBrands
                 heading={""}
                 brandName={"Adidas"}

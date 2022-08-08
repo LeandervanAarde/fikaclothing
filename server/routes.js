@@ -6,7 +6,7 @@ const router = express();
 
 //Routes entered here;
 
- exports = router.get('/api/allproducts', async (req, res) => {
+  router.get('/api/allproducts', async (req, res) => {
         const findProducts = await productSchema.find();
         res.json(findProducts); 
     });
@@ -37,6 +37,11 @@ router.post('/api/addproduct', (req, res) =>{
         res.status(400).json({mssg: "Bad request, error 400", err: err})
     })
 });
+
+router.get('/api/getproducts/:brand', async(req, res) =>{
+    const brandedProducts = await routesSchema.find({brand: req.params.brand});
+    res.json(brandedProducts)
+})
 
 
 

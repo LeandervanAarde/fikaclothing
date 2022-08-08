@@ -6,13 +6,11 @@ import "./index.scss";
 import { CartProvider } from './contexts/CartDrop.context';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
     <BrowserRouter>
       <CartProvider>
         <App />
       </CartProvider>
     </BrowserRouter>
-  </React.StrictMode>
 );
 
 

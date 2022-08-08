@@ -64,9 +64,9 @@ $headings: 'Koulen', cursive;
 //DropShadow
 
 @mixin dropShadow{
-    box-shadow: 7px 7px 20px -1px rgba(0,0,0,0.2);
--webkit-box-shadow: 7px 7px 20px -1px rgba(0,0,0,0.2);
--moz-box-shadow: 7px 7px 20px -1px rgba(0,0,0,0.2);
+    box-shadow: 7px 7px 20px -1px rgba(0,0,0,0.11);
+-webkit-box-shadow: 7px 7px 20px -1px rgba(0,0,0,0.11);
+-moz-box-shadow: 7px 7px 20px -1px rgba(0,0,0,0.11);
 }
 
 //Blur

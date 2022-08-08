@@ -25,7 +25,6 @@ const Register = () => {
         const emailRegex = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
         const { name, value } = e.target;
         const checker = emailRegex.test(value);
-        console.log(checker)
         if (checker === false) {
             setEmailError(true);
         } else {
