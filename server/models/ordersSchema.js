@@ -2,9 +2,7 @@ const mongoose = require('mongooose');
 
 const orders = mongoose.Schema({
     customerDetails: [
-        {
-            type: { type: Schema.Types.ObjectId, ref: 'users' }
-        }
+             { type: Schema.Types.ObjectId, ref: 'users' }
     ],
     orderInformation: [
         {

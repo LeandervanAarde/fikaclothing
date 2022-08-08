@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 const users = mongoose.Schema({
     Role: {
         type: String, 
-        required: true, 
+        required: true,
+        default: 'Customer' 
     }, 
     name: {
         type: String,
@@ -30,7 +31,7 @@ const users = mongoose.Schema({
         cellphone: String,
     },
     shippingAd:{
-        houseNr:{
+        house:{
             type: Number,
             required: true,
         },
@@ -48,7 +49,7 @@ const users = mongoose.Schema({
             required: true,
         },
         postalCode:{
-            type: Number,
+            type: String,
             required: true,
         },
         Country:{
@@ -61,11 +62,7 @@ const users = mongoose.Schema({
         default: false
     },
     wishlist: [
-        {
-            product: {
-                type: { type: Schema.Types.ObjectId, ref: 'products'}
-            },
-        }
+            { type: mongoose.Schema.Types.ObjectId, ref: 'products'}
     ]
 });
 
