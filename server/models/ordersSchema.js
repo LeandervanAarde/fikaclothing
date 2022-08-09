@@ -1,8 +1,8 @@
-const mongoose = require('mongooose');
+const mongoose = require('mongoose');
 
 const orders = mongoose.Schema({
     customerDetails: [
-             { type: Schema.Types.ObjectId, ref: 'users' }
+             { type: mongoose.Schema.Types.ObjectId, ref: 'users' }
     ],
     orderInformation: [
         {
@@ -12,12 +12,12 @@ const orders = mongoose.Schema({
             },
             deliveryDate: {
                 type: Date,
-                default: Date.now + 4
+                default: () => Date.now() + 4*24*60*60*1000
             },
             orderStatus: String,
             products: [
                 {
-                    type: { type: Schema.Types.ObjectId, ref: 'products' },
+                    shoe:{ type: mongoose.Schema.Types.ObjectId, ref: 'products' },
                     color: {
                         type: String,
                         required: true,

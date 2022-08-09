@@ -4,18 +4,17 @@ const userRouter = express();
 
 //Routes entered here;
 
-//   userRouter.get('/api/allUsers', async (req, res) => {
-//         const findProducts = await productSchema.find();
-//         res.json(findProducts); 
-//     });
+userRouter.get('/api/allusers', async (req, res) => {
+    const findusers = await userSchema.find();
+    res.json(findusers);
+});
 
-// router.get('/api/individualproduct/:id', async(req,res) =>{
-//     const singleProduct = await routesSchema.findById(req.params.id);
-//     return res.json(singleProduct) 
-// });
+userRouter.get('/api/individual/:id', async (req, res) => {
+    const singlePerson = await userSchema.findById(req.params.id);
+    return res.json(singlePerson)
+});
 
-
-userRouter.post('/api/adduser', (req, res) =>{
+userRouter.post('/api/adduser', (req, res) => {
     const user = new userSchema({
         Role: req.body.Role,
         name: req.body.name,
@@ -33,24 +32,19 @@ userRouter.post('/api/adduser', (req, res) =>{
         Country: req.body.shippingAd.Country,
         newsletter: req.body.newsletter,
         wishlist: req.body.wishlist,
-    })
-
+    });
     user.save()
-    .then(item =>{
-        res.json(item)
-    })
-    .catch(err =>{
-        res.status(400).json({mssg: "Bad request, error 400", err: err})
-    })
+        .then(item => {
+            res.json(item)
+        })
+        .catch(err => {
+            res.status(400).json({ mssg: "Bad request, error 400", err: err })
+        })
 });
 
-// router.get('/api/getproducts/:brand', async(req, res) =>{
-//     const brandedProducts = await routesSchema.find({brand: req.params.brand});
-//     res.json(brandedProducts)
-// })
-
-
-
-
+userRouter.get('/api/getperson/:Role', async (req, res) => {
+    const personRole = await userSchema.find({ Role: req.params.Role });
+    res.json(personRole)
+})
 
 module.exports = userRouter;
