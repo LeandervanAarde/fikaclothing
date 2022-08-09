@@ -45,6 +45,11 @@ userRouter.post('/api/adduser', (req, res) => {
 userRouter.get('/api/getperson/:Role', async (req, res) => {
     const personRole = await userSchema.find({ Role: req.params.Role });
     res.json(personRole)
-})
+});
+
+userRouter.get('/api/getcustomer/:id', async (req, res) => {
+    const person = await userSchema.findById(req.params.id);
+    res.json(person)
+});
 
 module.exports = userRouter;

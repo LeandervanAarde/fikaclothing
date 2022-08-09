@@ -5,7 +5,7 @@ import CardContainer from '../../Components/CardContainer/CardContainer.componen
 import Footer from '../../Components/Footer/Footer.component';
 import FeaturedBrands from "../../Components/FeaturedBrands/FeaturedBrands.component"
 import SearchResults from '../../Components/SearchResults/SearchResults.component';
-import axios from "axios";
+
 import { useState } from 'react';
 
 const Home = () => {

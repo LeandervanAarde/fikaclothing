@@ -1,7 +1,5 @@
 import React, {useEffect} from 'react';
-import Filter from '../../Components/Filter/Filter.component';
 import Footer from '../../Components/Footer/Footer.component';
-import DropDownFilter from '../../Components/DropDownFilter/DropDownFilter.component';
 import "./Shop.styles.scss";
 import AllProducts from '../../Components/AllProducts/AllProducts.component';
 

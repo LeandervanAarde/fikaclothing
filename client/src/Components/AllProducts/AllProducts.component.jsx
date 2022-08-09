@@ -52,23 +52,6 @@ const AllProducts = () => {
         console.log(e.target.value)
     }
 
-
-    // useEffect(() => {
-    //     const url = "http://localhost:5001/api/allproducts";
-    
-    //     const fetchData = async () => {
-    //       try {
-    //         const response = await fetch(url);
-    //         const json = await response.json();
-    //         console.log(json);
-    //       } catch (error) {
-    //         console.log("error", error);
-    //       }
-    //     };
-    
-    //     fetchData();
-    // }, []);
-
     return (
         <>
             <Filter

@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react';
 import Card from '../Card/Card.component';
 import "./FeaturedBrands.styles.scss";
 import axios from 'axios'
-import MockStock from "../../MockImages/MockStock.json";
 
 const FeaturedBrands = ({ heading, brandName }) => {
     const [data, setData] = useState();
