@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { useParams } from 'react-router';
 import axios from 'axios';
 import "./IndividualProduct.styles.scss"
@@ -11,6 +11,7 @@ import Button from '../Button/Button.component';
 import ReviewContainer from '../ReviewSection/ReviewContainer.component';
 import MockStock from "../../MockImages/MockStock.json";
 import Review from '../Review/Review.component';
+import { CartContext } from '../../contexts/CartDrop.context';
 import { useLayoutEffect } from 'react';
 
 
@@ -22,11 +23,17 @@ const IndividualProduct = () => {
     const[colors, setColors] = useState();
     const [thisReview, setThisReview] = useState()
     const [img, setImg] = useState(0);
+    const [sizeActive, setSizeActive] = useState(false)
+    // const [images, setimages] = useState();
+    const {addItemToCart, cartItems} = useContext(CartContext)
+    const [orderInfo, setOrderInfo] = useState();
+    const [totalOrder, setTotalOrder] = useState([]);
 
     useEffect(() => {
         document.title = "View Product";
         window.scrollTo(0, 0)
     }, []);
+    
 
     useEffect(() =>{
         axios.get(`http://localhost:5001/api/individualproduct/${product.productId}`)
@@ -37,11 +44,38 @@ const IndividualProduct = () => {
             setTotalStock(data.availableStock.map(i => i.totalStock).reduce((prev, curr, index) => prev + curr, 0))
             setColors(data.availableStock.map((color, index) => color.variations))
             setThisReview(data.reviews.map((rev) => (<Review reviews={rev}/>)))
+            // setimages(data.images[0]);
+            // console.log(data.images[0]);
         })
         .catch(err =>{
           
         })
     },[]);
+
+    const getShoeSize = (e) =>{
+        console.log(e.target.id);
+        const size = prod.availableStock.map(i => (i)).filter(i =>
+          { return i.size === (+e.target.id) })
+        // console.log(prod)
+        // console.log(size)
+        // setOrderInfo({...orderInfo, size: e.target.id}) 
+        setProd({...prod, availableStock : size})
+    }
+    console.log(prod)
+
+
+    
+    const getShoeColour = (e) =>{
+        console.log(e.target.id);
+        setOrderInfo({...orderInfo, color: e.target.id})
+    }
+
+    const addProduct = () => {
+        // const price = prod.price - prod.discount
+        const {name, images, id} = prod
+            addItemToCart(prod)
+            
+    }
 
     return (
        isBusy ?
@@ -82,12 +116,12 @@ const IndividualProduct = () => {
        <h4 className='sizeH'>Sizes</h4>
        <div className='size-box-container'>
            {
-               prod.availableStock.map((i, index) => (<AvailableSizes key={index} size={i.size} />))
+               prod.availableStock.map((i, index) => (<AvailableSizes active={sizeActive? 'sizeActive' : 'size-container'} key={index} size={i.size} handler={ getShoeSize } />))
            }
        </div>
        <div className='color-box-container'>
            {
-               colors[0].map((c, index) => (<Colour key={index} color={c.color} />))
+               colors[0].map((c, index) => (<Colour key={index} color={c.color} handler={getShoeColour} />))
            }
        </div>
 
@@ -95,6 +129,7 @@ const IndividualProduct = () => {
            <Button
                buttonType={"primary"}
                children={"Add to cart"}
+               onClick = {addProduct}
            />
        </div>
 
@@ -102,6 +137,7 @@ const IndividualProduct = () => {
        <h3 className='rev-heading'>Reviews</h3>
        <ReviewContainer 
            children = {thisReview}
+         
        />
        <Footer />
    </div>

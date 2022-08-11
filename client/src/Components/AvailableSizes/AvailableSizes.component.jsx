@@ -1,10 +1,10 @@
 import React from 'react';
 import "./AvailableSizes.styles.scss";
 
-const AvailableSizes = ({size}) => {
+const AvailableSizes = ({size, handler, active}) => {
     return (
-        <div className='size-container'>
-            <h4 className='Size'>{size}</h4>
+        <div className={` ${active}`} id={`${size}`} onClick={handler}>
+            <h4 className={`Size`} id={`${size}`}>{size}</h4>
         </div>
     );
 };

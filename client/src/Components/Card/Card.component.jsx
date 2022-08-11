@@ -1,18 +1,17 @@
 import React, {useEffect} from 'react';
 import './Card.styles.scss';
-import shoe1 from "../../Assets/leon-skibitzki-mHUk4Se7peY-unsplash.jpg";
 import Button from "../Button/Button.component";
 import { useNavigate } from 'react-router';
 import { useContext } from 'react';
 import { CartContext } from '../../contexts/CartDrop.context';
 
 
-const Card = ({id,name, discount, price, imageUrl}) => {
+const Card = ({id,name, discount, price, images}) => {
     // const productName = "Nike Airforce 1 Jordan Edition"
 
     const navigate = useNavigate();
     const {addItemToCart} = useContext(CartContext)
-    const addProduct = () => addItemToCart({id,name, discount, price, imageUrl})
+    // const addProduct = () => addItemToCart({id,name, discount, price, images})
     const viewItem = () =>{
         navigate(`/Shop/Product/${name}/${id}`);
         window.scrollTo(0, 0)
@@ -22,7 +21,7 @@ const Card = ({id,name, discount, price, imageUrl}) => {
 
     return (
         <div className={`card-body ${id}`} >
-            <img src={imageUrl} onClick={viewItem}/>
+            <img src={images} onClick={viewItem}/>
             <h6 className='product-name'>{name}</h6>
             <hr />
             <h5 className='price'>R {price}</h5>
@@ -31,7 +30,7 @@ const Card = ({id,name, discount, price, imageUrl}) => {
                 <Button
                     buttonType={"primary"}
                     children={"Add to cart"}
-                    onClick={addProduct}
+                    // onClick={addProduct}
                 />
             </div>
         </div>

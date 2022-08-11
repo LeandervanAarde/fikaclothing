@@ -14,7 +14,7 @@ const CardContainer = ({heading}) => {
             const data = res.data;
             console.log(data)
             setData(data)
-            setCards(data.slice(-10).map(shoe =>(<Card id={shoe._id}  key={shoe._id} name={shoe.brand +' '+ shoe.name} discount={shoe.price} price={ + shoe.price - shoe.discount} imageUrl={shoe.images[0]}/>)))
+            setCards(data.slice(-10).map(shoe =>(<Card id={shoe._id}  key={shoe._id} name={shoe.brand +' '+ shoe.name} discount={shoe.price} price={ + shoe.price - shoe.discount} images={shoe.images[0]}/>)))
         })
         .catch(err =>{
             console.log(err);

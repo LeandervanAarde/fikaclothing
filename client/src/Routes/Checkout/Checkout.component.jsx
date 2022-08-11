@@ -15,9 +15,6 @@ const Checkout = () => {
         navigate("/Payment")
     }
 
-    console.log(total);
-
-
     return (
         <>
             <h1 className='heading'>Checkout</h1>

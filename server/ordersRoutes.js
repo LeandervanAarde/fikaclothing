@@ -26,4 +26,9 @@ orderRouter.get('/api/allorders', async (req, res) =>{
     res.json(orders);
 });
 
+orderRouter.get('/api/singleorder/:id', async(req, res) =>{
+    const singleOrder = await orderSchema.findById(req.params.id);
+    return res.json(singleOrder);
+});
+
 module.exports = orderRouter;

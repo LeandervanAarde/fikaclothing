@@ -10,6 +10,7 @@ import Shop from './Routes/Shop/Shop.component';
 import IndividualProduct from './Components/IndividualProduct/IndividualProduct.component';
 import Payment from './Routes/Payment/Payment.component';
 import StockManagement from './Routes/Administration/StockManagement.component';
+import OrderInformation from './Routes/OrderInformation/OrderInformation.component';
 
 const App = () => {
   return (
@@ -22,7 +23,8 @@ const App = () => {
               <Route path={`Shop/Product/:productName/:productId`}element={<IndividualProduct/>}/>
               <Route path='/Checkout/*' element={<Checkout/>}/>
               <Route path='/Payment' element={<Payment/>}></Route>
-              <Route path='/management' element={<StockManagement/>}/>
+              <Route path='/Management' element={<StockManagement/>}/>
+              <Route path='/Management/Order/:orderId/:customerId' element={<OrderInformation/>}/>
         </Route>
     </Routes>
   );

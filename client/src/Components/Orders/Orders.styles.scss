@@ -16,7 +16,7 @@
     // background-color: gray;
 
     .orders-header {
-        width: 68%;
+        width: 58%;
         padding: 10px 0;
         display: flex;
         justify-content: space-between;
@@ -24,7 +24,7 @@
     
         .header-block {
           text-transform: capitalize;
-          width: 15%;
+          width: 10%;
           text-align: center;
           @include headingFive();
           &:last-child {

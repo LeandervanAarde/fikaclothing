@@ -2,11 +2,17 @@ import React from 'react';
 import "./CartItem.styles.scss";
 
 const CartItem = ({ cartItems }) => {
-    const { name, imageUrl, price, quantity, size, color } = cartItems;
+    const { name, images, price, quantity, size, color } = cartItems;
     return (
         <div className='checkout-item-container'>
             <div className='image-container'>
-                <img src={imageUrl} alt={name} />
+               
+                {
+                        Array.isArray(images) ?
+                        <img src={images[0]} alt={name} />
+                        : 
+                        <img src={images} alt={name} />
+                }
 
             </div>
             <span className='name'>{name}</span>
@@ -21,7 +27,6 @@ const CartItem = ({ cartItems }) => {
                 backgroundColor: `${color}`,
                 borderRadius: `55px`
             }}>
-
             </div>
             <div className='remove-button'> &#10005;</div>
         </div>

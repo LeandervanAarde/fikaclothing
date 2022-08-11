@@ -43,8 +43,4 @@ router.get('/api/getproducts/:brand', async(req, res) =>{
     res.json(brandedProducts)
 })
 
-
-
-
-
 module.exports = router;
