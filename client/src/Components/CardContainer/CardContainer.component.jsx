@@ -7,6 +7,7 @@ import axios from 'axios'
 const CardContainer = ({heading}) => {
     const [data, setData] = useState();
     const [cards, setCards] = useState();
+    const [discount, setDiscount] = useState()
 
     useEffect(() =>{
         axios.get('http://localhost:5001/api/allproducts')
@@ -14,7 +15,8 @@ const CardContainer = ({heading}) => {
             const data = res.data;
             console.log(data)
             setData(data)
-            setCards(data.slice(-10).map(shoe =>(<Card id={shoe._id}  key={shoe._id} name={shoe.brand +' '+ shoe.name} discount={shoe.price} price={ + shoe.price - shoe.discount} images={shoe.images[0]}/>)))
+            setDiscount(data.discount)
+            setCards(data.slice(-10).map(shoe => (<Card key={shoe._id} id={shoe._id} name={shoe.name} discount={+ shoe.discount} price={shoe.price - shoe.discount} images={shoe.images[0]} />)))
         })
         .catch(err =>{
             console.log(err);

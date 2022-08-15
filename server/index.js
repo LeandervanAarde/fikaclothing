@@ -9,7 +9,7 @@ const cors = require('cors')
 const PORT = process.env.PORT || 5001; 
 const uri =process.env.DB_CONNECTION;
 const db = mongoose.connection.useDb('allshoes')
-console.log(db)
+// console.log(db)
 
 app.use(cors({origin:'http://localhost:3000'}));
 app.use(express.urlencoded({extended: false}));

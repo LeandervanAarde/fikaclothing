@@ -79,18 +79,20 @@ const AddItem = () => {
             </div>
             <div className='description'>
                 <TextArea
-                  label={"Description"}
-                  value={" "}
-                  name="Description"
-                  required={true}
+                    label={"Description"}
+                    value={" "}
+                    name="Description"
+                    required={true}
                 />
             </div>
             <div className='add-item-btn'>
-            <Button
-           buttonType={"primary"}
-           children={"Add item"}/>
-          
+                <Button
+                    buttonType={"primary"}
+                    children={"Add item"} />
+
             </div>
+
+
         </div>
     );
 };

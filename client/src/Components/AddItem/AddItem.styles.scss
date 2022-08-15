@@ -5,9 +5,13 @@
     width: 80%;
 
     .name,.brand{
-        width: 50%;
+        width: 51%;
         display: inline-block;
        
+    }
+
+    .name{
+        margin-left: -3%;
     }
 
     .price, .disc, .col, .quan, .size{
@@ -19,5 +23,8 @@
     .add-item-btn{
         width: 15%;
         margin-left: 2%;
+    
     }
+
+   
 }

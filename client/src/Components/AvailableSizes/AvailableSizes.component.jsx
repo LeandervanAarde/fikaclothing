@@ -3,7 +3,7 @@ import "./AvailableSizes.styles.scss";
 
 const AvailableSizes = ({size, handler, active}) => {
     return (
-        <div className={` ${active}`} id={`${size}`} onClick={handler}>
+        <div className={`size-container ${active}`} id={`${size}`} onClick={handler}>
             <h4 className={`Size`} id={`${size}`}>{size}</h4>
         </div>
     );

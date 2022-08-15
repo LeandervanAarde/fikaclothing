@@ -17,7 +17,7 @@ import { useLayoutEffect } from 'react';
 
 const IndividualProduct = () => {
     const product = useParams();
-    const [prod, setProd] = useState();
+    const [prod, setProd] = useState();   
     const[totalStock, setTotalStock] = useState();
     const [isBusy, setIsBusy] = useState(true);
     const[colors, setColors] = useState();
@@ -28,7 +28,7 @@ const IndividualProduct = () => {
     const {addItemToCart, cartItems} = useContext(CartContext)
     const [orderInfo, setOrderInfo] = useState();
     const [totalOrder, setTotalOrder] = useState([]);
-
+ 
     useEffect(() => {
         document.title = "View Product";
         window.scrollTo(0, 0)
@@ -42,15 +42,18 @@ const IndividualProduct = () => {
             setProd(data)
             setIsBusy(false);
             setTotalStock(data.availableStock.map(i => i.totalStock).reduce((prev, curr, index) => prev + curr, 0))
-            setColors(data.availableStock.map((color, index) => color.variations))
-            setThisReview(data.reviews.map((rev) => (<Review reviews={rev}/>)))
-            // setimages(data.images[0]);
-            // console.log(data.images[0]);
+            setColors(data.availableStock.map((color, index) => color.variations));
+
+            setOrderInfo({name: data.name , brand: data.brand ,_id: data._id, price: data.price , discount: data.discount, images: data.images[0]})
+            setThisReview(data.reviews.map((rev) => (<Review reviews={rev}/>)));
+
         })
         .catch(err =>{
-          
+            console.log(err)
         })
-    },[]);
+    },[/* Add global state Manager*/]);
+
+    
 
     const getShoeSize = (e) =>{
         console.log(e.target.id);
@@ -59,23 +62,22 @@ const IndividualProduct = () => {
         // console.log(prod)
         // console.log(size)
         // setOrderInfo({...orderInfo, size: e.target.id}) 
-        setProd({...prod, availableStock : size})
+        setOrderInfo({...orderInfo, size : size[0].size})
+        // setColors(size.map(newColours => newColours.variations.stock >= 0? <></>:  newColours.variations))
+        console.log(size[0])
     }
-    console.log(prod)
-
-
-    
+  console.log(colors)
     const getShoeColour = (e) =>{
         console.log(e.target.id);
         setOrderInfo({...orderInfo, color: e.target.id})
     }
 
+
     const addProduct = () => {
-        // const price = prod.price - prod.discount
-        const {name, images, id} = prod
-            addItemToCart(prod)
-            
+        addItemToCart(orderInfo)
     }
+
+    console.log(orderInfo)
 
     return (
        isBusy ?
@@ -116,7 +118,7 @@ const IndividualProduct = () => {
        <h4 className='sizeH'>Sizes</h4>
        <div className='size-box-container'>
            {
-               prod.availableStock.map((i, index) => (<AvailableSizes active={sizeActive? 'sizeActive' : 'size-container'} key={index} size={i.size} handler={ getShoeSize } />))
+               prod.availableStock.map((i, index) => (<AvailableSizes key={index} size={i.size} handler={ getShoeSize } />))
            }
        </div>
        <div className='color-box-container'>
@@ -137,7 +139,6 @@ const IndividualProduct = () => {
        <h3 className='rev-heading'>Reviews</h3>
        <ReviewContainer 
            children = {thisReview}
-         
        />
        <Footer />
    </div>

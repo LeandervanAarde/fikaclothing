@@ -11,6 +11,8 @@ const Checkout = () => {
     const navigate = useNavigate();
     const { cartItems, total } = useContext(CartContext);
 
+    console.log(cartItems)
+
     const goToPayment = () => {
         navigate("/Payment")
     }
@@ -69,3 +71,4 @@ const Checkout = () => {
 };
 
 export default Checkout;
+

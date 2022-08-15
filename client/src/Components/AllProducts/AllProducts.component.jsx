@@ -32,23 +32,23 @@ const AllProducts = () => {
         let val = e.currentTarget.value;
         if (val === "A-Z") {
             setDat(data.sort((a, b) => (a.name > b.name ? 1 : -1)))
-            setCards(dat.map(shoe => (<Card key={shoe._id} id={shoe._id} name={shoe.name} discount={shoe.price} price={+ shoe.price - shoe.discount} images={shoe.images[0]} />)))
+            setCards(dat.map(shoe => (<Card key={shoe._id} id={shoe._id} name={shoe.name} discount={+ shoe.discount} price={shoe.price - shoe.discount} images={shoe.images[0]} />)))
         } else if (val === "Z-A") {
             setDat(data.sort((a, b) => (a.name > b.name ? -1 : 1)))
             setCards(data.map(shoe => (<Card key={shoe._id} id={shoe._id} name={shoe.name} discount={shoe.price} price={+ shoe.price - shoe.discount} images={shoe.images[0]} />)))
         } else if (val === "high-low") {
             setDat(data.sort((a, b) => (+ a.price - a.discount > + b.price - b.discount ? -1 : 1)))
-            setCards(data.map(shoe => (<Card key={shoe._id} id={shoe._id} name={shoe.name} discount={shoe.price} price={+ shoe.price - shoe.discount} images={shoe.images[0]} />)))
+            setCards(data.map(shoe => (<Card key={shoe._id} id={shoe._id} name={shoe.name} discount={+ shoe.discount} price={shoe.price - shoe.discount} images={shoe.images[0]} />)))
         } else if (val === "low-high") {
             setDat(data.sort((a, b) => (+ a.price - a.discount > + b.price - b.discount ? 1 : -1)))
-            setCards(data.map(shoe => (<Card key={shoe._id} id={shoe._id} name={shoe.name} discount={shoe.price} price={+ shoe.price - shoe.discount} images={shoe.images[0]} />)))
+            setCards(data.map(shoe => (<Card key={shoe._id} id={shoe._id} name={shoe.name} discount={+ shoe.discount} price={shoe.price - shoe.discount} images={shoe.images[0]} />)))
         }
     }
 
     const handleChange = (e) => {
         setBrand(e.target.value)
         setDat(data.filter(brand => brand.brand === e.target.value))
-        setCards(data.map(shoe => (<Card key={shoe._id} id={shoe._id} name={shoe.name} discount={shoe.discount} price={+ shoe.price} images={shoe.images[0]} />)))
+        setCards(data.map(shoe => (<Card key={shoe._id} id={shoe._id} name={shoe.name} discount={+ shoe.discount} price={shoe.price - shoe.discount} images={shoe.images[0]} />)))
         console.log(e.target.value)
     }
 

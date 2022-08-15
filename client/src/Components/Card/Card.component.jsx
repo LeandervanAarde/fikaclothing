@@ -14,18 +14,23 @@ const Card = ({id,name, discount, price, images}) => {
     // const addProduct = () => addItemToCart({id,name, discount, price, images})
     const viewItem = () =>{
         navigate(`/Shop/Product/${name}/${id}`);
-        window.scrollTo(0, 0)
+    window.scrollTo(0, 0)
     }
-
-
-
     return (
         <div className={`card-body ${id}`} >
             <img src={images} onClick={viewItem}/>
             <h6 className='product-name'>{name}</h6>
             <hr />
-            <h5 className='price'>R {price}</h5>
-            <h5 className='discount'>R {discount}</h5>
+            <h5 className='price'>R {+price-discount}</h5>
+            {
+                + discount === 0
+                ? 
+         
+             <></>
+                : 
+                <h5 className='discount'>R{+price}</h5>
+            }
+
             <div className='btn-container'>
                 <Button
                     buttonType={"primary"}
