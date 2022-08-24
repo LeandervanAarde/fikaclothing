@@ -1,41 +1,45 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import './Card.styles.scss';
 import Button from "../Button/Button.component";
 import { useNavigate } from 'react-router';
 import { useContext } from 'react';
 import { CartContext } from '../../contexts/CartDrop.context';
+import { RerenderContext } from '../../contexts/Rerenders.context';
 
 
-const Card = ({id,name, discount, price, images}) => {
+const Card = ({ id, name, discount, price, images }) => {
     // const productName = "Nike Airforce 1 Jordan Edition"
 
     const navigate = useNavigate();
-    const {addItemToCart} = useContext(CartContext)
+    const { addItemToCart } = useContext(CartContext)
+    const { update, setUpdate } = useContext(RerenderContext);
+
     // const addProduct = () => addItemToCart({id,name, discount, price, images})
-    const viewItem = () =>{
+    const viewItem = () => {
         navigate(`/Shop/Product/${name}/${id}`);
-    window.scrollTo(0, 0)
+        setUpdate(!update)
+        window.scrollTo(0, 0)
     }
+
     return (
         <div className={`card-body ${id}`} >
-            <img src={images} onClick={viewItem}/>
+            <img src={images} onClick={viewItem} />
             <h6 className='product-name'>{name}</h6>
             <hr />
-            <h5 className='price'>R {+price-discount}</h5>
+            <h5 className='price'>R {+price - discount}</h5>
             {
                 + discount === 0
-                ? 
-         
-             <></>
-                : 
-                <h5 className='discount'>R{+price}</h5>
+                    ?
+                    <></>
+                    :
+                    <h5 className='discount'>R{+price}</h5>
             }
 
             <div className='btn-container'>
                 <Button
                     buttonType={"primary"}
                     children={"Add to cart"}
-                    // onClick={addProduct}
+                // onClick={addProduct}
                 />
             </div>
         </div>

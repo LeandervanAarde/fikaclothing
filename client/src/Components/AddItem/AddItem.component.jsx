@@ -89,10 +89,7 @@ const AddItem = () => {
                 <Button
                     buttonType={"primary"}
                     children={"Add item"} />
-
             </div>
-
-
         </div>
     );
 };

@@ -18,17 +18,17 @@ const Navigation = () => {
     const [searchItems, setSearchItems] = useState();
     const [data, setData] = useState()
 
-    useEffect(() =>{
+    useEffect(() => {
         axios.get('http://localhost:5001/api/allproducts')
-        .then(res =>{
-            const data = res.data;
-            console.log(res.data)
-            setData(data)
-        })
-        .catch(err =>{
-            console.log(err);
-        })
-    },[])
+            .then(res => {
+                const data = res.data;
+                // console.log(res.data)
+                setData(data)
+            })
+            .catch(err => {
+                console.log(err);
+            })
+    }, [])
 
     const handleSearch = (newSearchQuery) => {
         if (newSearchQuery !== "") {
@@ -74,8 +74,8 @@ const Navigation = () => {
                         <CartIcon />
                         <p className='nav-item'>Cart</p>
                     </div>
-                    <Link className='form-link nav-link' to="/orders">
-                        <p className='nav-item'>Orders</p>
+                    <Link className='form-link nav-link' to="/Management">
+                        <p className='nav-item'>Admin</p>
                     </Link>
 
                     <Link className='form-link nav-link' to="/signIn">

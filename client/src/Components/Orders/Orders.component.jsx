@@ -13,7 +13,7 @@ const Orders = () => {
         .then(res =>{
             let data = res.data;
             setProductData(res.data.map(i => <OrderItem key={i._id} _id={i._id} orderDate={i.orderInformation[0].orderDate.split("T").splice(0,1)} orderStatus={i.orderInformation[0].orderStatus} products={i.orderInformation[0].products.length} customerId={i.customerDetails[0]} /> ));
-            console.log(data);
+            // console.log(data);
             setBusy(false)
         })
         .catch(err =>{
@@ -22,12 +22,7 @@ const Orders = () => {
         
     }, [])
 
-    console.log(productData)
-
-
-
-
-    
+    // console.log(productData)    
     return (
           busy ? 
           <></>

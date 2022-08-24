@@ -7,6 +7,7 @@ const SearchItem = ({id,image, name, price}) => {
 
     const viewItem = () =>{
         navigate(`/Shop/Product/${name}/${id}`)
+     
     }
 
     return (

@@ -10,21 +10,19 @@ import axios from 'axios'
 
 const StockManagement = () => {
     // const data = MockStock;
-    const [data, setData] = useState()
+    const [dat, setDat] = useState()
     const [cards, setCards] = useState();
+    const [busy, setIsBusy] = useState(false)
 
     useEffect(() =>{
         axios.get('http://localhost:5001/api/allproducts')
         .then(res =>{
             const data = res.data;
-            console.log(res.data);
-            setData(res.data);
-            setCards(data.
-                map(shoe =>(<ManagementCard key={shoe._id} id={shoe._id} name={shoe.name} discount={shoe.discount} price={shoe.price} images={shoe.images[0]} stock={shoe.availableStock.totalStock.reduce((prev, curr, index) => {return prev + curr},0)} />)))    
+            setDat(res.data);
+            setCards(data.map(shoe =>(<ManagementCard key={shoe._id} id={shoe._id} name={shoe.name} discount={shoe.discount} price={shoe.price} images={shoe.images[0]} stock ={shoe.availableStock.map(size => size.totalStock).reduce((prev, curr, index) => {return prev + curr},0)}/>)))    
         })
         .catch(err =>{
             console.log(err); 
-         
         })
     },[]);
 

@@ -12,22 +12,26 @@ const AllProducts = () => {
     // const data = MockStock;
     const [data, setData] = useState()
     const [cards, setCards] = useState();
-
-    useEffect(() =>{
+    const [brands, setBrands] = useState();
+    const [brand, setBrand] = useState();
+    const checkIfExists = Array.from(new Set(brand));
+    useEffect(() => {
         axios.get('http://localhost:5001/api/allproducts')
-        .then(res =>{
-            const data = res.data;
-            console.log(res.data)
-            setData(res.data)
-            setCards(data.map(shoe => (<Card key={shoe._id} id={shoe._id} name={shoe.name} discount={shoe.discount} price={shoe.price} images={shoe.images[0]} />)))
-        })
-        .catch(err =>{
-            console.log(err); 
-        })
-    },[])
+            .then(res => {
+                const data = res.data;
+                console.log(res.data)
+                setData(res.data)
+                setCards(data.map(shoe => (<Card key={shoe._id} id={shoe._id} name={shoe.name} discount={shoe.discount} price={shoe.price} images={shoe.images[0]} />)))
+                setBrand(data.map(shoe => shoe.brand))
+
+            })
+            .catch(err => {
+                console.log(err);
+            })
+    }, [])
 
     const [dat, setDat] = useState(data)
-    const [brand, setBrand] = useState();
+
     const nameSort = (e) => {
         let val = e.currentTarget.value;
         if (val === "A-Z") {
@@ -46,17 +50,20 @@ const AllProducts = () => {
     }
 
     const handleChange = (e) => {
-        setBrand(e.target.value)
-        setDat(data.filter(brand => brand.brand === e.target.value))
-        setCards(data.map(shoe => (<Card key={shoe._id} id={shoe._id} name={shoe.name} discount={+ shoe.discount} price={shoe.price - shoe.discount} images={shoe.images[0]} />)))
-        console.log(e.target.value)
+        setCards(data
+            .filter(brand => brand.brand === e.target.value)
+            .map(shoe => (<Card key={shoe._id} id={shoe._id} name={shoe.name} discount={+ shoe.discount} price={shoe.price - shoe.discount} images={shoe.images[0]} />)))
     }
 
     return (
         <>
             <Filter
-            filterfunc={handleChange}
-            brand={brand}/>
+                brand={checkIfExists.map((i, index) => (<>
+                    <input key={index} type={"radio"} name={`radio ${i}`} value={i} className="radio" checked={brand == i} onChange={handleChange} />
+                    <label key={index + 1} htmlFor={i} > {i}</label>
+                    <br />
+                </>))}
+            />
             <div className='all-products-container'>
 
                 <div className='drop-container'>
