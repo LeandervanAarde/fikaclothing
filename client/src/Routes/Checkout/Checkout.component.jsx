@@ -9,13 +9,15 @@ import { useContext } from 'react';
 
 const Checkout = () => {
     const navigate = useNavigate();
-    const { cartItems, total } = useContext(CartContext);
+    const { cartItems, total, addItemToCart,removeEntireItem  } = useContext(CartContext);
 
     console.log(cartItems)
 
     const goToPayment = () => {
         navigate("/Payment")
     }
+
+    
 
     return (
         <>
@@ -52,7 +54,7 @@ const Checkout = () => {
                 </div>
                 {
                     cartItems.map((cartItem, index) => (
-                        <CartItem key={index} cartItems={cartItem} />
+                        <CartItem key={index} cartItems={cartItem}  />
                     ))
                 }
                 <span className='total'>Total Price (ZAR): R {total ? total.price * total.quantity : total} </span>

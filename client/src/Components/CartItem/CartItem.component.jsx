@@ -3,12 +3,12 @@ import "./CartItem.styles.scss";
 import { CartContext } from '../../contexts/CartDrop.context';
 
 
-const CartItem = ({ cartItems }) => {
+const CartItem = ({ cartItems, add }) => {
     const { name, images, price, quantity, size, color } = cartItems;
-    // const {addItemToCart } = useContext(CartContext);
-    // const addItem = addItemToCart(cartItems.quantity)
-    // const removeItem = removeItemFromCart(CartItems)
-    // const clearCartItem = removeEntireItem(cartItems)
+    const {addItemToCart,removeEntireItem } = useContext(CartContext);
+    // const addItem = () => addItemToCart(cartItems.quantity)
+    // const removeItem = removeItemFromCart(cartItems)
+    const clearCartItem = () => {removeEntireItem(cartItems)}
     return (
         <div className='checkout-item-container'>
             <div className='image-container'>
@@ -34,7 +34,7 @@ const CartItem = ({ cartItems }) => {
                 borderRadius: `55px`
             }}>
             </div>
-            <div className='remove-button' onClick={""}> &#10005;</div>
+            <div className='remove-button' onClick={clearCartItem}> &#10005;</div>
         </div>
     );
 };

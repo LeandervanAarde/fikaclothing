@@ -1,27 +1,18 @@
 import { createContext, useState, useEffect, useReducer } from "react";
 
-export const CartContext = createContext({
-    showCart: false,
-    setOpenCart: () => {},
-    cartItems: [],
-    addItemToCart: () => {},
-    cartCount: 0,
-    total: 0,
-    removeItemFromCart : () => { },
-    removeEntireItem: () =>{ }
-});
+
 
 const addItem = (cartItems, productToAdd) => {
-    const existingItem = cartItems.find((cartItem) => cartItem._id === productToAdd._id);
+    const existingItem = cartItems.find((cartItem) => cartItem._id == productToAdd);
 
     if (existingItem) {
         return cartItems.map(item =>
-            item._id === productToAdd._id
+            item._id === productToAdd
                 ? { ...item, quantity: item.quantity + 1 }
                 : item
         )
     }
-    console.log(cartItems)
+   
     return [...cartItems, {...productToAdd, quantity: 1}];
 }
 
@@ -36,9 +27,20 @@ const addItem = (cartItems, productToAdd) => {
 
 
 
-// const clearCartItem = (cartItems, productToRemove) =>{
-//     return (cartItems.filter(cartItem => cartItem._id !== productToRemove));
-// }
+const clearCartItem = (cartItems, productToRemove) =>{
+    return (cartItems.filter(cartItem => cartItem._id !== productToRemove._id));
+}
+
+export const CartContext = createContext({
+    showCart: false,
+    setOpenCart: () => {},
+    cartItems: [],
+    addItemToCart: () => {},
+    cartCount: 0,
+    total: 0,
+    removeItemFromCart : () => { },
+    removeEntireItem: () =>{ }
+});
 
 export const cartActionTypes = {
     SET_IS_CART_OPEN: " SET_IS_CART_OPEN",
@@ -95,10 +97,10 @@ export const CartProvider = ({ children }) => {
     //     updateCartReducer(newCartItems);
     // }
 
-    // const removeEntireItem = (prodRemove) =>{
-    //     const newCartItems = clearCartItem(cartItems, prodRemove);
-    //     updateCartReducer(newCartItems)
-    // }
+    const removeEntireItem = (prodRemove) =>{
+        const newCartItems = clearCartItem(cartItems, prodRemove);
+        updateCartReducer(newCartItems)
+    }
 
 
     const val = {
@@ -109,7 +111,7 @@ export const CartProvider = ({ children }) => {
         cartCount,
         total,
         // removeItemFromCart,
-        // removeEntireItem,
+        removeEntireItem,
     }
 
     return (

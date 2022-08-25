@@ -106,11 +106,18 @@ const IndividualProduct = () => {
                     </div>
 
                     <div className='cart-button'>
-                        <Button
-                            buttonType={"primary"}
-                            children={"Add to cart"}
-                            onClick={addProduct}
-                        />
+
+                        {
+                            totalStock > 0 ?
+                                <Button
+                                    buttonType={"primary"}
+                                    children={"Add to cart"}
+                                    onClick={addProduct}
+                                />
+                                :
+                                <></>
+                        }
+
                     </div>
 
                     <p className='not-sure'>Not sure? Try it on and return free of charge within 14 days</p>

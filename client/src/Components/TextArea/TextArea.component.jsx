@@ -9,7 +9,7 @@ const TextArea = ({label, ...otherprops}) => {
 
                 {
                     label &&
-                    <label for={label} className={`${otherprops.value.length ? 'shrink' : ''} form-input-label`}>{label}</label>
+                    <label for={label} className={`${otherprops.value ? 'shrink' : ''} form-input-label`}>{label}</label>
                 }
                 <br />
                 <textarea className='input' {...otherprops} rows={4} cols={100} />

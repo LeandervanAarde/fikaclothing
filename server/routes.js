@@ -61,4 +61,18 @@ router.post('/api/addreview/:id', async (req, res) => {
     }
 })
 
+router.patch('/api/editproduct/:id', async (req, res) => {
+    const product = await routesSchema.updateOne(
+        { _id: req.params.id },
+        {
+            $set: {
+                discount: req.body.discount,
+                description: req.body.description,
+                availableStock: req.body.availableStock
+            }
+        }
+    )
+
+});
+
 module.exports = router;

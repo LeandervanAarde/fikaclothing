@@ -1,13 +1,13 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './ManagementCard.styles.scss';
 import shoe1 from "../../Assets/leon-skibitzki-mHUk4Se7peY-unsplash.jpg";
 import Button from "../Button/Button.component";
 import { useNavigate } from 'react-router';
+import EditStock from '../EditStock/EditStock.component';
 
-const ManagementCard = ({name, images, price, discount, stock, id }) => {
+const ManagementCard = ({name, images, price, discount, stock, id, open }) => {
     // const productName = "Nike Airforce 1 Jordan Edition"
-
-
+ 
     return (
         <div className='card-body' >
             <img src={images} />
@@ -25,7 +25,9 @@ const ManagementCard = ({name, images, price, discount, stock, id }) => {
                     buttonType={"primary"}
                     children={"Edit item"}
                     id={id}
+                    onClick={open}
                 />
+
             </div>
         </div>
     );
