@@ -17,26 +17,26 @@ router.get('/api/individualproduct/:id', async (req, res) => {
 });
 
 router.post('/api/addproduct', (req, res) => {
+    let data = req.body.payload;
+    console.log(req.body.availableStock);
     const product = new routesSchema({
         name: req.body.name,
         brand: req.body.brand,
         price: req.body.price,
         discount: req.body.discount,
-        timeStamp: req.body.timeStamp,
         description: req.body.description,
         images: req.body.images,
-        reviews: req.body.reviews,
-        availableStock: req.body.availableStock
+        availableStock : req.body.availableStock
     })
-
     product.save()
         .then(item => {
             res.json(item)
         })
         .catch(err => {
-            res.status(400).json({ mssg: "Bad request, error 400", err: err })
+            res.status(400).json({ mssg: "some kind of error", err: err })
         })
 });
+
 
 router.get('/api/getproducts/:brand', async (req, res) => {
     const brandedProducts = await routesSchema.find({ brand: req.params.brand });
@@ -62,17 +62,27 @@ router.post('/api/addreview/:id', async (req, res) => {
 })
 
 router.patch('/api/editproduct/:id', async (req, res) => {
+    console.log( req.params.id )
     const product = await routesSchema.updateOne(
         { _id: req.params.id },
         {
             $set: {
+                name: req.body.name,
+                price: req.body.price,
                 discount: req.body.discount,
                 description: req.body.description,
-                availableStock: req.body.availableStock
             }
         }
-    )
+    );
 
+    res.json(product)
 });
 
+router.delete("/api/deleteproduct/:id", async(req,res) =>{
+    const deleteProduct = await routesSchema.deleteOne({_id: req.params.id })
+    res.json(deleteProduct)
+})
+
 module.exports = router;
+
+

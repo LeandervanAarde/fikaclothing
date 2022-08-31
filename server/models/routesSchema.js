@@ -34,16 +34,13 @@ const products = mongoose.Schema({
     reviews:[
         {
             name:{
-                type: String,
-                required: true,
+                type: String,  
             },
             review:{
-                type: String,
-                required: true,
+                type: String,  
             },
             rating:{
                 type: Number,
-                required: true,
                 min: 0, 
                 max: 5,
             }

@@ -3,27 +3,27 @@ import { createContext, useState, useEffect, useReducer } from "react";
 
 
 const addItem = (cartItems, productToAdd) => {
-    const existingItem = cartItems.find((cartItem) => cartItem._id == productToAdd);
-
+    const existingItem = cartItems.find((cartItem) => cartItem._id === productToAdd._id);
+    console.log(cartItems, productToAdd)
     if (existingItem) {
         return cartItems.map(item =>
-            item._id === productToAdd
+            item._id === productToAdd._id
                 ? { ...item, quantity: item.quantity + 1 }
                 : item
         )
-    }
-   
-    return [...cartItems, {...productToAdd, quantity: 1}];
+    } 
+        return [...cartItems, {...productToAdd, quantity: 1}];
+
 }
 
-// const removeItem = (cartItems, productToRemove) =>{
-//     const existingItem = cartItems.find((cartItem) => cartItem._id === productToRemove._id);
+const removeItem = (cartItems, productToRemove) =>{
+    const existingItem = cartItems.find((cartItem) => cartItem._id === productToRemove._id);
 
-//     if (existingItem.quantity === 1){
-//         return (cartItems.filter(cartItem => cartItem._id !== productToRemove._id))
-//     }
-//     return cartItems.map(cartItem => cartItem._id === productToRemove._id ? {...cartItem, quantity: cartItem.quantity -1}: cartItem)
-// }
+    if (existingItem.quantity === 1){
+        return (cartItems.filter(cartItem => cartItem._id !== productToRemove._id))
+    }
+    return cartItems.map(cartItem => cartItem._id === productToRemove._id ? {...cartItem, quantity: cartItem.quantity -1}: cartItem)
+}
 
 
 
@@ -92,10 +92,10 @@ export const CartProvider = ({ children }) => {
         dispatch({ type: cartActionTypes.SET_IS_CART_OPEN, payload: bool});
     }
 
-    // const removeItemFromCart = (prodRemove) =>{
-    //     const newCartItems = removeItem(cartItems, prodRemove);
-    //     updateCartReducer(newCartItems);
-    // }
+    const removeItemFromCart = (prodRemove) =>{
+        const newCartItems = removeItem(cartItems, prodRemove);
+        updateCartReducer(newCartItems);
+    }
 
     const removeEntireItem = (prodRemove) =>{
         const newCartItems = clearCartItem(cartItems, prodRemove);
@@ -110,7 +110,7 @@ export const CartProvider = ({ children }) => {
         setShowCart,
         cartCount,
         total,
-        // removeItemFromCart,
+        removeItemFromCart,
         removeEntireItem,
     }
 

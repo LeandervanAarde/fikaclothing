@@ -9,6 +9,7 @@ const defaultFormVals = {
     cellphone: '',
     password: '',
     confirm: '',
+    images: []
 }
 
 const Register = () => {

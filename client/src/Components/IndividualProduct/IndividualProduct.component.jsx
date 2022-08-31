@@ -96,7 +96,7 @@ const IndividualProduct = () => {
                     <h4 className='sizeH'>Sizes</h4>
                     <div className='size-box-container'>
                         {
-                            prod.availableStock.map((i, index) => (i.totalStock > 10 ? <AvailableSizes key={index} size={i.size} handler={getShoeSize} /> : <></>))
+                            prod.availableStock.map((i, index) => (i.totalStock > 1 ? < AvailableSizes key={index} size={i.size} handler={getShoeSize} /> : <></>))
                         }
                     </div>
                     <div className='color-box-container'>

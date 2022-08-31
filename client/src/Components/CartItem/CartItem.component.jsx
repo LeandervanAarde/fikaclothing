@@ -5,9 +5,9 @@ import { CartContext } from '../../contexts/CartDrop.context';
 
 const CartItem = ({ cartItems, add }) => {
     const { name, images, price, quantity, size, color } = cartItems;
-    const {addItemToCart,removeEntireItem } = useContext(CartContext);
-    // const addItem = () => addItemToCart(cartItems.quantity)
-    // const removeItem = removeItemFromCart(cartItems)
+    const {addItemToCart,removeEntireItem, removeItemFromCart } = useContext(CartContext);
+    const addItem = () => addItemToCart(cartItems)
+    const removeItem = () => removeItemFromCart(cartItems)
     const clearCartItem = () => {removeEntireItem(cartItems)}
     return (
         <div className='checkout-item-container'>
@@ -24,9 +24,9 @@ const CartItem = ({ cartItems, add }) => {
             <span className='name'>{name}</span>
             <span className='price'>{price}</span>
             <span className='quantity'>
-                <div className='arrow' onClick={"removeItemFromCart"}> &#10094;</div>
+                <div className='arrow' onClick={removeItem}> &#10094;</div>
                 <span className='value'>{quantity}</span>
-                <div className='arrow' onClick={"addItem"}>&#10095;</div>
+                <div className='arrow' onClick={addItem}>&#10095;</div>
             </span>
             <span className='size'>{size}</span>
             <div className='color' style={{

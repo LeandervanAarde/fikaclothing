@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import MockStock from "../../MockImages/MockStock.json";
 import Card from '../../Components/Card/Card.component';
 import "./StockManagement.styles.scss";
@@ -8,6 +8,7 @@ import AddItem from '../../Components/AddItem/AddItem.component';
 import Orders from '../../Components/Orders/Orders.component';
 import axios from 'axios'
 import EditStock from '../../Components/EditStock/EditStock.component';
+import { RerenderContext } from '../../contexts/Rerenders.context';
 
 const StockManagement = () => {
     // const data = MockStock;
@@ -17,11 +18,13 @@ const StockManagement = () => {
     const [openModal, setOpenModal] = useState(false)
     const [editInfo, setEditInfo] = useState();
     const [img, setImg] = useState()
+    const {update, setUpdate} = useContext(RerenderContext)
 
     const getProductInformation = (e) => {
         let id = e.target.id
         console.log(id)
         setOpenModal(!openModal);
+
         axios.get(`http://localhost:5001/api/individualproduct/${id}`)
         .then(res => {
             const data = res.data;
@@ -30,12 +33,23 @@ const StockManagement = () => {
             setEditInfo(data)
             setImg(data.images[0])
         
-
         })
         .catch(err => {
             console.log(err)
         })
     } 
+
+    const deleteItem = (e) =>{
+        let id = e.target.id
+        console.log(id)
+        axios.delete(`http://localhost:5001/api/deleteproduct/${id}`)
+        .then(res => {
+            alert(`shoe with ${id} has been deleted`)
+        })
+        .catch(err => {
+            console.log(err);
+        })
+    }
 
 
     useEffect(() => {
@@ -43,19 +57,14 @@ const StockManagement = () => {
             .then(res => {
                 const data = res.data;
                 setDat(res.data);
-                setCards(data.map(shoe => (<ManagementCard key={shoe._id} id={shoe._id} name={shoe.name} discount={shoe.discount} price={shoe.price} images={shoe.images[0]} stock={shoe.availableStock.map(size => size.totalStock).reduce((prev, curr, index) => { return prev + curr }, 0)} open={getProductInformation} />)))
+                setCards(data.map(shoe => (<ManagementCard key={shoe._id} id={shoe._id} name={shoe.name} discount={shoe.discount} price={shoe.price} images={shoe.images[0]} stock={shoe.availableStock.map(size => size.totalStock).reduce((prev, curr, index) => { return prev + curr }, 0)} open={getProductInformation} remove={deleteItem} />)))
                 setIsBusy(false)
                 setEditInfo(data)
             })
             .catch(err => {
                 console.log(err);
             })
-    }, []);
-
-
-
-
-
+    }, [update]);
 
     return (
         busy
@@ -77,7 +86,7 @@ const StockManagement = () => {
                 <Footer />
 
                 {
-                    openModal && <EditStock setOpen={() => {return setOpenModal(!openModal)}} brand={editInfo.brand} name={editInfo.name} img={img} price={editInfo.price} discount={editInfo.discount} desc={editInfo.description}/>
+                    openModal && <EditStock setOpen={() => {return setOpenModal(!openModal)}} id={editInfo._id} brand={editInfo.brand} name={editInfo.name} img={img} price={editInfo.price} discount={editInfo.discount} description={editInfo.description}/>
                 }
             </div>
     );

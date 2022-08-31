@@ -55,7 +55,9 @@ const Checkout = () => {
                 {
                     cartItems.map((cartItem, index) => (
                         <CartItem key={index} cartItems={cartItem}  />
-                    ))
+                    ),
+                    console.log(cartItems)
+                    )
                 }
                 <span className='total'>Total Price (ZAR): R {total ? total.price * total.quantity : total} </span>
                 {

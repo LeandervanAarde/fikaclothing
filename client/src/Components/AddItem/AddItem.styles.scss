@@ -20,11 +20,25 @@
         display: inline-block;
     }
 
+    .upload{
+        background-color: red;
+    }
+
     .add-item-btn{
-        width: 15%;
+        width: 17%;
         margin-left: 2%;
     
     }
 
+    .filebtn{
+        width: 25%;
+        margin-left: 2%;
+        margin-bottom: 2%;
+        margin-top: 2%;
+        input{
+            height: 100%;
+            width: 100%;
+        }
+    }
    
 }

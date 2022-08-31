@@ -52,6 +52,7 @@ const ReviewModal = ({ setOpen, id }) => {
                         className='rating'
                         label={"rating"}
                         value={rating}
+                        max={5}
                         type="number"
                         name="rating"
                         required={true}

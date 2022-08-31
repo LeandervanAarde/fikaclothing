@@ -23,7 +23,6 @@ const AllProducts = () => {
                 setData(res.data)
                 setCards(data.map(shoe => (<Card key={shoe._id} id={shoe._id} name={shoe.name} discount={shoe.discount} price={shoe.price} images={shoe.images[0]} />)))
                 setBrand(data.map(shoe => shoe.brand))
-
             })
             .catch(err => {
                 console.log(err);

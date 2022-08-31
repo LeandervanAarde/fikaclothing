@@ -38,8 +38,8 @@ const Card = ({ id, name, discount, price, images }) => {
             <div className='btn-container'>
                 <Button
                     buttonType={"primary"}
-                    children={"Add to cart"}
-                // onClick={addProduct}
+                    children={"view item"}
+                    onClick={viewItem}
                 />
             </div>
         </div>
