@@ -23,7 +23,7 @@ const BucketName = "fikaclothing";
 const region = "us-east-1";
 AWS.config.update({
     accessKeyId: "AKIAWDMDUWDEHUXLLQOB",
-    secretAccessKey: "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"
+    secretAccessKey: ""
 });
 const bucket = new AWS.S3({
     params: { Bucket: BucketName },
@@ -39,6 +39,9 @@ const AddItem = () => {
         const { name, value } = e.target
         setValues({ ...values, [name]: value })
     }
+
+    const hell0  = 0;
+
     const [images, setImages] = useState([]);
     const getImages = async (e) => {
         let imageFile = e.target.files
