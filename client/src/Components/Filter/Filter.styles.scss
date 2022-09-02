@@ -17,4 +17,9 @@
         color: white;
         text-align: center;
     }
+
+    .radio, label{
+        color: white;
+        @include body();
+    }
 }

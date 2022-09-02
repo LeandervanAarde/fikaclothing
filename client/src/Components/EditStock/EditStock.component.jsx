@@ -8,9 +8,7 @@ import { RerenderContext } from '../../contexts/Rerenders.context';
 
 
 const EditStock = ({ setOpen, id, img, brand, name, discount, price, description }) => {
-
     const [formValues, setFormValues] = useState();
-    // const [identifier, setIdentifier] = useState()
     const [busy, setBusy] = useState(true)
     const { update, setUpdate } = useContext(RerenderContext)
 
@@ -22,10 +20,8 @@ const EditStock = ({ setOpen, id, img, brand, name, discount, price, description
             name
         })
         setBusy(false)
-        // setIdentifier(id)
-
     }, [name, discount, price, description])
-    // console.log(identifier)
+
 
     const closeModal = () => {
         setOpen(prevState => !prevState)
@@ -33,12 +29,10 @@ const EditStock = ({ setOpen, id, img, brand, name, discount, price, description
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        console.log(formValues);
         setFormValues({ ...formValues, [name]: value });
     }
 
     const updateProduct = () => {
-
         const payload = {
             name: formValues.name,
             price: + formValues.price,

@@ -28,9 +28,7 @@ const renderReducer = (state, action) =>{
 const initialState ={
     update: false,
 }
-
 //this is the provider, this is the component\
-
 export const RenderProvider = ({ children }) => {
    const [{update}, dispatch] = useReducer(renderReducer, initialState)
 

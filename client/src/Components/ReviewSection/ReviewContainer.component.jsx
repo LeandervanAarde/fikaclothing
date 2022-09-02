@@ -5,7 +5,7 @@ import "./ReviewContainer.styles.scss";
 import CardContainer from '../CardContainer/CardContainer.component';
 import { useState } from 'react';
 import ReviewModal from '../ReviewModal/ReviewModal.component';
-const ReviewContainer = ({children, loadMore, id}) => {
+const ReviewContainer = ({ children, loadMore, id }) => {
     const [openModal, setOpenModal] = useState(false)
     return (
         <>
@@ -13,24 +13,24 @@ const ReviewContainer = ({children, loadMore, id}) => {
                 {children}
             </div>
             <div className='review-button'>
-            <Button
+                <Button
                     buttonType={"primary"}
                     children={"Leave a review"}
-                    onClick={() => {return setOpenModal(!openModal)}}
+                    onClick={() => { return setOpenModal(!openModal) }}
                 />
-                <br/>
+                <br />
                 <Button
                     buttonType={"extra"}
                     children={"Load More"}
-                    onClick = {loadMore}
+                    onClick={loadMore}
                 />
             </div>
             <CardContainer
                 heading="other products"
             />
-        {
-            openModal && <ReviewModal id={id} setOpen={() => {return setOpenModal(!openModal)}}/>
-        }
+            {
+                openModal && <ReviewModal id={id} setOpen={() => { return setOpenModal(!openModal) }} />
+            }
         </>
     );
 };

@@ -45,6 +45,7 @@ const StockManagement = () => {
         axios.delete(`http://localhost:5001/api/deleteproduct/${id}`)
         .then(res => {
             alert(`shoe with ${id} has been deleted`)
+            setUpdate(prevState => !prevState)
         })
         .catch(err => {
             console.log(err);

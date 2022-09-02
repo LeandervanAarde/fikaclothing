@@ -1,18 +1,11 @@
 import React from 'react';
 import { useState } from 'react';
 import "./Filter.styles.scss";
-import RadioButton from '../FilterSection/RadioButtoncomponent';
-import MockStock from "../../MockImages/MockStock.json";
 
-
-
-const Filter = ({filterfunc, brand}) => {
+const Filter = ({brand}) => {
     const Range = [[0, " - ", 500], [500, " - ", 1000], [1500, " - ", 2000], [2000, " - ", 2500]];
     const [range, setRange] = useState();
 
-    // const [filter, setFilter] = useState(data);
-
-   
 
     const handlePriceChange = (e) => {
         setRange(e.target.value)
@@ -25,7 +18,6 @@ const Filter = ({filterfunc, brand}) => {
         <br />
     </>))
 
-
     return (
         <div className='filter-container'>
             <h4 className='filter-heading'>Filter</h4>
@@ -33,7 +25,6 @@ const Filter = ({filterfunc, brand}) => {
             {brand}
             <h5 className='filterHeading'>Prices</h5>
             {rangeMap}
-
         </div>
     );
 };

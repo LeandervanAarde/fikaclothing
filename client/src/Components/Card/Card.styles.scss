@@ -1,6 +1,6 @@
 @import "../../StylesSource/variables.scss";
 
-.card-body{
+.card-body {
     width: 230px;
     height: auto;
     margin-bottom: 40px;
@@ -12,14 +12,14 @@
     @include dropShadow();
     transition: 0.3s ease-in-out all;
 
-    img{
+    img {
         width: 100%;
         height: 150px;
         background-color: red;
         object-fit: cover;
     }
 
-    .product-name{
+    .product-name {
         @include headingSix();
         font-weight: 800;
         text-transform: uppercase;
@@ -28,21 +28,20 @@
         margin-bottom: 10px;
     }
 
-    hr{
+    hr {
         width: 70%;
         border: 1px solid $black ;
-    
     }
 
-    .price, .discount {
-       float: left;
+    .price,
+    .discount {
+        float: left;
         margin-left: 20%;
         @include body();
-        font-weight: 500;  
-            
+        font-weight: 500;
     }
 
-    .price{
+    .price {
         color: $black;
         font-weight: 700;
         font-size: 18px;
@@ -51,24 +50,24 @@
         margin-top: 10px;
     }
 
-    .discount{
-        color: lighten($black,  40%);
+    .discount {
+        color: lighten($black, 40%);
         width: 30%;
         text-decoration: line-through;
         text-decoration-color: $red;
         text-decoration-thickness: 2.5px;
         margin-top: 10px;
-        
 
-        del{
+
+        del {
             color: $red;
         }
     }
 
-    .btn-container{
-       width: 100%;
-       display: flex;
-       justify-content: center;
-       padding: 0;
+    .btn-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 0;
     }
 }

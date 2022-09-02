@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './Card.styles.scss';
 import Button from "../Button/Button.component";
 import { useNavigate } from 'react-router';
@@ -8,13 +8,10 @@ import { RerenderContext } from '../../contexts/Rerenders.context';
 
 
 const Card = ({ id, name, discount, price, images }) => {
-    // const productName = "Nike Airforce 1 Jordan Edition"
-
     const navigate = useNavigate();
     const { addItemToCart } = useContext(CartContext)
     const { update, setUpdate } = useContext(RerenderContext);
 
-    // const addProduct = () => addItemToCart({id,name, discount, price, images})
     const viewItem = () => {
         navigate(`/Shop/Product/${name}/${id}`);
         setUpdate(!update)

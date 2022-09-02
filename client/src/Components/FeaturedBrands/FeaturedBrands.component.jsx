@@ -13,7 +13,7 @@ const FeaturedBrands = ({ heading, brandName }) => {
             const data = res.data;
             console.log(data)
             setData(data)
-            setCards(data.slice(-10).map(shoe => (<Card key={shoe._id} id={shoe._id} name={shoe.name} discount={+ shoe.discount} price={shoe.price - shoe.discount} images={shoe.images[0]} />)))
+            setCards(data.slice(-10).map(shoe => (<Card key={shoe._id} id={shoe._id} name={shoe.name} discount={+ shoe.discount} price={+ shoe.price } images={shoe.images[0]} />)))
         })
         .catch(err =>{
             console.log(err);

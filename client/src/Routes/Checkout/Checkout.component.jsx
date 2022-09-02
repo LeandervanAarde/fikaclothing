@@ -17,8 +17,6 @@ const Checkout = () => {
         navigate("/Payment")
     }
 
-    
-
     return (
         <>
             <h1 className='heading'>Checkout</h1>

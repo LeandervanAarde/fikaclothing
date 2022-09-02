@@ -30,7 +30,6 @@ const AllProducts = () => {
     }, [])
 
     const [dat, setDat] = useState(data)
-
     const nameSort = (e) => {
         let val = e.currentTarget.value;
         if (val === "A-Z") {
@@ -64,17 +63,14 @@ const AllProducts = () => {
                 </>))}
             />
             <div className='all-products-container'>
-
                 <div className='drop-container'>
                     <DropDownFilter nameSort={nameSort} />
-
                 </div>
                 <div className='products-container'>
                     {cards}
                 </div>
             </div>
         </>
-
     );
 };
 

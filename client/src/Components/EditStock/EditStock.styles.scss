@@ -18,7 +18,6 @@
         @include dropShadow();
         animation: modal 0.4s 1;
 
-
         .prod-image {
             width: 15%;
             aspect-ratio: 1/1;
@@ -31,29 +30,30 @@
             object-fit: cover;
         }
 
-
         .header-text-stock {
             @include headingThree();
             text-align: center;
             margin-top: 13%;
         }
 
-       .form-container{
+        .form-container {
             width: 100%;
             display: flex;
             justify-content: space-between;
 
-            .left-container, .right-container, .center-container{
+            .left-container,
+            .right-container,
+            .center-container {
                 width: 33.33%
             }
-       }
+        }
 
-       .buttons-con{
-        padding-left: 4%;
-        padding-right: 4%;
-        width: 92%;
-        display: flex;
-        justify-content: space-between;
-       }
+        .buttons-con {
+            padding-left: 4%;
+            padding-right: 4%;
+            width: 92%;
+            display: flex;
+            justify-content: space-between;
+        }
     }
 }

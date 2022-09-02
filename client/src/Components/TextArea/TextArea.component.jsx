@@ -1,7 +1,7 @@
 import React from 'react';
 import "./TextArea.styles.scss"
 
-const TextArea = ({label, ...otherprops}) => {
+const TextArea = ({ label, ...otherprops }) => {
     return (
         <>
 
