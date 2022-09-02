@@ -192,41 +192,47 @@ The `Development Process` is the technical implementations and functionality don
 <!-- stipulate all of the functionality you included in the project -->
 <!-- This is your time to shine, explain the technical nuances of your project, how did you achieve the final outcome!-->
 
-* Utilized momentJS in order to create the calendar, get weekly and daily appointments. This would make that I could make bookings far ahead of time and view appointments in the near future. 
-* Implementation of Socket io to make a chat room. This makes use of web sockets in order to send and receive messages on the Chat component. This required an additional serverside folder in order to make this possible
-* Express was implemented as part of the backend for the chat component
+* Better management of components, giving each component a folder that will hold the stylesheet along with the component. 
+* Working with useContext in order to improve state management throughout the entire project, making less code do more. 
+* Working searchbar in the project that will return the correct data
 * SASS was implemented in order to make styling more efficient and easier to understand, this could also assist with consistency of colours throughout the project.
-* Components were made more re-usable so that I could access them in different places, this also allows for less code to do more and future developers can read it and understand it more (we hope!). 
-* Implementation of PHP and SQL as backend to store, create, read, update and delete data. 
+* AWS buckets implemented for images, thus making the program run faster due to less memory taken up in the actual project. 
+* Filters and sorting implemented to aid users in the search for shoes. 
+* Colours loaded dynamically through the database along with the sizes 
+* Reviews section where users can leave a review and view all the other reviews 
+* Going back a page implemented through useNavigate(-1)
+* orders are tracked and dates are dynamically populated for dispatch 
 
 #### Highlights
 <!-- stipulated the highlight you experienced with the project -->
-* Over the course of this project, the highlight for me was the impementation of Socket Io, this was especially exciting because it added an extra layer of excitement to the application. 
-* Using PHP has taught me the basics of backend development and SQL databases. This was a highlight as it has the potential to open up many more doors.
-* I enjoyed the challenges that these two languages have brought, although it was extremely difficult, I have a new respect for Php and what it has to offer.
+* Over the course of this project, one of the main highlights was the use of REACT, I have learned a lot about React recently and this was a way of testing it and really starting to make React work, this has been an exciting project in that regard and I will continue to learn more about REact so that I am able to use the full power of it. 
+* Using NodeJS and Express has been extremly exciting, Mongo has also been a highlight and a better experience than an SQL database. The use of Javascript as a backend language has been fantastic. 
+* I really enjoyed the complexity of this project, although I feel the project can be pushed further, I have done a lot and I am proud of the project as a whole. This project has definetly been my favorite project that I've done and I hope to improve it. 
 
 #### Challenges
 <!-- stipulated the challenges you faced with the project and why you think you faced it or how you think you'll solve it (if not solved) -->
-* One of my largest challenges in this project was an error that is still active, there is an issue with the useEffects that cause an infinite loop, thus information does not properly update unless the application is reloaded everytime a change is made. This is especially frustrating because it defeats the purpose of SPA=. 
-* The intergration of PHP and REACT was fairly difficult and was proven to be a challenge throuhgout the entire project. This issue was resolved through numerous work arounds and self study. In the end the project was successful, but it was fairly challenging
-* Consistency was a big issue in this problem , I've noticed that this is a challenge among most of the applications that I have developed. This is something that I will pay more attention to in the future, but this was a step in the right direction. 
+* One of my largest challenges in this project was considering how all the required fields were going to be laid out, this was more of a front end issue and I do thinnk I can improve on this aspect.  
+* The creation of my database has been a major struggle, I think I tried to make it more complex, but it has been a good struggle and I have definetly learned a lot about how to better structure things in the future 
+* One of my BIGGEST issues in this project lays within my cart, unfortunately the way I have set it up, it can only handle one variation at a time, this is a problem that I am actively investigating and will fix. 
 
 #### Above And Beyond
 
 What aspects of this final build contribute to the `Above And Beyond` Component of your brief?
 <!-- what did you learn outside of the classroom and implement into your project-->
-* SocketIo Chatroom
-* This project made use of SocketIo in order to create a chatroom. Socket Io makes use of webSockets in order to create a communication between client and server. This was not part of the brief but it was something that I felt could be fairly benificial to the application. 
-+ MomentJS.
-* Moment JS was used as a way to incorporate formatted dates into the application, this was used throughout the entire application to apply functionality. It was also used in the creation of the calendar. 
+* Implementation of reviews, this was fairly ease considering my DB structure, but it worked out for the best. 
+* AWS buckets
+* AWS buckets, this was used for image storage as opposed to using multer and the local machine. This was exciting because I dont think other students were able to achieve this.
+
+* Context state management
+* Context state management was implemented into the project in order to make code easier to read and make data easier to update, this was quite challenging and I dont fully understand Context as of yet, but I do have a good grasp on it and Im looking forward to learning more about it so that I can use something like REDUX or GraphQL 
 * SASS
 * Sass was used as a means to make Css more readable due to its structure. SCSS allows for external files to be linked. This was used to create more consistency in the front end of the application with the use of variables. The variables would allow me to predefine aspects such as fonts and colours to be re-used. Variables would also avoid aspects of too much repetition and making the code look un neat. 
 
 ### Future Implementation
 <!-- stipulate functionality and improvements that can be implemented in the future. -->
-* In future I would like to implement better back end and make use of table relations and prepared statements. This will make the application more usable and more secure, while teaching me better practice for industry standard 
-* In the future I would like to implement a better, more consistent front end that is more attractive to the viewers. 
-*  A future improvement that I would like to incorporate is the image upload, due to time constraints I was not able to incorporate this into the project. 
+* IN future I would like to do more server side rendering and focus on the backend.
+ 
+* A fututre implementation is making the project a more accurate ecommerce website, this would make it more appealing.
 
 <!-- MOCKUPS -->
 ## Final Outcome
@@ -249,7 +255,7 @@ See the [open issues](https://github.com/LeandervanAarde/cde-booking/issues) for
 <!-- AUTHORS -->
 ## Authors
 
-* [Leander van Aarde](https://github.com/LeandervanAarde/cde-booking)
+* [Leander van Aarde](https://github.com/LeandervanAarde/fikaclothing)
 
 <!-- LICENSE -->
 ## License
@@ -260,14 +266,14 @@ Distributed under the MIT License. See `LICENSE` for more information.\
 ## Contact
 
 * **leander van Aarde** -(mailto: Leander.vaonline@gmail.com) - [@instagram_handle](https://www.instagram.com/_.leander_e/) 
-* **Project Link** - https://github.com/LeandervanAarde/cde-booking
+* **Project Link** - https://github.com/LeandervanAarde/fikaclothing
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 <!-- all resources that you used and Acknowledgements here -->
-* [MomentJs](https://momentjs.com/)
 * [Stack overflow](https://stackoverflow.com/)
-* [SocketIO](https://socket.io/)
 * [Chat App](https://www.fullstacklabs.co/blog/chat-application-react-express-socket-io)
-* [Image](https://unsplash.com/)
+* [Images](https://www.nike.com/za/)
+* [Images](https://www.adidas.co.za/outlet?cm_mmc=AdieSEM_Google_Search-_-adidas_Brand_GSN_Exact_AWO-_-Brand-_-adidas_brand-_-dv:eCom-_-cn:adidas_Brand_GSN_Exact_AWO-_-pc:Google_Search&cm_mmc1=ZA&cm_mmc2=PPC-Multiple-brand-Multiple-BM-ZA-EMEA-eCom-Paid_Search&gclid=Cj0KCQjw08aYBhDlARIsAA_gb0fw39zkUktuakE1CdeBlNpQDyePBn8pLW94A1wBcFBMpJRJ9OzMshgaAuKuEALw_wcB&gclsrc=aw.ds)
+* [AWS](https://aws.amazon.com/free/?trk=73c6744c-29f5-4966-bdc7-8599174c182d&sc_channel=ps&s_kwcid=AL!4422!3!444219541634!e!!g!!aws&ef_id=Cj0KCQjw08aYBhDlARIsAA_gb0dnWqHWmnxuX0ZVFEOC_r6m2A0mZyKIQs8dfv0rhrp3zZW2lVW1QPUaAkS7EALw_wcB:G:s&s_kwcid=AL!4422!3!444219541634!e!!g!!aws)
 
