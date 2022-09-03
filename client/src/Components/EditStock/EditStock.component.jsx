@@ -5,12 +5,20 @@ import FormInput from '../forminput/FormInput.component';
 import TextArea from '../TextArea/TextArea.component';
 import "./EditStock.styles.scss";
 import { RerenderContext } from '../../contexts/Rerenders.context';
+import { useNavigate } from 'react-router';
 
 
 const EditStock = ({ setOpen, id, img, brand, name, discount, price, description }) => {
     const [formValues, setFormValues] = useState();
     const [busy, setBusy] = useState(true)
     const { update, setUpdate } = useContext(RerenderContext)
+    const navigate = useNavigate()
+
+    const editItem = () => {
+        navigate(`/Management/Product/${name}/${id}`);
+        setUpdate(!update)
+        window.scrollTo(0, 0)
+    }
 
     useEffect(() => {
         setFormValues({
@@ -117,7 +125,8 @@ const EditStock = ({ setOpen, id, img, brand, name, discount, price, description
                         </div>
                         <Button
                             buttonType={'secondary'}
-                            children={'Add variations'}
+                            children={'Edit variations'}
+                            onClick={editItem}
                         />
                         <Button
                             buttonType={'extra'}

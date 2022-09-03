@@ -14,35 +14,6 @@ const db = mongoose.connection.useDb('allshoes')
 
 app.use(cors({origin:'http://localhost:3000'}));
 
-// const productImageStore = multer.diskStorage({
-//     destination: (req, file, callBack) => {
-//         callBack(null, './productImages');
-//     }, 
-
-//     filename: (req, file, callBack) => {
-//         console.log(file);
-//         callBack(null, Date.now() + path.extname(file.originalname))
-//     }
-// });
-// const fileFilter = (req, file, cb) => {
-//     if (
-//         file.mimetype === 'image/png' ||
-//         file.mimetype === 'image/jpg' ||
-//         file.mimetype === 'image/jpeg'
-//     ) {
-//         cb(null, true);
-//     } else {
-//         cb(null, false);
-//     }
-// };
-
-// app.use(
-//     multer({
-//         storage: productImageStore,
-//         fileFilter: fileFilter,
-//     }).array('images')
-// );
-
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 app.use(routes);

@@ -7,10 +7,10 @@ import FeaturedBrands from "../../Components/FeaturedBrands/FeaturedBrands.compo
 import SearchResults from '../../Components/SearchResults/SearchResults.component';
 
 import { useState } from 'react';
-
 const Home = () => {
     useEffect(() =>{
         document.title = "Home"
+        sessionStorage.getItem('user')
      }, [])
 
     return (

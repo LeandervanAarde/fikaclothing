@@ -8,8 +8,6 @@ orderRouter.post('/api/addorder', (req,res) =>{
     const newOrder = new orderSchema({
         customerDetails: req.body.customerDetails,
         orderInformation: req.body.orderInformation,
-        orderStatus: req.body.orderInformation.orderStatus,
-        products: req.body.orderInformation.products,
     });
 
     newOrder.save()

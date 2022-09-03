@@ -5,7 +5,9 @@ import Footer from '../../Components/Footer/Footer.component';
 import "./OrderInformation.styles.scss"
 import axios from 'axios';
 import Button from '../../Components/Button/Button.component';
+import DispatchCard from "../../Components/DispatchCard/DispatchCard.component"
 let Arr = [];
+let extra =[];
 
 const OrderInformation = () => {
     const order = useParams();
@@ -21,18 +23,23 @@ const OrderInformation = () => {
                 let data = res.data;
                 console.log(data);
                 let order = data.orderInformation[0].products;
-                // console.log(order)
+                console.log(order)
                 setProducts(order);
+                let ex = data.orderInformation[0].products;
+
+               let tester =  ex.map(i => ([i.color, i.size]))
+                console.log(tester)
 
                 order.map(i => {
 
                     axios.get(`http://localhost:5001/api/individualproduct/${i.shoe}`)
                         .then(res => {
 
-                            let data = res.data;
-                            Arr.push(data)
-                            setProdInfo(Arr)
+                            let data2 = res.data;
+                            Arr.push(data2)
+                            let shoes = Arr.map(shoe => (<DispatchCard key={shoe._id} id={shoe._id} name={shoe.name} discount={+ shoe.discount} price={shoe.price - shoe.discount} images={shoe.images[0]} />))
                             // console.log(Arr)
+                            setProdInfo(shoes)
                         })
                 })
             })
@@ -41,6 +48,7 @@ const OrderInformation = () => {
             });
 
         console.log(Arr)
+        console.log(extra)
 
         axios.get(`http://localhost:5001/api/getcustomer/${order.customerId}`)
             .then(res => {
@@ -98,20 +106,13 @@ const OrderInformation = () => {
                         <p className='client-information'><strong>Status</strong> Name</p>
                     </div>
 
-                    <div className='information-container'>
-                    <h4 className='Information-heading'>Product Information</h4>
-                        {
-                            prodInfo.map((prod) => (
-                                <>
-
-                                    <p className='client-information'><strong>Product:</strong> {prod.name}</p>
-                                    <p className='client-information'><strong>Colour:</strong> Name</p>
-                                    <p className='client-information'><strong>Brand:</strong> {prod.brand}</p>
-                                    <p className='client-information'><strong>Size:</strong> 1</p>
-                                </>
-                            ))
-                        }
+                    <div className='order-cards-container'>
+                            {
+                                prodInfo
+                            }
                     </div>
+
+
                     <div className='disp-button'>
                         <Button
                             buttonType={'primary'}

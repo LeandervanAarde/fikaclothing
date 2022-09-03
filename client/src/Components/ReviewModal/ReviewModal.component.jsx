@@ -24,7 +24,6 @@ const ReviewModal = ({ setOpen, id }) => {
     const addReview = () => {
         axios.post('http://localhost:5001/api/addreview/' + id, formValues)
             .then(res => {
-                console.log('Cody said this would work and if it doesnt he is a liar')
                 setOpen(!setOpen)
                 setUpdate(!update)
             })

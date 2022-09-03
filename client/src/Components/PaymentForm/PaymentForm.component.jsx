@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import "./PaymentForm.styles.scss"
 import FormInput from '../forminput/FormInput.component';
 import { useState } from 'react';
 import { useEffect } from 'react';
+
 
 const defaultFormFields = {
     cardName: '',
@@ -22,6 +23,7 @@ const PaymentForm = () => {
     const maxYear = Year + 10;
     const range = (start, end) => { return Array(end - start + 1).fill().map((_, idx) => start + idx) }
     const yearArr = range(Year, maxYear);
+  
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -33,6 +35,16 @@ const PaymentForm = () => {
             setFormFields({ ...formFields, [payment[0]]: e.target.innerHTML });
         }
     }
+
+    // const getDeliveryDate = (e) =>{
+    //     let val = e.target.value;
+    //     console.log(val)
+    // }
+
+
+
+
+    // console.log(finalItems)
 
     return (
         <div className='form'>

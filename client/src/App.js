@@ -11,6 +11,7 @@ import IndividualProduct from './Components/IndividualProduct/IndividualProduct.
 import Payment from './Routes/Payment/Payment.component';
 import StockManagement from './Routes/Administration/StockManagement.component';
 import OrderInformation from './Routes/OrderInformation/OrderInformation.component';
+import AdminShoe from './Routes/AdminShoe/AdminShoe.component';
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
               <Route path='/Payment' element={<Payment/>}></Route>
               <Route path='/Management' element={<StockManagement/>}/>
               <Route path='/Management/Order/:orderId/:customerId' element={<OrderInformation/>}/>
+              <Route path='/Management/Product/:productName/:productId' element={<AdminShoe/>}/>
         </Route>
     </Routes>
   );

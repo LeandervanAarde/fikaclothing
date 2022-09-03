@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 // import DeliveryOptions from '../../Components/DeliverOptions/DeliveryOptions.component';
 import Footer from '../../Components/Footer/Footer.component';
 import PaymentForm from '../../Components/PaymentForm/PaymentForm.component';
@@ -6,6 +6,8 @@ import "./Payment.styles.scss";
 // import { MdOutlineInventory2, MdOutlineTimeToLeave } from "react-icons/md";
 import DeliveryType from '../../Components/DeliveryTypes/DeliveryType.component';
 import Button from '../../Components/Button/Button.component';
+import { CartContext } from '../../contexts/CartDrop.context';
+import axios from 'axios'
 // import { useState } from 'react';
 // const initialValues ={
 //     deliveryOptions : '',
@@ -17,16 +19,57 @@ const Payment = () => {
     const mL = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     const current_datetime = new Date()
     const sameDay = current_datetime.getDate() + " " + mL[current_datetime.getMonth()] + " " + current_datetime.getFullYear()
-    const nextDay = current_datetime.getDate()+1 + " " + mL[current_datetime.getMonth()] + " " + current_datetime.getFullYear()
-    const twoDay = current_datetime.getDate()+2 + " " + mL[current_datetime.getMonth()] + " " + current_datetime.getFullYear()
-    const standard = current_datetime.getDate()+4 + " " + mL[current_datetime.getMonth()] + " " + current_datetime.getFullYear()
+    const nextDay = current_datetime.getDate() + 1 + " " + mL[current_datetime.getMonth()] + " " + current_datetime.getFullYear()
+    const twoDay = current_datetime.getDate() + 2 + " " + mL[current_datetime.getMonth()] + " " + current_datetime.getFullYear()
+    const standard = current_datetime.getDate() + 4 + " " + mL[current_datetime.getMonth()] + " " + current_datetime.getFullYear()
     const hour = current_datetime.getHours();
+    const { cartItems } = useContext(CartContext)
+    const [finalItems, setFinalItems] = useState()
+    const [deliveryDate, setDeliveryDate] = useState()
+    const [dataSend, setDataSend] = useState()
+    const customer = sessionStorage.getItem('user')
+
+
+    useEffect(() => {
+        const items = cartItems.map((i) => (
+            {
+                shoe: i._id,
+                color: i.color,
+                size: i.size,
+                quantity: i.quantity
+            }
+        ))
+        setFinalItems(items)
+    }, [])
     console.log(hour)
- 
-    // const handleClick = (e) =>{
-    //     // const {className, innerHTML} = e.target
-    //     // if(e.target.children[1].innerHTML == '') 
-    // }
+
+    const handleClick = (e) => {
+        let val = e.target.id
+        console.log(val)
+        setDeliveryDate(val)
+        let payload = {
+            customerDetails: customer,
+            orderInformation: [
+                {
+                    products: finalItems
+                }
+            ]
+        }
+
+        setDataSend(payload)
+
+        console.log(payload)
+    }
+
+    const placeOrder = (e) => [
+        axios.post('http://localhost:5001/api/addorder', dataSend)
+            .then(res => {
+                console.log(res)
+            })
+            .catch(err => {
+
+            })
+    ]
 
     return (
         <div>
@@ -50,24 +93,26 @@ const Payment = () => {
                 <DeliveryType
                     heading={"Same Day Delivery"}
                     date={hour >= 12 ? nextDay : sameDay}
+                    handleClick={handleClick}
                 />
                 <DeliveryType
                     heading={"2 Day"}
                     date={twoDay}
+                    handleClick={handleClick}
                 />
                 <DeliveryType
                     heading={"Standard Delivery"}
                     date={standard}
+                    handleClick={handleClick}
                 />
 
                 <div className='finalChekout'>
                     <Button
                         buttonType={"primary"}
-                        children={"Place Order"} />
+                        children={"Place Order"}
+                        onClick={placeOrder} />
                 </div>
             </div>
-
-
 
             <Footer />
         </div>

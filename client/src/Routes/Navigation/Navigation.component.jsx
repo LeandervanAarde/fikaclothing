@@ -10,6 +10,7 @@ import axios from 'axios';
 import Search from '../../Components/SearchBar/Search.component';
 import SearchItem from '../../Components/SearchItem/SearchItem.component';
 import SearchResults from '../../Components/SearchResults/SearchResults.component';
+import { useNavigate } from 'react-router-dom';
 
 const Navigation = () => {
     const { showCart, setShowCart } = useContext(CartContext);
@@ -17,12 +18,14 @@ const Navigation = () => {
     const [searchQuery, setSearchQuery] = useState("");
     const [searchItems, setSearchItems] = useState();
     const [data, setData] = useState()
+    const LoggedIn = sessionStorage.getItem('loggedIn')
+    const Role = + sessionStorage.getItem('Role')
+    const navigate = useNavigate();
 
     useEffect(() => {
         axios.get('http://localhost:5001/api/allproducts')
             .then(res => {
                 const data = res.data;
-                // console.log(res.data)
                 setData(data)
             })
             .catch(err => {
@@ -40,6 +43,11 @@ const Navigation = () => {
         } else {
             setShowSearch(false)
         }
+    }
+
+    const logout = () => {
+        navigate('/signIn')
+        sessionStorage.clear()
     }
     return (
         <>
@@ -64,9 +72,9 @@ const Navigation = () => {
                         <p className='nav-item'>Shop</p>
                     </Link>
 
-                    <Link to="/discounted" className='nav-link'>
+                    {/* <Link to="/discounted" className='nav-link'>
                         <p className='nav-item'> Discounted</p>
-                    </Link>
+                    </Link> */}
                 </div>
 
                 <div className='customer-details'>
@@ -74,13 +82,26 @@ const Navigation = () => {
                         <CartIcon />
                         <p className='nav-item'>Cart</p>
                     </div>
-                    <Link className='form-link nav-link' to="/Management">
-                        <p className='nav-item'>Admin</p>
-                    </Link>
 
-                    <Link className='form-link nav-link' to="/signIn">
-                        <p className='nav-item'>Login/ Register</p>
-                    </Link>
+                    {
+                        Role === 2001
+                            ?
+                            <Link className='form-link nav-link' to="/Management">
+                                <p className='nav-item'>Admin</p>
+                            </Link>
+                            :
+                            <></>
+                    }
+                    {
+                        LoggedIn ?
+                            <Link className='form-link nav-link' to="/signIn">
+                                <p className='nav-item' onClick={logout}>Logout</p>
+                            </Link>
+                            :
+                            <Link className='form-link nav-link' to="/signIn">
+                                <p className='nav-item'>Login/ Register</p>
+                            </Link>
+                    }
                     {
                         showCart && <CartDropDown />
                     }

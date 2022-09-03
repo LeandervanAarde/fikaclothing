@@ -14,7 +14,7 @@ const Filter = ({brand}) => {
 
     const rangeMap = Range.map((i, index) => (<>
         <input key={index} type={"radio"} name={`radio ${i}`} value={i} className="radio" checked={range == i} onChange={handlePriceChange} />
-        <label key={index +1} htmlFor={i} > {i}</label>
+        <label key={index +10} htmlFor={i} > {i}</label>
         <br />
     </>))
 

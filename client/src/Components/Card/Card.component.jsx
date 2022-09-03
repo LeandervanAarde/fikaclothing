@@ -9,7 +9,6 @@ import { RerenderContext } from '../../contexts/Rerenders.context';
 
 const Card = ({ id, name, discount, price, images }) => {
     const navigate = useNavigate();
-    const { addItemToCart } = useContext(CartContext)
     const { update, setUpdate } = useContext(RerenderContext);
 
     const viewItem = () => {
@@ -31,7 +30,6 @@ const Card = ({ id, name, discount, price, images }) => {
                     :
                     <h5 className='discount'>R{+price}</h5>
             }
-
             <div className='btn-container'>
                 <Button
                     buttonType={"primary"}

@@ -9,12 +9,11 @@ import { useContext } from 'react';
 
 const Checkout = () => {
     const navigate = useNavigate();
-    const { cartItems, total, addItemToCart,removeEntireItem  } = useContext(CartContext);
+    const { cartItems, total, addItemToCart, removeEntireItem } = useContext(CartContext);
+    const isLoggedIn = sessionStorage.getItem('loggedIn')
 
-    console.log(cartItems)
-
-    const goToPayment = () => {
-        navigate("/Payment")
+    const handleClick = () => {
+        isLoggedIn ? navigate("/Payment") : navigate("/signIn")
     }
 
     return (
@@ -52,18 +51,21 @@ const Checkout = () => {
                 </div>
                 {
                     cartItems.map((cartItem, index) => (
-                        <CartItem key={index} cartItems={cartItem}  />
-                    ),
-                    console.log(cartItems)
+                        <CartItem key={index} cartItems={cartItem} />
+                    )
                     )
                 }
                 <span className='total'>Total Price (ZAR): R {total ? total.price * total.quantity : total} </span>
                 {
-                    cartItems.length === 0 ? <p className='oops'>Oops! You forgot to add those sweet shoes! Add some and we'll get them to you! </p> : <Button
-                        buttonType={'primary'}
-                        children="Proceed to Checkout"
-                        onClick={goToPayment}
-                    />
+                    cartItems.length === 0
+                        ?
+                        <p className='oops'>Oops! You forgot to add those sweet shoes! Add some and we'll get them to you! </p>
+                        :
+                        <Button
+                            buttonType={'primary'}
+                            children="Proceed to Checkout"
+                            onClick = {handleClick}
+                        />
                 }
             </div>
 

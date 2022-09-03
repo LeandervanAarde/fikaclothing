@@ -1,0 +1,67 @@
+@import "../../StylesSource/variables.scss";
+
+.card-body {
+    width: 230px;
+    height: auto;
+    margin-bottom: 40px;
+    min-height: 290px;
+    background-color: $white;
+    display: inline-block;
+    justify-content: center;
+    padding-bottom: 10px;
+    @include dropShadow();
+    transition: 0.3s ease-in-out all;
+
+    img {
+        width: 100%;
+        height: 150px;
+        background-color: red;
+        object-fit: cover;
+    }
+
+    .product-name {
+        @include headingSix();
+        font-weight: 800;
+        text-transform: uppercase;
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    hr {
+        width: 70%;
+        border: 1px solid $black ;
+    }
+
+    .price,
+    .discount {
+        float: left;
+        margin-left: 20%;
+        @include body();
+        font-weight: 500;
+    }
+
+    .price {
+        color: $black;
+        font-weight: 700;
+        font-size: 18px;
+        margin-left: 15%;
+        margin-bottom: 5px;
+        margin-top: 10px;
+    }
+
+    .discount {
+        color: lighten($black, 40%);
+        width: 30%;
+        text-decoration: line-through;
+        text-decoration-color: $red;
+        text-decoration-thickness: 2.5px;
+        margin-top: 10px;
+
+
+        del {
+            color: $red;
+        }
+    }
+
+}

@@ -28,6 +28,7 @@ const ManagementCard = ({name, images, price, discount, stock, id, open, remove 
                     id={id}
                     onClick={open}
                 />
+            
 
             </div>
         </div>

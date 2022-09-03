@@ -6,7 +6,7 @@ import sliderImages from '../../MockImages/mockimages';
 const Slider = () => {
     const images = sliderImages;
     const [img, setImg] = useState(0);
-    const shoes = images.map(i => (i.shoe));
+    const shoes = images.map(i => (i.images));
     const heading = images.map(i => (i.title));
     const content = images.map(i => (i.content));
 

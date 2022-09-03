@@ -8,7 +8,7 @@ import AWS from "aws-sdk";
 import { RerenderContext } from '../../contexts/Rerenders.context';
 import axios from 'axios';
 
-
+const hello =''
 const defaultFormVals = {
     name: '',
     brand: '',
@@ -39,9 +39,6 @@ const AddItem = () => {
         const { name, value } = e.target
         setValues({ ...values, [name]: value })
     }
-
-    const hell0  = 0;
-
     const [images, setImages] = useState([]);
     const getImages = async (e) => {
         let imageFile = e.target.files

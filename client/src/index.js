@@ -7,13 +7,13 @@ import { CartProvider } from './contexts/CartDrop.context';
 import { RenderProvider } from './contexts/Rerenders.context';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <BrowserRouter>
-      <CartProvider>
-        <RenderProvider>
+  <BrowserRouter>
+    <CartProvider>
+      <RenderProvider>
         <App />
-        </RenderProvider>
-      </CartProvider>
-    </BrowserRouter>
+      </RenderProvider>
+    </CartProvider>
+  </BrowserRouter>
 );
 
 

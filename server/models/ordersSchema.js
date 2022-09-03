@@ -14,7 +14,10 @@ const orders = mongoose.Schema({
                 type: Date,
                 default: () => Date.now() + 4*24*60*60*1000
             },
-            orderStatus: String,
+            orderStatus: {
+                type: String,
+                default: "pending"
+            },
             products: [
                 {
                     shoe:{ type: mongoose.Schema.Types.ObjectId, ref: 'products' },
@@ -25,6 +28,9 @@ const orders = mongoose.Schema({
                     size: {
                         type: Number,
                         required: true
+                    },
+                    quantity:{
+                        type: Number
                     }
                 }
             ]

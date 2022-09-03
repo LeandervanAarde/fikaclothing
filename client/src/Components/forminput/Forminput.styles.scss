@@ -26,13 +26,13 @@
         margin-left: 5%;
         transition: 400ms ease all;
         position: relative;
+        @include body();
         
         &.shrink{
             @include shrinkLabel()
         }
         &:focus~.form-input-label {
             @include shrinkLabel();
-         
         }
     }
 }
