@@ -177,12 +177,7 @@ Wireframing was one of the most important aspects of this project, I wanted to c
 ![image8](https://drive.google.com/uc?export=view&id=1vKAs1lwSBQbaV_Wxx5T8lO3aFgWFiU4G)
 ![image9](https://drive.google.com/uc?export=view&id=1FtlZz4_vqHLaMjifonwUaHfShA7czli8)
 ![image10](https://drive.google.com/uc?export=view&id=1JyB1IyiGPcYHZyXKnvhh-WZuyorNXCh_)
-![image11](https://drive.google.com/uc?export=view&id=1Aa1FTHZWf5ffGEUbnjQI8mdDMPz8bDbH)
-![image12](https://drive.google.com/uc?export=view&id=1CPwXcHMQ7Xwqe1SFt0c6hdXTm-_mVbnT)
-![image13](https://drive.google.com/uc?export=view&id=1fHk5mGnY_sAoMhacngCnaZ0vX5G1wCDI)
-![image14](https://drive.google.com/uc?export=view&id=15mgZQBOy29ctHHEYFUOsMmQQedp0kWQU)
-![image15](https://drive.google.com/uc?export=view&id=1iiNGyK71MhuQM8FiKmVzJ5cJZAI2xild)
-![image16](https://drive.google.com/uc?export=view&id=1daEryyi_6hDgags3Unnw06tfjHslU29F)
+
 
 
 
