@@ -146,7 +146,7 @@ Looking for a specific product? Fika has a searchbar that allows users to search
 ### View your cart at any time!
 View all the items in your cart that you have bought! Cart will dynamically update everytime you add an item into it, this will clear once you have purchased, refreshed the application
 
-![image4](https://drive.google.com/uc?export=view&id=179PtitQiOw--XTjHwvjWnHSUn7ZrX4dD)
+![image3](https://drive.google.com/uc?export=view&id=1Y0L1dj2CV-1NOcrBL5Z2-uU_7vW-SSoG)
 
 ### Like what you see? view it and review it on the individual product page
 Fika has an individual product page that holds 4 images of each product so that users can view it from every angle, colours are also visually showcased along with the sizes, discount and it will show if the shoe is in stock or not. If you are not sure about the shoe, take a look at the reviews and decide for yourself :D. Users also have the opportunity to leave a review and view other shoes on the site
@@ -170,7 +170,7 @@ Throughout the conceptual process of this application , I had started taking mor
 
 ### Ideation
 
-![image7](https://drive.google.com/uc?export=view&id=1K4q_eWZJq-odCJlG3jd-ENfxlXb7omN_)
+![image7](https://drive.google.com/uc?export=view&id=1DyQ1Odspv3moaKG0TD8eC-hrzH0jjZea)
 ### Wireframes
 Wireframing was one of the most important aspects of this project, I wanted to create an application that was pleasing to the viewer and that functioned well. Wireframing was the most time consuming aspect of this project considering that I had also created designs for this project beforehand. 
 ![image6](https://drive.google.com/uc?export=view&id=1eVpD0UuiBSgq_hDE1oaZLEW4iznOIikz)
@@ -237,11 +237,18 @@ What aspects of this final build contribute to the `Above And Beyond` Component 
 
 ### Mockups
 
-![image10](https://drive.google.com/uc?export=view&id=1zhp2EjfmmWPeYJ1ug8vRv8NEBVu50XaH)
-![image11](https://drive.google.com/uc?export=view&id=1lWJwFo9amrM6M1hlhdouKXxl6RWEkE8a)
-![image12](https://drive.google.com/uc?export=view&id=179PtitQiOw--XTjHwvjWnHSUn7ZrX4dD)
-![image13](https://drive.google.com/uc?export=view&id=1AZRxRysJt9lKHe_fatdQWGNezd3PFrUv)
-![image14](https://drive.google.com/uc?export=view&id=1Jed5lxkq6HY8Pc-Y7tFW8hU9LxbHVj0a)
+![image10](https://drive.google.com/uc?export=view&id=1D2ma2-aVcSnSGjWGr7jR-s6f7K2yYVIG)
+
+
+![image11](https://drive.google.com/uc?export=view&id=1MgG8gj8d_mE2aF25ZkXNcijICEb0zWNM)
+
+![image12](https://drive.google.com/uc?export=view&id=1DyQ1Odspv3moaKG0TD8eC-hrzH0jjZea)
+
+![image13](https://drive.google.com/uc?export=view&id=1Y0L1dj2CV-1NOcrBL5Z2-uU_7vW-SSoG)
+
+![image14](https://drive.google.com/uc?export=view&id=1oXXHJ75UTolK1Fx_yzHC1fjD-p1j339l)
+
+
 1AZRxRysJt9lKHe_fatdQWGNezd3PFrUv
 <!-- VIDEO DEMONSTRATION -->
 ### Video Demonstration
@@ -270,7 +277,6 @@ Distributed under the MIT License. See `LICENSE` for more information.\
 ## Acknowledgements
 <!-- all resources that you used and Acknowledgements here -->
 * [Stack overflow](https://stackoverflow.com/)
-* [Chat App](https://www.fullstacklabs.co/blog/chat-application-react-express-socket-io)
 * [Images](https://www.nike.com/za/)
 * [Images](https://www.adidas.co.za/outlet?cm_mmc=AdieSEM_Google_Search-_-adidas_Brand_GSN_Exact_AWO-_-Brand-_-adidas_brand-_-dv:eCom-_-cn:adidas_Brand_GSN_Exact_AWO-_-pc:Google_Search&cm_mmc1=ZA&cm_mmc2=PPC-Multiple-brand-Multiple-BM-ZA-EMEA-eCom-Paid_Search&gclid=Cj0KCQjw08aYBhDlARIsAA_gb0fw39zkUktuakE1CdeBlNpQDyePBn8pLW94A1wBcFBMpJRJ9OzMshgaAuKuEALw_wcB&gclsrc=aw.ds)
 * [AWS](https://aws.amazon.com/free/?trk=73c6744c-29f5-4966-bdc7-8599174c182d&sc_channel=ps&s_kwcid=AL!4422!3!444219541634!e!!g!!aws&ef_id=Cj0KCQjw08aYBhDlARIsAA_gb0dnWqHWmnxuX0ZVFEOC_r6m2A0mZyKIQs8dfv0rhrp3zZW2lVW1QPUaAkS7EALw_wcB:G:s&s_kwcid=AL!4422!3!444219541634!e!!g!!aws)
