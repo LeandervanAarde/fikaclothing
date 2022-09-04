@@ -29,7 +29,7 @@ This project is an ecommerce web application where users can view, choose and bu
     <!--<p align="center"> Find the official website for the Center of Diabetes and Endocrinology : <a href="https://www.cdediabetes.co.za/"> here</a> </p> -->
    <br />
    <br />
-   <a href="path/to/demonstration/video">View Demo</a> 
+[View Demonstration](https://drive.google.com/uc?export=view&id=1cNGq8l3L4jkYujGfNEWfyXQMHyyK0_H3)
    <!-- INSERT UP UP -->
     ·
     <a href="https://github.com/LeandervanAarde/fikaclothing/issues">Report Bug</a>
@@ -253,7 +253,7 @@ What aspects of this final build contribute to the `Above And Beyond` Component 
 <!-- VIDEO DEMONSTRATION -->
 ### Video Demonstration
 To see a run through of the application, click below:
-[View Demonstration](https://drive.google.com/uc?export=view&id=15g0MauoJMrDld3alcVn1GhrlNraR1i_w)
+[View Demonstration](https://drive.google.com/uc?export=view&id=1cNGq8l3L4jkYujGfNEWfyXQMHyyK0_H3)
 
 See the [open issues](https://github.com/LeandervanAarde/cde-booking/issues) for a list of proposed features (and known issues).
 
