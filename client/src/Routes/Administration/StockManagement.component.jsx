@@ -52,7 +52,6 @@ const StockManagement = () => {
         })
     }
 
-
     useEffect(() => {
         axios.get('http://localhost:5001/api/allproducts')
             .then(res => {

@@ -1,12 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import OrderItem from '../OrderItem/OrderItem.component';
 import "./Orders.styles.scss";
+import { RerenderContext } from '../../contexts/Rerenders.context';
 import axios from 'axios';
 
 
 const Orders = () => {
     const [productData, setProductData] = useState();
     const [busy, setBusy] = useState(true)
+    const {update, setUpdate} = useContext(RerenderContext)
+
+
 
     useEffect(() => {
         axios.get('http://localhost:5001/api/allorders')
@@ -19,7 +23,9 @@ const Orders = () => {
             .catch(err => {
                 console.log(err)
             })
-    }, [])
+    }, [update])
+
+ 
 
     return (
         busy ?

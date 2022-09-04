@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { useParams } from 'react-router';
 import BackButton from '../../Components/BackButton/BackButton.component';
 import Footer from '../../Components/Footer/Footer.component';
 import "./OrderInformation.styles.scss"
 import axios from 'axios';
 import Button from '../../Components/Button/Button.component';
+import { useNavigate } from 'react-router';
+import { RerenderContext } from '../../contexts/Rerenders.context';
 import DispatchCard from "../../Components/DispatchCard/DispatchCard.component"
+
 let Arr = [];
 let extra =[];
 
@@ -18,6 +21,8 @@ const OrderInformation = () => {
     const [prodInfo, setProdInfo] = useState([]);
     const [finish, setFinish] = useState(false)
     const [cards,setCards] = useState()
+    const {update, setUpdate} = useContext(RerenderContext)
+    const navigate = useNavigate()
 
     useEffect(() => {
         axios.get(`http://localhost:5001/api/singleorder/${order.orderId}`)
@@ -55,6 +60,9 @@ const OrderInformation = () => {
                 console.log(err);
             });
 
+
+
+
         console.log(Arr)
         console.log(extra)
    
@@ -69,6 +77,23 @@ const OrderInformation = () => {
                 console.log(err);
             });
     }, []);
+
+    const dispatchOrder =(e) =>{
+        let id = e.target.id
+        console.log(id)
+        axios.delete(`http://localhost:5001/api/dispatchorder/${id}`)
+        .then(res => {
+            alert(`item has been dispatched`)
+            setUpdate(prevState => !prevState)
+            navigate('/Management')
+        })
+        .catch(err => {
+            console.log(err);
+        })
+        console.log(id)
+    }
+
+
 
     return (
         isBusy ?
@@ -128,6 +153,8 @@ const OrderInformation = () => {
                         <Button
                             buttonType={'primary'}
                             children={"Dispatch Order"}
+                            onClick={dispatchOrder}
+                            id={order.orderId}
                         />
                     </div>
 

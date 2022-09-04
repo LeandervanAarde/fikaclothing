@@ -24,6 +24,7 @@ const IndividualProduct = () => {
     const { addItemToCart, cartItems } = useContext(CartContext)
     const { update, setUpdate } = useContext(RerenderContext);
     const [orderInfo, setOrderInfo] = useState();
+    const [active, setActive] = useState(false)
 
     useEffect(() => {
         document.title = "View Product";
@@ -53,6 +54,7 @@ const IndividualProduct = () => {
 
     const getShoeColour = (e) => {
         setOrderInfo({ ...orderInfo, color: e.target.id })
+        setActive(true)
     }
 
     const addProduct = () => {
@@ -101,12 +103,12 @@ const IndividualProduct = () => {
                     </div>
                     <div className='color-box-container'>
                         {
-                            colors[0].map((c, index) => (<Colour key={index} color={c.color} handler={getShoeColour} />))
+                            colors[0].map((c, index) => (<Colour key={index} color={c.color} handler={getShoeColour}  />))
                         }
                     </div>
 
                     <div className='cart-button'>
-
+                
                         {
                             totalStock > 0 ?
                                 <Button
@@ -117,10 +119,9 @@ const IndividualProduct = () => {
                                 :
                                 <></>
                         }
-
                     </div>
-
                     <p className='not-sure'>Not sure? Try it on and return free of charge within 14 days</p>
+                    <br />
                     <h3 className='rev-heading'>Reviews</h3>
                     <ReviewContainer
                         children={thisReview}

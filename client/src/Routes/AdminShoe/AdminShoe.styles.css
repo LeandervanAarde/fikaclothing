@@ -39,25 +39,52 @@
   width: 100%;
 }
 
-.sectionOne, .section, .sectionTwo, .sectionThree {
-  min-height: 40vh;
-  width: 33.3%;
+.itemsContainer {
+  width: 100%;
+  height: auto;
+}
+
+.section {
+  width: 32.1%;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  margin-top: -10%;
   padding-top: 1%;
+  padding-left: 1%;
+  border-left: 2px solid black;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 20px;
 }
 
-.sectionOne, .section {
-  background-color: rgba(255, 166, 0, 0.295);
+.section h4 {
+  font-family: "Koulen", cursive;
+  font-size: 22px;
+  color: #000000;
 }
 
-.sectionThree {
-  background-color: blue;
+.section li {
+  list-style: none;
+  font-family: "Koulen", cursive;
+  font-size: 15px;
+  color: #000000;
+  margin-top: 10%;
 }
 
-.sectionTwo {
-  background-color: red;
+.section input {
+  width: 40%;
+  text-align: center;
+  background-color: transparent;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 3px solid #B32430;
+  outline: none;
+  margin-top: 6%;
+}
+
+.edsbutton {
+  width: 100%;
 }
 /*# sourceMappingURL=AdminShoe.styles.css.map */

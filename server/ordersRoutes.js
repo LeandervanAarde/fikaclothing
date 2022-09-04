@@ -29,5 +29,10 @@ orderRouter.get('/api/singleorder/:id', async(req, res) =>{
     return res.json(singleOrder);
 });
 
+orderRouter.delete("/api/dispatchorder/:id", async (req, res) => {
+    const deleteProduct = await orderSchema.deleteOne({ _id: req.params.id })
+    res.json(deleteProduct)
+})
+
 
 module.exports = orderRouter;
