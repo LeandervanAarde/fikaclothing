@@ -66,7 +66,7 @@ This project is an ecommerce web application where users can view, choose and bu
 <!--PROJECT DESCRIPTION-->
 ## About the Project
 <!-- header image of project -->
-![image1](https://drive.google.com/uc?export=view&id=1oXXHJ75UTolK1Fx_yzHC1fjD-p1j339l)
+
 <!-- https://drive.google.com/file/d/1oXXHJ75UTolK1Fx_yzHC1fjD-p1j339l/view?usp=sharing -->
 
 
@@ -130,7 +130,7 @@ Run the following in the command-line to install all the required dependencies:
 
 <!-- note how you can use your gitHub link. Just make a path to your assets folder -->
 
-![image2](https://drive.google.com/uc?export=view&id=1lWJwFo9amrM6M1hlhdouKXxl6RWEkE8a)
+![image2](https://drive.google.com/uc?export=view&id=1oXXHJ75UTolK1Fx_yzHC1fjD-p1j339l)
 
 ### See all the newest products and featured brands! 
 On the home page all users can see the 10 latest products that have been added onto the database, thus the "newest products". Underneath users will be able to view the Featured brands that Fika offers! 
