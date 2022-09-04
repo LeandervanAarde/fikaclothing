@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "ACSA,OAAO,CAAC,gLAAI;ADPZ,AAAA,iBAAiB,CAAA;EACb,KAAK,EAAE,GAAG;EAEV,YAAY,EAAE,EAAE;EAChB,aAAa,EAAE,EAAE;EACjB,UAAU,EAAE,GAAG;CAClB;;AAED,AAAA,cAAc,CAAA;EACV,KAAK,EAAE,GAAG;EACV,OAAO,EAAE,YAAY;EACrB,eAAe,EAAE,MAAM;EACvB,WAAW,EAAE,GAAG;EAChB,UAAU,EAAE,EAAE;EACd,aAAa,EAAE,EAAE;CACpB",
+    "sources": [
+        "ReviewContainer.styles.scss",
+        "../../StylesSource/variables.scss"
+    ],
+    "names": [],
+    "file": "ReviewContainer.styles.css"
+}

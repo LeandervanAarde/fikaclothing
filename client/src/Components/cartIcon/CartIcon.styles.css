@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Koulen&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+.cart-icon-container {
+  width: 45px;
+  height: 45px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+  float: left;
+}
+
+.cart-icon-container .shopping-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.cart-icon-container .item-count {
+  position: absolute;
+  font-size: 10px;
+  font-weight: bold;
+  bottom: 12px;
+  font-family: "Raleway", sans-serif;
+}
+/*# sourceMappingURL=CartIcon.styles.css.map */

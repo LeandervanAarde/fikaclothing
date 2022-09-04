@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Koulen&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+.button-con {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  height: 50px;
+  letter-spacing: 0.5px;
+  padding: 0 35px 0 35px;
+  line-height: 50px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.button-con.primary {
+  background-color: #B32430;
+  color: #F7F7F7;
+  font-weight: 800;
+  -webkit-transition: 300ms linear all;
+  transition: 300ms linear all;
+}
+
+.button-con.primary:hover {
+  background-color: #781820;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  font-size: 15px;
+}
+
+.button-con.google-btn {
+  background-color: #408CFF;
+  color: #F7F7F7;
+  font-weight: 800;
+  -webkit-transition: 300ms linear all;
+  transition: 300ms linear all;
+}
+
+.button-con.google-btn:hover {
+  background-color: #0063f8;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  font-size: 15px;
+}
+
+.button-con.secondary {
+  border: 3px solid #000000;
+  color: #000000;
+  font-weight: 800;
+  -webkit-transition: 300ms linear all;
+  transition: 300ms linear all;
+  padding: 0 35px 0 35px;
+}
+
+.button-con.secondary:hover {
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+  font-size: 15px;
+  color: white;
+  border: none;
+  background-color: #000000;
+}
+
+.button-con.extra {
+  background-color: #000000;
+  color: #F7F7F7;
+  font-weight: 800;
+  -webkit-transition: 300ms linear all;
+  transition: 300ms linear all;
+}
+
+.button-con.extra:hover {
+  background-color: transparent;
+  border: 4px solid #000000;
+  font-size: 15px;
+  color: #000000;
+}
+/*# sourceMappingURL=Button.styles.css.map */

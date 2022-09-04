@@ -16,20 +16,28 @@ const OrderInformation = () => {
     const [isBusy, setIsBusy] = useState(true);
     const [products, setProducts] = useState();
     const [prodInfo, setProdInfo] = useState([]);
+    const [finish, setFinish] = useState(false)
+    const [cards,setCards] = useState()
 
     useEffect(() => {
         axios.get(`http://localhost:5001/api/singleorder/${order.orderId}`)
             .then(res => {
                 let data = res.data;
-                console.log(data);
                 let order = data.orderInformation[0].products;
-                console.log(order)
                 setProducts(order);
+                setCurrOrder({
+                    orderDate: data.orderInformation[0].orderDate,
+                    deliveryDate: data.orderInformation[0].deliveryDate,
+                    status: data.orderInformation[0].orderStatus
+                })
+                setFinish(true)
                 let ex = data.orderInformation[0].products;
 
-               let tester =  ex.map(i => ([i.color, i.size]))
-                console.log(tester)
 
+
+               let tester =  ex.map(i => ({color:i.color, size: i.size, quantity: i.quantity }))
+                console.log(tester)
+                console.log(ex)
                 order.map(i => {
 
                     axios.get(`http://localhost:5001/api/individualproduct/${i.shoe}`)
@@ -37,7 +45,7 @@ const OrderInformation = () => {
 
                             let data2 = res.data;
                             Arr.push(data2)
-                            let shoes = Arr.map(shoe => (<DispatchCard key={shoe._id} id={shoe._id} name={shoe.name} discount={+ shoe.discount} price={shoe.price - shoe.discount} images={shoe.images[0]} />))
+                            let shoes = Arr.map(shoe => (<DispatchCard key={shoe._id} id={shoe._id} name={shoe.name} discount={+ shoe.discount} price={+shoe.price - +shoe.discount} images={shoe.images[0]} color ={tester.map((e) => (e.color))} qty={tester.map((e,index) => (e.quantity))} size={tester.map((e) => (e.size))} /> ))
                             // console.log(Arr)
                             setProdInfo(shoes)
                         })
@@ -49,7 +57,7 @@ const OrderInformation = () => {
 
         console.log(Arr)
         console.log(extra)
-
+   
         axios.get(`http://localhost:5001/api/getcustomer/${order.customerId}`)
             .then(res => {
                 let data = res.data;
@@ -61,8 +69,6 @@ const OrderInformation = () => {
                 console.log(err);
             });
     }, []);
-
-    console.log(prodInfo)
 
     return (
         isBusy ?
@@ -99,19 +105,24 @@ const OrderInformation = () => {
                         <p className='client-information'><strong>Country: </strong> {user.shippingAd.Country}</p>
                     </div>
 
-                    <div className='information-container'>
-                        <h4 className='Information-heading'>Order Information</h4>
-                        <p className='client-information'><strong>Order Date</strong> Name</p>
-                        <p className='client-information'><strong>Expected Delivery Date</strong> Name</p>
-                        <p className='client-information'><strong>Status</strong> Name</p>
-                    </div>
+                        {
+                            finish ? 
+                            <div className='information-container'>
+                            <h4 className='Information-heading'>Order Information</h4>
+                            <p className='client-information'><strong>Order Date</strong> {currOrder.orderDate}</p>
+                            <p className='client-information'><strong>Expected Delivery Date</strong> {currOrder.deliveryDate}</p>
+                            <p className='client-information'><strong>Status </strong> {currOrder.status}</p>
+                        </div>
+                        : 
+                        <>
+                        </>
+                        }
 
                     <div className='order-cards-container'>
                             {
                                 prodInfo
                             }
                     </div>
-
 
                     <div className='disp-button'>
                         <Button

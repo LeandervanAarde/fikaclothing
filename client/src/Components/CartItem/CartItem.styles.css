@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Koulen&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+.checkout-item-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 100px;
+  border-bottom: 1px solid darkgrey;
+  padding: 15px 0;
+  font-size: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.checkout-item-container .image-container {
+  width: 23%;
+  padding-right: 15px;
+  max-height: 150px;
+}
+
+.checkout-item-container .image-container img {
+  height: 100%;
+  max-height: 150px;
+}
+
+.checkout-item-container .name,
+.checkout-item-container .quantity,
+.checkout-item-container .price,
+.checkout-item-container .size {
+  width: 23%;
+}
+
+.checkout-item-container .color {
+  width: 7%;
+  aspect-ratio: 1/1;
+}
+
+.checkout-item-container .quantity {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center !important;
+}
+
+.checkout-item-container .quantity .arrow {
+  cursor: pointer;
+}
+
+.checkout-item-container .quantity .value {
+  margin: 0 10px;
+}
+
+.checkout-item-container .remove-button {
+  padding-left: 12px;
+  cursor: pointer;
+  margin-left: 13%;
+  margin-right: 2.5%;
+}
+/*# sourceMappingURL=CartItem.styles.css.map */

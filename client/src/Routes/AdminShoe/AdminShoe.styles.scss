@@ -38,14 +38,17 @@
 }
 
 
-.sectionOne, .sectionTwo, .sectionThree{
+.sectionOne,.section, .sectionTwo, .sectionThree{
     min-height: 40vh;
     width: 33.3%;
     display: inline-flex;
+    margin-top: -10%;
+    padding-top: 1%;
 
 }
-.sectionOne{
-    background-color: orange;
+.sectionOne, .section{
+    background-color: rgba(255, 166, 0, 0.295);
+    
 }
 
 .sectionThree{

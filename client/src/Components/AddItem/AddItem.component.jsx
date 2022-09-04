@@ -8,7 +8,7 @@ import AWS from "aws-sdk";
 import { RerenderContext } from '../../contexts/Rerenders.context';
 import axios from 'axios';
 
-const hello =''
+
 const defaultFormVals = {
     name: '',
     brand: '',

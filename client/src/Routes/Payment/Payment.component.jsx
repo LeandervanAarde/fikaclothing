@@ -57,19 +57,41 @@ const Payment = () => {
         }
 
         setDataSend(payload)
-
+        let test = payload.orderInformation[0].products.map((i) => i)
+        console.log(test)
         console.log(payload)
     }
 
-    const placeOrder = (e) => [
-        axios.post('http://localhost:5001/api/addorder', dataSend)
-            .then(res => {
-                console.log(res)
-            })
-            .catch(err => {
+    console.log(dataSend)
+    const placeOrder = async (e) => {
+        try {
+            const response = await axios.post('http://localhost:5001/api/addorder', dataSend);
+        } catch (e) {
+            console.log(e);
+        }
 
-            })
-    ]
+        try {
+            const products = dataSend.orderInformation[0].products;
+
+            // Promise.all(products).then(product => )
+            const requests = [];
+            const payload = [];
+            for (const product of products) {
+                requests.push(product.shoe);
+                payload.push(product);
+                // const res = await axios.patch(`http://localhost:5001/api/editquantity/${product.shoe}`, product);
+            }
+
+            await Promise.all(requests.map(async (request, i) => {
+                console.log(payload)
+                const response = await axios.patch(`http://localhost:5001/api/editquantity/${request}`, payload[i]);
+            }))
+
+        } catch (e) {
+            console.log(e)
+        }
+
+    }
 
     return (
         <div>

@@ -73,4 +73,9 @@ const products = mongoose.Schema({
     ]
 });
 
+// module.exports = products.methods.updateOrder = async function () {
+//     console.log(this);
+//     console.log(this.totalStock);
+// }
 module.exports = mongoose.model('products', products);
+

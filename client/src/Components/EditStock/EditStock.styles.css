@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Koulen&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+.backdrop {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.471);
+  position: fixed;
+  z-index: +999;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.backdrop .modal {
+  width: 60%;
+  height: 60vh;
+  background-color: white;
+  box-shadow: 7px 7px 20px -1px rgba(0, 0, 0, 0.11);
+  -webkit-box-shadow: 7px 7px 20px -1px rgba(0, 0, 0, 0.11);
+  -moz-box-shadow: 7px 7px 20px -1px rgba(0, 0, 0, 0.11);
+  -webkit-animation: modal 0.4s 1;
+          animation: modal 0.4s 1;
+}
+
+.backdrop .modal .prod-image {
+  width: 15%;
+  aspect-ratio: 1/1;
+  background-color: red;
+  position: absolute;
+  top: 5%;
+  left: 42%;
+  border-radius: 55%;
+  box-shadow: 7px 7px 20px -1px rgba(0, 0, 0, 0.11);
+  -webkit-box-shadow: 7px 7px 20px -1px rgba(0, 0, 0, 0.11);
+  -moz-box-shadow: 7px 7px 20px -1px rgba(0, 0, 0, 0.11);
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.backdrop .modal .header-text-stock {
+  font-family: "Koulen", cursive;
+  font-size: 28px;
+  color: #000000;
+  text-align: center;
+  margin-top: 13%;
+}
+
+.backdrop .modal .form-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.backdrop .modal .form-container .left-container,
+.backdrop .modal .form-container .right-container,
+.backdrop .modal .form-container .center-container {
+  width: 33.33%;
+}
+
+.backdrop .modal .buttons-con {
+  padding-left: 4%;
+  padding-right: 4%;
+  width: 92%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+/*# sourceMappingURL=EditStock.styles.css.map */

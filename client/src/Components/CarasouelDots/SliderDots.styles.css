@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Koulen&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+.dot {
+  height: 15px;
+  aspect-ratio: 1/1 !important;
+  background-color: #F7F7F7;
+  border-radius: 55%;
+  display: inline-block;
+  margin-left: 15px;
+  -webkit-transition: 0.5 ease all;
+  transition: 0.5 ease all;
+  cursor: pointer;
+}
+
+.active {
+  background-color: #B32430 !important;
+  margin-top: 3px;
+  height: 12px;
+  aspect-ratio: 1/1 !important;
+  border-radius: 55%;
+  display: inline-block;
+  margin-left: 20px;
+  -webkit-transition: 0.5 ease all;
+  transition: 0.5 ease all;
+}
+/*# sourceMappingURL=SliderDots.styles.css.map */

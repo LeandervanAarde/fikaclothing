@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Koulen&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+.form {
+  width: 100%;
+  height: 50%;
+}
+
+.form .exp-date-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.form .exp-date-container .exp {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: grey;
+  margin-right: 10px;
+  float: left;
+}
+
+.form .exp-date-container .select {
+  width: 22%;
+}
+
+.cvv {
+  width: 30%;
+  margin-left: 5%;
+  margin-top: 1%;
+  float: left;
+}
+
+.paymentOptions {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.paymentOptions .options {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  width: 60%;
+  margin-left: 10%;
+  margin-top: 15%;
+}
+
+.paymentOptions .straight {
+  margin-left: 15%;
+}
+
+.paymentOptions .straight, .paymentOptions .budget {
+  max-height: 20px;
+  width: 30%;
+  border: 2px solid #B32430;
+  padding: 3%;
+  text-align: center;
+  margin-right: 20px;
+  margin-top: 10%;
+  -webkit-transition: 0.4s ease all;
+  transition: 0.4s ease all;
+  cursor: pointer;
+}
+
+.paymentOptions .straight span, .paymentOptions .budget span {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+.paymentOptions .straight:hover, .paymentOptions .budget:hover {
+  background-color: #B32430;
+  color: #F7F7F7;
+  font-weight: 400;
+}
+/*# sourceMappingURL=PaymentForm.styles.css.map */

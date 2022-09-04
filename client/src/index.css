@@ -1,0 +1,16 @@
+body {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+#root {
+  background-color: #f7f7f7;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+/*# sourceMappingURL=index.css.map */

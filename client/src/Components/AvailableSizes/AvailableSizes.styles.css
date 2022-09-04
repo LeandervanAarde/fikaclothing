@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Koulen&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+.size-container {
+  height: 100%;
+  aspect-ratio: 1/1;
+  background-color: transparent;
+  display: inline-block;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-right: 3%;
+  border: 2px solid #000000;
+}
+
+.size-container .Size {
+  font-family: "Koulen", cursive;
+  font-size: 22px;
+  color: #000000;
+  text-align: center;
+  margin-top: 25%;
+}
+
+.size-container:hover {
+  background-color: #B32430;
+  border: none;
+  cursor: pointer;
+}
+
+.size-container:hover .Size {
+  color: white;
+}
+
+.sizeActive {
+  height: 100%;
+  aspect-ratio: 1/1;
+  background-color: #B32430;
+  display: inline-block;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-right: 3%;
+  border: none;
+}
+
+.sizeActive .Size {
+  font-family: "Koulen", cursive;
+  font-size: 22px;
+  color: #000000;
+  color: white;
+  text-align: center;
+  margin-top: 25%;
+}
+/*# sourceMappingURL=AvailableSizes.styles.css.map */

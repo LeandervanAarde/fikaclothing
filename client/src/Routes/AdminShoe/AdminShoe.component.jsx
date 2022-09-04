@@ -7,6 +7,7 @@ import axios from 'axios'
 import { RerenderContext } from '../../contexts/Rerenders.context';
 import { useState } from 'react';
 import BackButton from '../../Components/BackButton/BackButton.component';
+import FormInput from '../../Components/forminput/FormInput.component';
 
 const AdminShoe = () => {
     const product = useParams();
@@ -22,12 +23,18 @@ const AdminShoe = () => {
                 setImage(data.images[1])
                 setData(data)
                 setBusy(false)
+                const stock = data.availableStock.map((i) => i.variations.map((e) => i))
 
+                console.log(stock)
+    console.log(data.availableStock)
+    console.log(data)
             })
             .catch(err => {
                 console.log(err)
             })
     }, [update]);
+
+
 
     return (
         busy ?
@@ -41,7 +48,18 @@ const AdminShoe = () => {
         <BackButton/>
         <h2>{data.brand +" "+data.name}</h2>
         </div>
-        <div className='sectionOne'></div>
+        <div className='section'>
+            <FormInput
+                label={"password"}
+                value={"email"}
+                type="email"
+                name="email"
+                required={true}
+                onChange={"handleChange"}
+                placeholder={"eg. john@gmail.com"}
+            />
+
+        </div>
         <div className='sectionTwo'></div>
         <div className='sectionThree'></div>
 
