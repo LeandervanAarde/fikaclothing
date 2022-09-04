@@ -67,6 +67,7 @@ This project is an ecommerce web application where users can view, choose and bu
 ## About the Project
 <!-- header image of project -->
 ![image1](https://drive.google.com/uc?export=view&id=1oXXHJ75UTolK1Fx_yzHC1fjD-p1j339l)
+<!-- https://drive.google.com/file/d/1oXXHJ75UTolK1Fx_yzHC1fjD-p1j339l/view?usp=sharing -->
 
 
 ### Project Description
