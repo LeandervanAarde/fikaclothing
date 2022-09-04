@@ -8,6 +8,7 @@ import DeliveryType from '../../Components/DeliveryTypes/DeliveryType.component'
 import Button from '../../Components/Button/Button.component';
 import { CartContext } from '../../contexts/CartDrop.context';
 import axios from 'axios'
+import { useNavigate } from 'react-router';
 // import { useState } from 'react';
 // const initialValues ={
 //     deliveryOptions : '',
@@ -23,14 +24,17 @@ const Payment = () => {
     const twoDay = current_datetime.getDate() + 2 + " " + mL[current_datetime.getMonth()] + " " + current_datetime.getFullYear()
     const standard = current_datetime.getDate() + 4 + " " + mL[current_datetime.getMonth()] + " " + current_datetime.getFullYear()
     const hour = current_datetime.getHours();
-    const { cartItems } = useContext(CartContext)
+    const { cartItems, clear } = useContext(CartContext)
     const [finalItems, setFinalItems] = useState()
     const [deliveryDate, setDeliveryDate] = useState()
     const [dataSend, setDataSend] = useState()
     const customer = sessionStorage.getItem('user')
+    const navigate = useNavigate()
+    const [ordered, setOrdered] = useState(false)
 
 
     useEffect(() => {
+   
         const items = cartItems.map((i) => (
             {
                 shoe: i._id,
@@ -55,6 +59,7 @@ const Payment = () => {
                 }
             ]
         }
+        setOrdered(true)
 
         setDataSend(payload)
         let test = payload.orderInformation[0].products.map((i) => i)
@@ -85,13 +90,23 @@ const Payment = () => {
             await Promise.all(requests.map(async (request, i) => {
                 console.log(payload)
                 const response = await axios.patch(`http://localhost:5001/api/editquantity/${request}`, payload[i]);
-            }))
+                clear(cartItems)
+               
+                
 
+            }))
+    
         } catch (e) {
             console.log(e)
         }
-
+      
     }
+
+    const goBack = (e) =>{
+        navigate("/")
+    }
+
+
 
     return (
         <div>
@@ -129,10 +144,18 @@ const Payment = () => {
                 />
 
                 <div className='finalChekout'>
-                    <Button
+                    {
+                        ordered ?
+                        <Button
                         buttonType={"primary"}
                         children={"Place Order"}
                         onClick={placeOrder} />
+                        :
+                        <Button
+                        buttonType={"extra"}
+                        children={"Browse more"}
+                        onClick={goBack} />
+                    }
                 </div>
             </div>
 

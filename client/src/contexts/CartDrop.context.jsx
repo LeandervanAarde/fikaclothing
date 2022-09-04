@@ -27,6 +27,10 @@ const clearCartItem = (cartItems, productToRemove) => {
     return (cartItems.filter(cartItem => cartItem._id !== productToRemove._id));
 }
 
+const clearCart = (cartItems) => {
+    return (cartItems.splice(0,cartItems.length))
+}
+
 export const CartContext = createContext({
     showCart: false,
     setOpenCart: () => { },
@@ -35,7 +39,8 @@ export const CartContext = createContext({
     cartCount: 0,
     total: 0,
     removeItemFromCart: () => { },
-    removeEntireItem: () => { }
+    removeEntireItem: () => { },
+    clear: () => { }
 });
 
 export const cartActionTypes = {
@@ -97,6 +102,11 @@ export const CartProvider = ({ children }) => {
         updateCartReducer(newCartItems)
     }
 
+    const clear = () =>{
+        const newCartItems = clearCart(cartItems);
+        updateCartReducer(newCartItems)
+    }
+
     const val = {
         showCart,
         cartItems,
@@ -106,6 +116,7 @@ export const CartProvider = ({ children }) => {
         total,
         removeItemFromCart,
         removeEntireItem,
+        clear
     }
 
     return (

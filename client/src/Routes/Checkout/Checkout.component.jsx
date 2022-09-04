@@ -16,6 +16,8 @@ const Checkout = () => {
         isLoggedIn ? navigate("/Payment") : navigate("/signIn")
     }
 
+    const newCart = cartItems.map(i => ({price:i.price, quantity: i.quantity, final:i.price * i.quantity }));
+        console.log()
     return (
         <>
             <h1 className='heading'>Checkout</h1>
@@ -55,7 +57,7 @@ const Checkout = () => {
                     )
                     )
                 }
-                <span className='total'>Total Price (ZAR): R {total ? total.price * total.quantity : total} </span>
+                <span className='total'>Total Price (ZAR): R {cartItems.length > 0 ? newCart.map(i => i.final).reduce((prev,curr,index)=>{return prev+curr },0) : cartItems.price * cartItems.quantity} </span>
                 {
                     cartItems.length === 0
                         ?
