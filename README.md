@@ -132,6 +132,7 @@ Run the following in the command-line to install all the required dependencies:
 
 ![image2](https://drive.google.com/uc?export=view&id=1oXXHJ75UTolK1Fx_yzHC1fjD-p1j339l)
 
+
 ### See all the newest products and featured brands! 
 On the home page all users can see the 10 latest products that have been added onto the database, thus the "newest products". Underneath users will be able to view the Featured brands that Fika offers! 
 
