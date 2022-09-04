@@ -63,8 +63,6 @@ const Payment = () => {
 
         setDataSend(payload)
         let test = payload.orderInformation[0].products.map((i) => i)
-        console.log(test)
-        console.log(payload)
     }
 
     console.log(dataSend)
