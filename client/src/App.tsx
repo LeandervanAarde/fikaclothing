@@ -1,7 +1,8 @@
 import React from 'react';
 import './App.scss';
-import ResponsiveAppBar from './Routes/Navigation/Navigation.mui';
-import Navigation from './Routes/Navigation/Navigation.component';
+import { RouterProvider } from 'react-router-dom';
+import { router } from './Routes/router/router';
+
 // import { Link, Route, Routes, Switch } from "react-router-dom";
 // import Navigation from './Routes/Navigation/Navigation.component';
 // import Home from './Routes/Home/Home.component';
@@ -17,14 +18,11 @@ import Navigation from './Routes/Navigation/Navigation.component';
 
 const App = () => {
   return (
-      <>
-        <ResponsiveAppBar/>
-      </>
+    <RouterProvider router={router}/>
   );
 };
 
 export default App;
-
 
     // <Routes>
     //     <Route path="/" element={<Navigation/>}>
