@@ -1,18 +1,14 @@
 import { Box, Container } from "@mui/material";
 import React from "react";
 import { globalColors } from "../../StylesSource/styles";
-import {
-  IFooterInformation,
-  ISocials,
-  ISupport,
-} from "../../interfaces/Structure";
+import { FooterInformation } from "../../interfaces/Structure";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import { Facebook } from "@mui/icons-material";
 import XIcon from "@mui/icons-material/X";
 import { ReactComponent as StoreLogo } from "../../Assets/Logo.svg";
 type Props = {};
 
-const socials: ISocials[] = [
+const socials: FooterInformation[] = [
   {
     platform: "Instagram",
     handle: "@Fika_clothing",
@@ -30,7 +26,7 @@ const socials: ISocials[] = [
   },
 ];
 
-const SupportOptions: ISupport[] = [
+const SupportOptions: FooterInformation[] = [
   {
     location: "Help Centre",
     link: "",
@@ -59,15 +55,12 @@ export default function Footer({}: Props) {
         backgroundColor: globalColors.black,
       }}
     >
-
-      
-
       <Box
         width={100}
         height={"100%"}
         sx={{
           display: { xs: "none", md: "flex" },
-        //   backgroundColor: 'red'
+          //   backgroundColor: 'red'
         }}
         alignContent={"center"}
       >

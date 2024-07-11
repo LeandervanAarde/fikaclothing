@@ -13,6 +13,8 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { globalColors, globalFonts } from "../../StylesSource/styles";
 import { ReactComponent as StoreLogo } from "../../Assets/Logo.svg";
+import { subRoutes } from "../../Routes/router/router";
+import { Link } from "react-router-dom";
 
 const pages = ["Home", "Store"];
 const settings = ["Cart", "Account", "Logout"];
@@ -93,9 +95,9 @@ function MainNavigation() {
                   display: { xs: "block", md: "none" },
                 }}
               >
-                {pages.map((page) => (
-                  <MenuItem key={page} onClick={handleNavMenu}>
-                    <Typography textAlign="center">{page}</Typography>
+                {subRoutes[0].children.map((page) => (
+                  <MenuItem key={page.path} onClick={handleNavMenu}>
+                    <Link style={{color: globalColors.black}} to={page.path}>{page.name}</Link>
                   </MenuItem>
                 ))}
               </Menu>
@@ -113,18 +115,22 @@ function MainNavigation() {
               <StoreLogo />
             </Box>
             <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-              {pages.map((page) => (
+              {subRoutes[0].children.map((page) => (
                 <Button
-                  key={page}
+                  key={page.name}
                   onClick={handleNavMenu}
                   sx={{ my: 2, color: "white", display: "block" }}
                 >
-                  {page}
+                  <Link style={{color: globalColors.white}} to={page.path}>{page.name}</Link>
                 </Button>
               ))}
             </Box>
 
-            <Box sx={{ flexGrow: 0 }}>
+            <Box sx={{ flexGrow: 0 , gap: 2}}>
+              <Button variant="contained" sx={{mr: 2, backgroundColor: globalColors.red,}}>
+                Log in
+              </Button>
+
               <Tooltip title="Open settings">
                 <IconButton onClick={handleUserMenu} sx={{ p: 0 }}>
                   <Avatar />

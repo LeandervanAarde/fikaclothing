@@ -3,6 +3,7 @@ import { Container, Box, Typography } from "@mui/material";
 import headerImage from "../../Assets/header_image.jpeg";
 import { ReactComponent as StoreLogo } from "../../Assets/Logo.svg";
 import { globalColors, globalFonts } from "../../StylesSource/styles";
+import ProductCard from "../../Components/Card/Card.mui";
 
 type Props = {};
 
@@ -28,28 +29,124 @@ const logoContainerStyles: React.CSSProperties = {
 
 export default function Home({}: Props) {
   return (
-    <Container
-      maxWidth="xl"
-      sx={{
-        height: "60vh",
-        padding: { xs: 0, md: 0, lg: 0 },
-        position: "relative",
-      }}
-    >
-      <Box
+    <>
+      <Container
+        maxWidth="xl"
         sx={{
-          ...logoContainerStyles,
+          height: "60vh",
+          padding: { xs: 0, md: 0, lg: 0 },
+          position: "relative",
         }}
       >
-        <StoreLogo width={75} height={75} />
-        <Typography
-          variant="body1"
-          sx={{ fontFamily: globalFonts.body, color: globalColors.black }}
+        <Box
+          sx={{
+            ...logoContainerStyles,
+          }}
         >
-          Where Sneakers come alive
+          <StoreLogo width={75} height={75} />
+          <Typography
+            variant="body1"
+            sx={{ fontFamily: globalFonts.body, color: globalColors.black }}
+          >
+            Where Sneakers come alive
+          </Typography>
+        </Box>
+        <img
+          src={headerImage}
+          alt="Nike Air Jordan"
+          style={headerImageStyles}
+        />
+      </Container>
+
+      <Container
+        maxWidth="xl"
+        sx={{
+          padding: { xs: 0, md: 2, lg: 2 },
+          display: "flex",
+          flexDirection: 'row',
+          justifyContent: "center",
+          flexWrap: "wrap",
+          gap: 2,
+        }}
+      >
+        <Typography variant="h4" fontFamily={globalFonts.body}>
+          Featured Products
         </Typography>
-      </Box>
-      <img src={headerImage} alt="Nike Air Jordan" style={headerImageStyles} />
-    </Container>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            flexWrap: "wrap",
+            gap: 2,
+          }}
+        >
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+        </Box>
+      </Container>
+
+      <Container
+        maxWidth="xl"
+        sx={{
+          padding: { xs: 0, md: 2, lg: 2 },
+          display: "flex",
+          flexDirection: 'row',
+          justifyContent: "center",
+          flexWrap: "wrap",
+          gap: 2,
+        }}
+      >
+        <Typography variant="h4" fontFamily={globalFonts.body}>
+        FeaturedBrandOne
+        </Typography>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            flexWrap: "wrap",
+            gap: 2,
+          }}
+        >
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+        </Box>
+      </Container>
+
+      <Container
+        maxWidth="xl"
+        sx={{
+          padding: { xs: 0, md: 2, lg: 2 },
+          display: "flex",
+          flexDirection: 'row',
+          justifyContent: "center",
+          flexWrap: "wrap",
+          gap: 2,
+        }}
+      >
+        <Typography variant="h4" fontFamily={globalFonts.body}>
+          FeaturedBrandOne
+        </Typography>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            flexWrap: "wrap",
+            gap: 2,
+          }}
+        >
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+        </Box>
+      </Container>
+    </>
   );
 }

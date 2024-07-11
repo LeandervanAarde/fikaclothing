@@ -9,10 +9,12 @@ export default function Page() {
   return (
     <>
       <Paper
+     
         sx={{
           backgroundColor: globalColors.white,
           minHeight: "85vh",
-          padding: 0,
+          padding: {sm: 0, m: 0, lg: 0, xl: 0},
+           maxWidth:'100%',
         }}
       >
         <MainNavigation />

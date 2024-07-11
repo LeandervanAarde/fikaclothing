@@ -24,17 +24,14 @@ const App = () => {
 
 export default App;
 
-    // <Routes>
-    //     <Route path="/" element={<Navigation/>}>
-    //           <Route index element={<Home/>}></Route>
-    //           <Route path="/signIn" element={<Login/>} />
-    //           <Route path="/Register" element={<Register/>}/>
-    //           <Route path='/Shop/*' element={<Shop/>}></Route>
-    //           <Route path={`Shop/Product/:productName/:productId`}element={<IndividualProduct/>}/>
-    //           <Route path='/Checkout/*' element={<Checkout/>}/>
-    //           <Route path='/Payment' element={<Payment/>}></Route>
-    //           <Route path='/Management' element={<StockManagement/>}/>
-    //           <Route path='/Management/Order/:orderId/:customerId' element={<OrderInformation/>}/>
-    //           <Route path='/Management/Product/:productName/:productId' element={<AdminShoe/>}/>
-    //     </Route>
-    // </Routes>
+// Routes, 
+
+// sign in -> To Dialog
+// Register -> Route
+// Shop
+// Shop -> Product
+// Checkout
+// Confirmation of details
+
+// ADmin pages
+// orders, manage products, manage specials etc.
