@@ -20,7 +20,7 @@ const Navigation = () => {
     const [data, setData] = useState()
     const LoggedIn = sessionStorage.getItem('loggedIn')
     const Role = + sessionStorage.getItem('Role')
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
     useEffect(() => {
         axios.get('http://localhost:5001/api/allproducts')
@@ -46,17 +46,17 @@ const Navigation = () => {
     }
 
     const logout = () => {
-        navigate('/signIn')
+        // navigate('/signIn')
         sessionStorage.clear()
     }
     return (
         <>
             <div className="navigation">
-                <Link className='logo-container' to="/">
+                {/* <Link className='logo-container' to="/"> */}
                     <div className='logo'>
                         <StoreLogo />
                     </div>
-                </Link>
+                {/* </Link> */}
                 <div className='nav-links-container'>
                     <Search handleSearch={handleSearch} />
                     {
@@ -64,13 +64,13 @@ const Navigation = () => {
                             children={searchItems}
                         />
                     }
-                    <Link to="/" className='nav-link'>
+                    {/* <Link to="/" className='nav-link'> */}
                         <p className='nav-item'>Home</p>
-                    </Link>
+                    {/* </Link> */}
 
-                    <Link to="/Shop" className='nav-link'>
+                    {/* <Link to="/Shop" className='nav-link'> */}
                         <p className='nav-item'>Shop</p>
-                    </Link>
+                    {/* </Link> */}
 
                     {/* <Link to="/discounted" className='nav-link'>
                         <p className='nav-item'> Discounted</p>
@@ -86,28 +86,28 @@ const Navigation = () => {
                     {
                         Role === 2001
                             ?
-                            <Link className='form-link nav-link' to="/Management">
+                            // <Link className='form-link nav-link' to="/Management">
                                 <p className='nav-item'>Admin</p>
-                            </Link>
+                            // </Link> 
                             :
                             <></>
                     }
                     {
                         LoggedIn ?
-                            <Link className='form-link nav-link' to="/signIn">
+                            // <Link className='form-link nav-link' to="/signIn">
                                 <p className='nav-item' onClick={logout}>Logout</p>
-                            </Link>
+                            // </Link> 
                             :
-                            <Link className='form-link nav-link' to="/signIn">
+                            // <Link className='form-link nav-link' to="/signIn"></Link>
                                 <p className='nav-item'>Login/ Register</p>
-                            </Link>
+                            // </Link> 
                     }
-                    {
+                    {/* {
                         showCart && <CartDropDown />
-                    }
+                    } */}
                 </div>
             </div>
-            <Outlet />
+            {/* <Outlet /> */}
         </>
     );
 };
