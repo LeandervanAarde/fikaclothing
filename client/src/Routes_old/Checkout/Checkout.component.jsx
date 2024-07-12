@@ -1,8 +1,8 @@
 import React from 'react';
 import "./Checkout.styles.scss";
-import Footer from "../../Components/Footer/Footer.component"
-import CartItem from '../../Components/CartItem/CartItem.component';
-import Button from '../../Components/Button/Button.component';
+import Footer from "../../components/Footer/Footer.component"
+import CartItem from '../../Components_old/CartItem/CartItem.component';
+import Button from '../../Components_old/Button/Button.component';
 import { useNavigate } from 'react-router';
 import { CartContext } from '../../contexts/CartDrop.context';
 import { useContext } from 'react';

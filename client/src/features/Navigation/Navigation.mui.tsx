@@ -1,22 +1,25 @@
 import React, { useState } from "react";
 import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import Menu from "@mui/material/Menu";
+
+import {
+  Box,
+  Toolbar,
+  IconButton,
+  Typography,
+  Menu,
+  Container,
+  Avatar,
+  Button,
+  Tooltip,
+  MenuItem,
+} from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
-import Tooltip from "@mui/material/Tooltip";
-import MenuItem from "@mui/material/MenuItem";
 import { globalColors, globalFonts } from "../../StylesSource/styles";
 import { ReactComponent as StoreLogo } from "../../Assets/Logo.svg";
-import { subRoutes } from "../../Routes/router/router";
+import { subRoutes } from "../../routes/router/router";
 import { Link } from "react-router-dom";
+import Login from "../Login/Login.mui";
 
-const pages = ["Home", "Store"];
 const settings = ["Cart", "Account", "Logout"];
 
 function MainNavigation() {
@@ -40,16 +43,18 @@ function MainNavigation() {
       >
         <Container maxWidth="xl">
           <Toolbar disableGutters>
-            <Box
-              width={75}
-              height={75}
-              sx={{
-                display: { xs: "none", md: "flex" },
-              }}
-              alignContent={"center"}
-            >
-              <StoreLogo />
-            </Box>
+            <Link to={"/"}>
+              <Box
+                width={75}
+                height={75}
+                sx={{
+                  display: { xs: "none", md: "flex" },
+                }}
+                alignContent={"center"}
+              >
+                <StoreLogo />
+              </Box>
+            </Link>
             <Typography
               variant="h6"
               noWrap
@@ -95,11 +100,20 @@ function MainNavigation() {
                   display: { xs: "block", md: "none" },
                 }}
               >
-                {subRoutes[0].children.map((page) => (
-                  <MenuItem key={page.path} onClick={handleNavMenu}>
-                    <Link style={{color: globalColors.black}} to={page.path}>{page.name}</Link>
-                  </MenuItem>
-                ))}
+                {subRoutes[0].children.map((page) => {
+                  if (page.shouldShow) {
+                    return (
+                      <Link
+                        key={page.path}
+                        style={{ color: globalColors.black }}
+                        to={page.path}
+                      >
+                        <MenuItem>{page.name}</MenuItem>
+                      </Link>
+                    );
+                  }
+                  return null;
+                })}
               </Menu>
             </Box>
             <Box
@@ -115,21 +129,33 @@ function MainNavigation() {
               <StoreLogo />
             </Box>
             <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-              {subRoutes[0].children.map((page) => (
-                <Button
-                  key={page.name}
-                  onClick={handleNavMenu}
-                  sx={{ my: 2, color: "white", display: "block" }}
-                >
-                  <Link style={{color: globalColors.white}} to={page.path}>{page.name}</Link>
-                </Button>
-              ))}
+              {subRoutes[0].children.map((page) => {
+                if(page.shouldShow){
+                  return (
+                    <Link style={{ color: globalColors.white }} to={page.path}>
+                  <Button
+                    key={page.name}
+                    // onClick={handleNavMenu}
+                    sx={{ my: 2, color: "white", display: "block" }}
+                  >
+                    {page.name}
+                  </Button>
+                </Link>
+                  )
+                } else{
+                  return;
+                }
+              })}
             </Box>
 
-            <Box sx={{ flexGrow: 0 , gap: 2}}>
-              <Button variant="contained" sx={{mr: 2, backgroundColor: globalColors.red,}}>
+            <Box sx={{ flexGrow: 0, gap: 2 }}>
+              {/* <Button
+                variant="contained"
+                sx={{ mr: 2, backgroundColor: globalColors.red }}
+              >
                 Log in
-              </Button>
+              </Button> */}
+              <Login />
 
               <Tooltip title="Open settings">
                 <IconButton onClick={handleUserMenu} sx={{ p: 0 }}>

@@ -1,7 +1,7 @@
 import React from 'react';
 import "./AllProducts.styles.scss";
 import DropDownFilter from '../DropDownFilter/DropDownFilter.component';
-import Card from '../Card/Card.component';
+import Card from '../../components/Card/Card.component';
 // import MockStock from "../../MockImages/MockStock.json";
 import { useState } from 'react';
 import { useEffect } from 'react';

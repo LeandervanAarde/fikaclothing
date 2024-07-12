@@ -1,13 +1,13 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { useParams } from 'react-router';
-import BackButton from '../../Components/BackButton/BackButton.component';
-import Footer from '../../Components/Footer/Footer.component';
+import BackButton from '../../Components_old/BackButton/BackButton.component';
+import Footer from '../../components/Footer/Footer.component';
 import "./OrderInformation.styles.scss"
 import axios from 'axios';
-import Button from '../../Components/Button/Button.component';
+import Button from '../../Components_old/Button/Button.component';
 import { useNavigate } from 'react-router';
 import { RerenderContext } from '../../contexts/Rerenders.context';
-import DispatchCard from "../../Components/DispatchCard/DispatchCard.component"
+import DispatchCard from "../../Components_old/DispatchCard/DispatchCard.component"
 
 let Arr = [];
 let extra =[];

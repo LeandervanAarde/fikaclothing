@@ -1,20 +1,14 @@
 import React from "react";
-import { Container, Box, Typography } from "@mui/material";
+import { Container, Box, Typography, Grid } from "@mui/material";
 import headerImage from "../../Assets/header_image.jpeg";
 import { ReactComponent as StoreLogo } from "../../Assets/Logo.svg";
 import { globalColors, globalFonts } from "../../StylesSource/styles";
-import ProductCard from "../../Components/Card/Card.mui";
+import ProductCard from "../../components/Card/Card.mui";
+import { containerStyles, headerImageStyles } from "./styles.mui";
+import CardGrid from "../../components/CardGrid/CardGrid.mui";
+import Login from "../../features/Login/Login.mui";
 
 type Props = {};
-
-const headerImageStyles: React.CSSProperties = {
-  width: "100%",
-  height: "100%",
-  padding: "0",
-  objectFit: "cover",
-  objectPosition: "0 -30vh",
-  position: "relative", // Ensure the container is relative for absolute positioning inside it
-};
 
 const logoContainerStyles: React.CSSProperties = {
   position: "absolute",
@@ -26,16 +20,14 @@ const logoContainerStyles: React.CSSProperties = {
   transform: "translate(-10%, -1%)",
   zIndex: "1",
 };
-
-export default function Home({}: Props) {
+export default function Home() {
   return (
     <>
       <Container
-        maxWidth="xl"
+        maxWidth={false}
         sx={{
-          height: "60vh",
           padding: { xs: 0, md: 0, lg: 0 },
-          position: "relative",
+          ...containerStyles,
         }}
       >
         <Box
@@ -58,95 +50,29 @@ export default function Home({}: Props) {
         />
       </Container>
 
-      <Container
-        maxWidth="xl"
-        sx={{
-          padding: { xs: 0, md: 2, lg: 2 },
-          display: "flex",
-          flexDirection: 'row',
-          justifyContent: "center",
-          flexWrap: "wrap",
-          gap: 2,
-        }}
-      >
-        <Typography variant="h4" fontFamily={globalFonts.body}>
-          Featured Products
-        </Typography>
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            flexWrap: "wrap",
-            gap: 2,
-          }}
-        >
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-        </Box>
-      </Container>
+      <CardGrid heading="Feature Brand">
+        {[1, 2, 3, 4, 5].map((item) => (
+          <Grid item xs={11} sm={5} md={4} lg={2.4} xl={2.4}>
+            <ProductCard /> {/* Assuming item contains necessary props */}
+          </Grid>
+        ))}
+      </CardGrid>
 
-      <Container
-        maxWidth="xl"
-        sx={{
-          padding: { xs: 0, md: 2, lg: 2 },
-          display: "flex",
-          flexDirection: 'row',
-          justifyContent: "center",
-          flexWrap: "wrap",
-          gap: 2,
-        }}
-      >
-        <Typography variant="h4" fontFamily={globalFonts.body}>
-        FeaturedBrandOne
-        </Typography>
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            flexWrap: "wrap",
-            gap: 2,
-          }}
-        >
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-        </Box>
-      </Container>
+      <CardGrid heading="Feature Brand">
+        {[1, 2, 3, 4, 5].map((item) => (
+          <Grid item xs={11} sm={5} md={4} lg={2.4} xl={2.4}>
+            <ProductCard /> {/* Assuming item contains necessary props */}
+          </Grid>
+        ))}
+      </CardGrid>
 
-      <Container
-        maxWidth="xl"
-        sx={{
-          padding: { xs: 0, md: 2, lg: 2 },
-          display: "flex",
-          flexDirection: 'row',
-          justifyContent: "center",
-          flexWrap: "wrap",
-          gap: 2,
-        }}
-      >
-        <Typography variant="h4" fontFamily={globalFonts.body}>
-          FeaturedBrandOne
-        </Typography>
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            flexWrap: "wrap",
-            gap: 2,
-          }}
-        >
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-        </Box>
-      </Container>
+      <CardGrid heading="Feature Brand">
+        {[1, 2, 3, 4, 5].map((item) => (
+          <Grid item xs={11} sm={5} md={4} lg={2.4} xl={2.4}>
+            <ProductCard /> {/* Assuming item contains necessary props */}
+          </Grid>
+        ))}
+      </CardGrid>
     </>
   );
 }

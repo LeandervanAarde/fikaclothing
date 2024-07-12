@@ -3,7 +3,7 @@ import { useParams } from 'react-router';
 import axios from 'axios';
 import "./IndividualProduct.styles.scss"
 import BackButton from '../BackButton/BackButton.component';
-import Footer from '../Footer/Footer.component';
+import Footer from '../../components/Footer/Footer.component';
 import SubImages from '../SubImages/SubImages.component';
 import AvailableSizes from '../AvailableSizes/AvailableSizes.component';
 import Colour from '../Colour/Colour.component';

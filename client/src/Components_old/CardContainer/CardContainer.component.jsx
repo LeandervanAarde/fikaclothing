@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import "./CardContainer.styles.scss";
-import Card from '../Card/Card.component';
+import Card from '../../components/Card/Card.component';
 import { BiLeftArrow, BiRightArrow } from "react-icons/bi";
 import axios from 'axios'
 

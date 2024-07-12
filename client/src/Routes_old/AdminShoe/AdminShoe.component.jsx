@@ -1,14 +1,14 @@
 import React, { useEffect, useContext } from 'react';
 import "./AdminShoe.styles.scss"
-import Slider from '../../Components/Carasouel/Slider.component';
+import Slider from '../../Components_old/Carasouel/Slider.component';
 import sliderImages from '../../MockImages/mockimages';
 import { useParams } from 'react-router';
 import axios from 'axios'
 import { RerenderContext } from '../../contexts/Rerenders.context';
 import { useState } from 'react';
-import BackButton from '../../Components/BackButton/BackButton.component';
-import FormInput from '../../Components/forminput/FormInput.component';
-import Button from '../../Components/Button/Button.component';
+import BackButton from '../../Components_old/BackButton/BackButton.component';
+import FormInput from '../../Components_old/forminput/FormInput.component';
+import Button from '../../Components_old/Button/Button.component';
 
 const AdminShoe = () => {
     const product = useParams();

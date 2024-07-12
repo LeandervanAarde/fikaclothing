@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.scss';
 import { RouterProvider } from 'react-router-dom';
-import { router } from './Routes/router/router';
+import { router } from './routes/router/router';
 
 // import { Link, Route, Routes, Switch } from "react-router-dom";
 // import Navigation from './Routes/Navigation/Navigation.component';

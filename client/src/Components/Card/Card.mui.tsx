@@ -9,7 +9,7 @@ type Props = {};
 
 export default function ProductCard({}: Props) {
   return (
-    <Card sx={{ maxWidth: 300, minWidth: 250 }}>
+    <Card sx={{ width: {xs: '100%', sm: '100%', md: '100%'}}}>
       <CardActionArea>
         <CardMedia
           component="img"

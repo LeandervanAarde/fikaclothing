@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import "./Register.styles.scss";
-import FormInput from '../../Components/forminput/FormInput.component';
-import Button from '../../Components/Button/Button.component';
+import FormInput from '../../Components_old/forminput/FormInput.component';
+import Button from '../../Components_old/Button/Button.component';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 

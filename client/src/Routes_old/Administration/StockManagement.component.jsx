@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useContext } from 'react';
 import MockStock from "../../MockImages/MockStock.json";
-import Card from '../../Components/Card/Card.component';
+import Card from '../../components/Card/Card.component';
 import "./StockManagement.styles.scss";
-import ManagementCard from '../../Components/ManagementCard/ManagementCard.component';
-import Footer from '../../Components/Footer/Footer.component';
-import AddItem from '../../Components/AddItem/AddItem.component';
-import Orders from '../../Components/Orders/Orders.component';
+import ManagementCard from '../../Components_old/ManagementCard/ManagementCard.component';
+import Footer from '../../components/Footer/Footer.component';
+import AddItem from '../../Components_old/AddItem/AddItem.component';
+import Orders from '../../Components_old/Orders/Orders.component';
 import axios from 'axios'
-import EditStock from '../../Components/EditStock/EditStock.component';
+import EditStock from '../../Components_old/EditStock/EditStock.component';
 import { RerenderContext } from '../../contexts/Rerenders.context';
 
 const StockManagement = () => {

@@ -48,7 +48,7 @@ const SupportOptions: FooterInformation[] = [
 export default function Footer({}: Props) {
   return (
     <Container
-      maxWidth="xl"
+      maxWidth={false}
       sx={{
         height: "15vh",
 

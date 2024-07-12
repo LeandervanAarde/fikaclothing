@@ -1,11 +1,11 @@
 import React, { useContext, useState, useEffect } from 'react';
 // import DeliveryOptions from '../../Components/DeliverOptions/DeliveryOptions.component';
-import Footer from '../../Components/Footer/Footer.component';
-import PaymentForm from '../../Components/PaymentForm/PaymentForm.component';
+import Footer from '../../components/Footer/Footer.component';
+import PaymentForm from '../../Components_old/PaymentForm/PaymentForm.component';
 import "./Payment.styles.scss";
 // import { MdOutlineInventory2, MdOutlineTimeToLeave } from "react-icons/md";
-import DeliveryType from '../../Components/DeliveryTypes/DeliveryType.component';
-import Button from '../../Components/Button/Button.component';
+import DeliveryType from '../../Components_old/DeliveryTypes/DeliveryType.component';
+import Button from '../../Components_old/Button/Button.component';
 import { CartContext } from '../../contexts/CartDrop.context';
 import axios from 'axios'
 import { useNavigate } from 'react-router';
