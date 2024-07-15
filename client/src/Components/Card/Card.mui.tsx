@@ -1,15 +1,19 @@
-import * as React from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { useNavigate } from "react-router";
 type Props = {};
 
 export default function ProductCard({}: Props) {
+  const navigate = useNavigate();
   return (
-    <Card sx={{ width: {xs: '100%', sm: '100%', md: '100%'}}}>
+    <Card
+      sx={{ width: { xs: "100%", sm: "100%", md: "100%" } }}
+      onClick={() => navigate("/product/id")}
+    >
       <CardActionArea>
         <CardMedia
           component="img"

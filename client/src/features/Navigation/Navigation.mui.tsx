@@ -20,7 +20,25 @@ import { subRoutes } from "../../routes/router/router";
 import { Link } from "react-router-dom";
 import Login from "../Login/Login.mui";
 
-const settings = ["Cart", "Account", "Logout"];
+interface ISettings {
+  name: string;
+  route: string;
+}
+
+const settings: ISettings[] = [
+  {
+    name: "Cart",
+    route: "/cart",
+  },
+  {
+    name: "Account",
+    route: "/profile",
+  },
+  {
+    name: "Logout",
+    route: "/",
+  },
+];
 
 function MainNavigation() {
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
@@ -130,33 +148,26 @@ function MainNavigation() {
             </Box>
             <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
               {subRoutes[0].children.map((page) => {
-                if(page.shouldShow){
+                if (page.shouldShow) {
                   return (
                     <Link style={{ color: globalColors.white }} to={page.path}>
-                  <Button
-                    key={page.name}
-                    // onClick={handleNavMenu}
-                    sx={{ my: 2, color: "white", display: "block" }}
-                  >
-                    {page.name}
-                  </Button>
-                </Link>
-                  )
-                } else{
+                      <Button
+                        key={page.name}
+                        // onClick={handleNavMenu}
+                        sx={{ my: 2, color: "white", display: "block" }}
+                      >
+                        {page.name}
+                      </Button>
+                    </Link>
+                  );
+                } else {
                   return;
                 }
               })}
             </Box>
 
             <Box sx={{ flexGrow: 0, gap: 2 }}>
-              {/* <Button
-                variant="contained"
-                sx={{ mr: 2, backgroundColor: globalColors.red }}
-              >
-                Log in
-              </Button> */}
               <Login />
-
               <Tooltip title="Open settings">
                 <IconButton onClick={handleUserMenu} sx={{ p: 0 }}>
                   <Avatar />
@@ -179,8 +190,13 @@ function MainNavigation() {
                 onClose={handleUserMenu}
               >
                 {settings.map((setting) => (
-                  <MenuItem key={setting} onClick={handleUserMenu}>
-                    <Typography textAlign="center">{setting}</Typography>
+                  <MenuItem key={setting.name} onClick={handleUserMenu}>
+                    <Link
+                      style={{ color: globalColors.black }}
+                      to={setting.route}
+                    >
+                      <Typography textAlign="center">{setting.name}</Typography>
+                    </Link>
                   </MenuItem>
                 ))}
               </Menu>

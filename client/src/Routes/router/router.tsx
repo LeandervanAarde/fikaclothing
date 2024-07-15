@@ -4,6 +4,7 @@ import Home from "../Home/Home.mui";
 import Shop from "../Shop/Shop.mui";
 import Register from "../Register/Register.mui";
 import Product from "../Product/Product.mui";
+import Cart from "../Cart/Cart.mui";
 
 export const subRoutes = [
   {
@@ -33,6 +34,11 @@ export const subRoutes = [
         shouldShow: false,
         element: <Product />,
       },
+      {
+        path: '/cart',
+        shouldShow: false,
+        element: <Cart/>
+      }
     ],
   },
 ];

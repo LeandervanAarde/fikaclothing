@@ -13,3 +13,19 @@ export const subContainerStyles = {
 export const formControlStyles = {
   width: { xs: "100%", lg: "80%" },
 };
+
+
+export const optionStyles = {
+  width: "30px",
+  height: "30px",
+  justifyContent: "center",
+  alignItems: "center",
+  textAlign: "center",
+  padding: "5px",
+}
+
+export const calculateBorder = (value: unknown, selectedValue: unknown): string  =>  {
+  return value === selectedValue 
+  ? "2px solid black"
+  : "0.5px solid black"
+}
