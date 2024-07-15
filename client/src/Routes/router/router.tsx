@@ -1,39 +1,40 @@
-import {
-    createBrowserRouter,
-    RouterProvider,
-  } from "react-router-dom";
-import MainNavigation from "../../features/Navigation/Navigation.mui";
+import { createBrowserRouter } from "react-router-dom";
 import Page from "../../features/Page/Page";
 import Home from "../Home/Home.mui";
 import Shop from "../Shop/Shop.mui";
 import Register from "../Register/Register.mui";
+import Product from "../Product/Product.mui";
 
 export const subRoutes = [
   {
     path: "/",
-    element: <Page/>,
+    element: <Page />,
     children: [
       {
-        path: '/',
+        path: "/",
         name: "Home",
         index: true,
         shouldShow: true,
-        element: <Home/>
+        element: <Home />,
       },
       {
         path: "/shop",
         name: "Shop",
         shouldShow: true,
-        element: <Shop/>
+        element: <Shop />,
       },
       {
-        path: '/register',
+        path: "/register",
         shouldShow: false,
-        element: <Register/>
-      }
-    ]
-} 
-]
+        element: <Register />,
+      },
+      {
+        path: "/product/id",
+        shouldShow: false,
+        element: <Product />,
+      },
+    ],
+  },
+];
 
-
-  export const router = createBrowserRouter(subRoutes)
+export const router = createBrowserRouter(subRoutes);

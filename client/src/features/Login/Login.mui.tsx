@@ -18,7 +18,7 @@ const logoContainerStyles: React.CSSProperties = {
   alignItems: "center",
 };
 export default function Login() {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
     setOpen(true);
