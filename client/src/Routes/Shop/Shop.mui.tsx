@@ -31,7 +31,7 @@ export default function ProductsSection({}: Props) {
       <CardGrid>
         {mappedItems.map((item) => (
           <Grid item xs={11} sm={5} md={4} lg={2.4} xl={2.4}>
-            <ProductCard /> {/* Assuming item contains necessary props */}
+            <ProductCard /> 
           </Grid>
         ))}
       </CardGrid>

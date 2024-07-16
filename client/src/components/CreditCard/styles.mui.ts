@@ -1,14 +1,22 @@
+import { AspectRatio } from "@mui/icons-material";
 import { globalColors } from "../../StylesSource/styles";
 
 export const outerCardContainer = {
-  width: "360px",
-  height: '170px',
-  borderRadius: "10px",
+  width: {xs: "260px", sm: '380px',  md: "380px"},
+  aspectRatio: '16/7',
+  padding: 0,
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center'
 };
 
 export const innnerCard = {
   width: "100%",
   height: "100%",
+  display: 'flex',
+  justifyContent: 'center', 
+  alignItems: 'center',
+  padding: 0,
   borderRadius: "10px",
   boxShadow: "0 0 25px 2px rgba(black, 0.2)",
 };

@@ -14,15 +14,11 @@ import {
 import { ICardInformation } from "../../interfaces/Payment";
 import { formatCardNumber } from "../../helpers/globalHelpers";
 
-type Props = {};
-
-const cardDetails: ICardInformation = {
-  name: "LE van Aarde",
-  cardNumber: "1234 5678 9000 1234",
-  expiryDate: "12/24",
-};
-
-export default function CreditCard() {
+export default function CreditCard({
+  name,
+  cardNumber,
+  expiryDate,
+}: ICardInformation) {
   return (
     <Container sx={outerCardContainer}>
       <Container sx={innnerCard}>
@@ -66,15 +62,15 @@ export default function CreditCard() {
           </Box>
           <Box sx={cardTextContainer}>
             <Typography variant="caption" sx={cardText}>
-              Leander van Aarde
+              {name}
             </Typography>
 
             <Typography variant="body1" sx={cardText}>
-              {formatCardNumber(cardDetails.cardNumber)}
+              {formatCardNumber(cardNumber)}
             </Typography>
 
             <Typography variant="caption" sx={cardText}>
-              12/24
+              {expiryDate}
             </Typography>
           </Box>
         </Box>
