@@ -40,6 +40,7 @@ export default function Cart() {
         <Typography variant="h3" sx={{ fontFamily: globalFonts.body }}>
           Your cart
         </Typography>
+
         <TableContainer component={Paper}>
           <Table sx={{ width: "100%" }} aria-label="simple table">
             <TableHead>
@@ -71,6 +72,12 @@ export default function Cart() {
             </TableBody>
           </Table>
         </TableContainer>
+        <Button
+          sx={{ width: { xs: "100%", md: "auto" }, height: "40px" }}
+          variant="contained"
+        >
+          Save Cart
+        </Button>
       </Container>
 
       <Container

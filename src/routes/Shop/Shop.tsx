@@ -7,7 +7,7 @@ import { globalFonts } from "../../globals/styles/styles";
 
 type Props = {};
 
-export default function ProductsSection({}: Props) {
+export default function Shop({}: Props) {
   const mappedItems: number[] = [
     1, 2, 3, 4, 5, 6, 7, 8, 34, 3, 2, 34, 45, 3, 4, 5, 6, 7, 7, 6,
   ];

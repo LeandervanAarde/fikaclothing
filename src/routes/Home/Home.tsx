@@ -36,7 +36,7 @@ export default function Home() {
           <StoreLogo width={75} height={75} />
           <Typography
             variant="body1"
-            sx={{ font: globalFonts.body, color: globalColors.black }}
+            sx={{ fontFamily: globalFonts.body, color: globalColors.black }}
           >
             Where Sneakers come alive
           </Typography>
@@ -51,7 +51,7 @@ export default function Home() {
       <CardGrid heading="Feature Brand">
         {[1, 2, 3, 4, 5].map((item) => (
           <Grid item xs={11} sm={5} md={4} lg={2.4} xl={2.4}>
-            <ProductCard /> {/* Assuming item contains necessary props */}
+            <ProductCard /> 
           </Grid>
         ))}
       </CardGrid>
@@ -59,7 +59,7 @@ export default function Home() {
       <CardGrid heading="Feature Brand">
         {[1, 2, 3, 4, 5].map((item) => (
           <Grid item xs={11} sm={5} md={4} lg={2.4} xl={2.4}>
-            <ProductCard /> {/* Assuming item contains necessary props */}
+            <ProductCard />
           </Grid>
         ))}
       </CardGrid>
@@ -67,7 +67,7 @@ export default function Home() {
       <CardGrid heading="Feature Brand">
         {[1, 2, 3, 4, 5].map((item) => (
           <Grid item xs={11} sm={5} md={4} lg={2.4} xl={2.4}>
-            <ProductCard /> {/* Assuming item contains necessary props */}
+            <ProductCard /> 
           </Grid>
         ))}
       </CardGrid>
