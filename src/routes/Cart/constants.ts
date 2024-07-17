@@ -73,43 +73,99 @@ export const Addresses: IAddress[] = [
 export const MockData: ICartProduct[] = [
   createData({
     description: "Classic White Sneakers",
-    quantity: "50",
+    quantity: 1,
     color: "#FFFFFF", // White
     size: "10",
-    price: "R1200.00",
-    discount: "R200.00",
+    price: 1200.00,
+    discount: 0.03,
   }),
   createData({
     description: "High-top Red Sneakers",
-    quantity: "30",
+    quantity: 7,
     color: "#FF0000", // Red
     size: "11",
-    price: "R1500.00",
-    discount: "R250.00",
+    price: 1500.00,
+    discount: 0.10,
+  }),
+  createData({
+    description: "High-top Red Sneakers",
+    quantity: 2,
+    color: "#1d1d66", // Red
+    size: "11",
+    price: 1500.00,
+    discount: 0.10,
   }),
   createData({
     description: "Leather Brown Sneakers",
-    quantity: "70",
+    quantity: 1,
     color: "#8B4513", // Saddle Brown
     size: "9",
-    price: "R800.00",
-    discount: "R100.00",
+    price: 800.00,
+    discount: 0.05,
   }),
   createData({
     description: "Casual Gray Sneakers",
-    quantity: "45",
+    quantity: 1,
     color: "#2F4F4F",
     size: "8",
-    price: "R600.00",
-    discount: "R50.00",
+    price: 600.00,
+    discount: 0.08,
   }),
   createData({
     description: "Sporty Black Sneakers",
-    quantity: "20",
+    quantity: 3,
     color: "#000000", // Black
     size: "12",
-    price: "R1400.00",
-    discount: "R300.00",
+    price: 1400.00,
+    discount: 0.15,
+  }),
+  createData({
+    description: "Leather Brown Sneakers",
+    quantity: 1,
+    color: "#8B4513", // Saddle Brown
+    size: "9",
+    price: 800.00,
+    discount: 0.05,
+  }),
+  createData({
+    description: "Casual Gray Sneakers",
+    quantity: 1,
+    color: "#2F4F4F",
+    size: "8",
+    price: 600.00,
+    discount: 0.08,
+  }),
+  createData({
+    description: "Sporty Black Sneakers",
+    quantity: 3,
+    color: "#000000", // Black
+    size: "12",
+    price: 1400.00,
+    discount: 0.15,
+  }),
+  createData({
+    description: "Leather Brown Sneakers",
+    quantity: 1,
+    color: "#8B4513", // Saddle Brown
+    size: "9",
+    price: 800.00,
+    discount: 0.05,
+  }),
+  createData({
+    description: "Casual Gray Sneakers",
+    quantity: 1,
+    color: "#2F4F4F",
+    size: "8",
+    price: 600.00,
+    discount: 0.08,
+  }),
+  createData({
+    description: "Sporty Black Sneakers",
+    quantity: 3,
+    color: "#000000", // Black
+    size: "12",
+    price: 1400.00,
+    discount: 0.15,
   }),
 ];
 

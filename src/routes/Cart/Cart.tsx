@@ -13,11 +13,46 @@ import {
   Box,
   Typography,
 } from "@mui/material";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Addresses, Cards, DeliveryTypes, MockData } from "./constants";
+import { ICartTotals } from "../../globals/interfaces/structures";
+
+const defaultTotals: ICartTotals = {
+  Price: 0.0,
+  VAT: 0.15,
+  Delivery: 0.0,
+  Discount: 0.0,
+  Total: 0.0,
+};
 
 export default function Cart() {
   const [deliveryOption, setDeliveryOption] = useState<number | null>(null);
+  const [cartTotals, setCartTotals] = useState<ICartTotals>(defaultTotals);
+
+  function calculateCart() {
+    let newPrice = 0;
+    let newDiscount = 0;
+
+    MockData.forEach((item) => {
+      newPrice += item.price * item.quantity;
+      newDiscount += item.price * item.discount * item.quantity;
+    });
+
+    let newDelivery =
+      deliveryOption !== null ? DeliveryTypes[deliveryOption].priceIncrease : 0;
+    let newTotal = (newPrice + 0.15 + newDelivery - newDiscount).toFixed(2);
+    setCartTotals((prevTotals: ICartTotals) => ({
+      ...prevTotals,
+      Price: newPrice,
+      Delivery: newDelivery,
+      Discount: newDiscount,
+      Total: parseFloat(newTotal),
+    }));
+  }
+
+  useEffect(() => {
+    calculateCart();
+  }, [deliveryOption, MockData]);
 
   return (
     <Container
@@ -26,7 +61,8 @@ export default function Cart() {
         display: "flex",
         flexDirection: { xs: "column", md: "row" },
         minHeight: "70vh",
-        padding: { sm: 0, md: 0, lg: 0, xl: 0 },
+        p: 2
+    
       }}
     >
       <Container
@@ -35,6 +71,8 @@ export default function Cart() {
           display: "flex",
           flexDirection: "column",
           gap: "10px",
+          maxHeight: '78vh',
+          overflow: "scroll",
         }}
       >
         <Typography variant="h3" sx={{ fontFamily: globalFonts.body }}>
@@ -49,6 +87,7 @@ export default function Cart() {
                 <TableCell align="right">Quanity</TableCell>
                 <TableCell align="right">Color</TableCell>
                 <TableCell align="right">Size</TableCell>
+                <TableCell align="right">Price per unit</TableCell>
                 <TableCell align="right">Price</TableCell>
                 <TableCell align="right">Discount</TableCell>
               </TableRow>
@@ -66,12 +105,42 @@ export default function Cart() {
                   <TableCell align="right">{row.color}</TableCell>
                   <TableCell align="right">{row.size}</TableCell>
                   <TableCell align="right">{row.price}</TableCell>
-                  <TableCell align="right">- {row.discount}</TableCell>
+                  <TableCell align="right">
+                    {row.price * row.quantity}
+                  </TableCell>
+                  <TableCell align="right">
+                    - {row.price * row.discount * row.quantity}
+                  </TableCell>
                 </TableRow>
               ))}
             </TableBody>
           </Table>
         </TableContainer>
+
+        <Container
+          sx={{
+            display: "flex",
+            justifyContent: "flex-end",
+          }}
+        >
+          <Box sx={{display: 'flex',justifyContent: 'space-between', width: '100%'}}>
+            {Object.entries(cartTotals).map(([key, value]) => {
+              if (key === "VAT") {
+                return (
+                  <Typography key={key}>
+                    <b> {key} </b> : 15%
+                  </Typography>
+                );
+              }
+              return (
+                <Typography key={key}>
+                  <b> {key} </b>: R {value}
+                </Typography>
+              );
+            })}
+          </Box>
+        </Container>
+
         <Button
           sx={{ width: { xs: "100%", md: "auto" }, height: "40px" }}
           variant="contained"

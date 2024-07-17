@@ -14,13 +14,22 @@ export interface ICardInformation {
   expiryDate: string;
 }
 
+export interface ICartTotals {
+  Price: number;
+  VAT: 0.15;
+  Delivery: number;
+  Discount: number;
+  Total: number;
+}
+
+
 export interface ICartProduct {
   description: string;
-  quantity: string;
+  quantity: number;
   color: string;
   size: string;
-  price: string;
-  discount: string;
+  price: number;
+  discount: number;
 }
 
 export interface IDeliveryType {
